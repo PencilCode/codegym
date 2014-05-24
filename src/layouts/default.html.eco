@@ -46,7 +46,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="/">Project name</a>
+				<a class="navbar-brand" href="/">Code Fieldhouse</a>
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
@@ -75,10 +75,11 @@
 
 		<!-- Footer -->
 		<footer>
-			<p class="pull-left">&copy; Company <%- (new Date()).getFullYear() %></p>
+    <!--
 			<p class="pull-right">
 				This website was last updated at <%= @site.date.toISOString() %>
 			</p>
+    -->
 		</footer>
 	</div><!-- /container -->
 

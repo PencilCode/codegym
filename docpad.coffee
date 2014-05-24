@@ -12,32 +12,30 @@ docpadConfig = {
 		# Specify some site properties
 		site:
 			# The production url of our website
-			url: "http://website.com"
+			url: "http://fieldhouse.pencilcode.net"
 
 			# Here are some old site urls that you would like to redirect from
 			oldUrls: [
-				'www.website.com',
-				'website.herokuapp.com'
 			]
 
 			# The default title of our website
-			title: "Your Website"
+			title: "Code Fieldhouse"
 
 			# The website description (for SEO)
 			description: """
-				When your website appears in search results in say Google, the text here will be shown underneath your website's title.
+				An interactive sandbox for learning how to code on the web.
 				"""
 
 			# The website keywords (for SEO) separated by commas
 			keywords: """
-				place, your, website, keywoards, here, keep, them, related, to, the, content, of, your, website
+				education, code, computer science, coffeescript, turtle, music, animation, interactive fiction
 				"""
 
 			# The website author's name
-			author: "Your Name"
+			author: "Pencil Code"
 
 			# The website author's email
-			email: "your@email.com"
+			email: "info@pencilcode.net"
 
 			# Styles
 			styles: [

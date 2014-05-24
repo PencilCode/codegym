@@ -1,0 +1,18 @@
+---
+layout: default
+---
+
+<article id="code" class="code">
+	<h1><%= @document.title %></h1>
+	<div class="page-content">
+  <div id="codeframe"><%- @document.code %></div>
+  <%- @content %>
+  </div>
+</article>
+<script src="//pencilcode.net/lib/pencilcodeembed.js"></script>
+<script>
+var cf = document.getElementById('codeframe'),
+    code = cf.innerHTML,
+    pce = new PencilCodeEmbed(cf);
+pce.beginLoad(code);
+</script>
