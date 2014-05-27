@@ -3,16 +3,24 @@ layout: default
 ---
 
 <article id="code" class="code">
-	<h1><%= @document.title %></h1>
-	<div class="page-content">
+  <h1><%= @document.title %></h1>
+  <h3><%= @document.mission %></h3>
+  <div class="page-content">
   <div id="codeframe"><%- @document.code %></div>
+  <div>
   <%- @content %>
   </div>
+  </div>
+  <xmp id="setupcode" style="display:none"><%- @document.setup %></xmp>
 </article>
 <script src="//pencilcode.net/lib/pencilcodeembed.js"></script>
 <script>
 var cf = document.getElementById('codeframe'),
     code = cf.innerHTML,
+    setup = document.getElementById('setupcode').innerHTML,
     pce = new PencilCodeEmbed(cf);
+pce.on('load', function() {
+  pce.setPreviewScript([{text:setup, type:'text/coffeescript'}]);
+});
 pce.beginLoad(code);
 </script>
