@@ -3,15 +3,22 @@ layout: default
 ---
 
 <article id="code" class="code">
-  <h1><%= @document.title %></h1>
-  <h3><%= @document.mission %></h3>
-  <div class="page-content">
-  <div id="codeframe"><%- @document.code %></div>
-  <div>
-  <%- @content %>
-  </div>
-  </div>
-  <xmp id="setupcode" style="display:none"><%- @document.setup %></xmp>
+<h1><%= @document.title %></h1>
+<h3><%= @document.mission %></h3>
+<div class="page-content">
+<div id="codeframe"><%- @document.code %></div>
+<div>
+<%- @content %>
+</div>
+</div>
+<xmp id="setupcode" style="display:none">
+# common setup code here.
+_error = {}
+window.removeEventListener 'error', see
+window.addEventListener 'error', (e) ->
+  _error.message = e.message
+<%- @document.setup %>
+</xmp>
 </article>
 <script src="//pencilcode.net/lib/pencilcodeembed.js"></script>
 <script>
