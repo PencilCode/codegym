@@ -1,0 +1,13 @@
+---
+title: Draw
+layout: page
+tags: ['draw','index']
+pageOrder: 1
+---
+<nav class="linklist">
+	<% for document in @getCollection('examples').toJSON(): %>
+		<li><span><%= document.date.toDateString() %></span>
+		&raquo; <img width=100 src="/images/thumbs/<%= document.basename %>.png">
+		<a href="<%= document.url %>"><%= document.title %></a></li>
+	<% end %>
+</nav>

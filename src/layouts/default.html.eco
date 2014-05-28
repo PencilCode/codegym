@@ -66,6 +66,9 @@
 		</div>
 	</div>
 
+	<!-- Scripts -->
+	<%- @getBlock('scripts').add(@site.scripts).toHTML() %>
+
 	<!-- Content -->
 	<div class="container">
 		<!-- Content -->
@@ -83,7 +86,5 @@
 		</footer>
 	</div><!-- /container -->
 
-	<!-- Scripts -->
-	<%- @getBlock('scripts').add(@site.scripts).toHTML() %>
 </body>
 </html>

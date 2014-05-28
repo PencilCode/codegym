@@ -26,8 +26,5 @@ var cf = document.getElementById('codeframe'),
     code = cf.innerHTML,
     setup = document.getElementById('setupcode').innerHTML,
     pce = new PencilCodeEmbed(cf);
-pce.on('load', function() {
-  pce.setPreviewScript([{text:setup, type:'text/coffeescript'}]);
-});
-pce.beginLoad(code);
+pce.beginLoad({code: code, setup: [{code: setup, type: 'text/coffeescript'}]});
 </script>
