@@ -4,12 +4,19 @@ layout: default
 
 <article id="code" class="code">
 <h1><%= @document.title %></h1>
-<h3><%= @document.mission %></h3>
+<h3><%- @document.mission %></h3>
 <div class="page-content">
 <div id="codeframe"><%- @document.code %></div>
 <div>
-<%- @content %>
 </div>
+<% if @document.refs: %>
+  <center class="reflinks">
+  Reference: &nbsp;
+  <% for ref in (@document.refs or []): %>
+    <a href="/ref/<%= ref %>.html"><%=ref%></a> &nbsp
+  <% end %>
+</center>
+<% end %>
 </div>
 <xmp id="setupcode" style="display:none">
 # common setup code here.
@@ -17,7 +24,20 @@ _error = {}
 window.removeEventListener 'error', see
 window.addEventListener 'error', (e) ->
   _error.message = e.message
-<%- @document.setup %>
+thepopup = null
+popup = (t) ->
+  if thepopup
+    thepopup.html t
+    return
+  thepopup = write """
+    <center>#{t}</center>
+  """
+  thepopup.css
+    background: 'lightblue'
+    fontFamily: 'Arial'
+    margin: '5% 15%'
+    padding: '10px'
+<%- @content %>
 </xmp>
 </article>
 <script src="//pencilcode.net/lib/pencilcodeembed.js"></script>

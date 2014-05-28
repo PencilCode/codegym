@@ -1,0 +1,54 @@
+---
+title: Draw a Dot
+mission: Pick a <a href="/ref/colors.html">color</a> and make a dot.
+layout: code
+tags: ['draw','index']
+refs: ['colors', 'dot']
+code: |
+  dot purple, 100
+---
+dotcount = 0
+colors = {}
+sizes = []
+originaldot = window.dot
+window.dot = ->
+  dotcount += 1
+  for a in arguments
+    if isNaN(a) then colors[a] = true
+    else sizes.push(a)
+  originaldot.apply(null, arguments)
+hints = ->
+  if dotcount == 0
+    return
+  if dotcount == 1
+    popup """
+      <p>Very nice.<br>
+      Try adding a second dot!<br>
+      <p>HINT: add a second line like the first.
+    """
+  else if _.keys(colors).length == 1
+    popup """
+      <p>Are your dots all the same color?
+      <p>HINT: try picking different colors.
+    """
+  else if _.uniq(sizes).length == 1
+    popup """
+      <p>Are your dots all the same size?
+      <p>HINT: try picking a different size for a dot.
+    """
+  else if sizes[1] > sizes[0]
+    popup """
+      <p>Did you draw a bigger dot after a smaller one?<br>
+      To see both dots, try drawing the bigger one first.
+    """
+  else
+    popup """
+      <p>Beautiful!
+    """
+click ->
+  if dotcount is 0
+    popup """
+      <p>Click on the blue play button to run the program.
+    """
+
+setTimeout((-> done -> setTimeout hints, 500), 500)
