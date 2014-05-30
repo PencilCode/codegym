@@ -1,0 +1,38 @@
+---
+layout: default
+---
+
+<div class="col-md-12">
+<h1><%= @document.title %> <small><%= @document.description %></small></h1>
+</div>
+
+<div class="col-md-6">
+<%- @content %>
+</div>
+
+<div class="col-md-6">
+<div id="codeframe" style="min-height:60vh"></div>
+</div>
+<style>
+code.jumbo:hover { background: azure; }
+</style>
+<script src="//pencilcode.net/lib/pencilcodeembed.js"></script>
+<script>
+var cf = document.getElementById('codeframe'),
+    code = cf.innerHTML,
+    pce = new PencilCodeEmbed(cf);
+$('code.jumbo').css({cursor: 'pointer'})
+$('code.jumbo').click(function() {
+  // Grab all the code except inside def subelements; and transform nbsp to space.
+  var code = $(this).clone().find('dfn').remove().end().text().replace(/\xA0/g, ' ');
+  if ($(this).data('before')) { code = $(this).data('before'); + '\n\n' + code; }
+  if ($(this).data('after')) { code += '\n\n' + $(this).data('after'); }
+  pce.setCode(code);
+  pce.beginRun();
+});
+pce.on('load', function() {
+  if ($('code.jumbo[default]').length) { $('code.jumbo[default]').eq(0).click(); }
+  else { $('code.jumbo').eq(0).click(); }
+});
+pce.beginLoad();
+</script>

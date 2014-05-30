@@ -77,6 +77,12 @@ docpadConfig = {
       # Merge the document keywords with the site keywords
       @site.keywords.concat(@document.keywords or []).join(', ')
 
+    localBlock: (type) ->
+       block = []
+       block = block.concat @site[type] if @site[type] and Array.isArray @site[type]
+       block = block.concat @document[type] if @document[type] and Array.isArray @document[type]
+       return block
+
 
   # =================================
   # Collections
@@ -87,7 +93,8 @@ docpadConfig = {
       database.findAllLive({pageOrder: $exists: true}, [pageOrder:1,title:1])
 
     examples: (database) ->
-      database.findAllLive({code: $exists: true}, [date:-1])
+      database.findAllLive(
+          {codeLevel: $exists: true}, [codeLevel:1, codeOrder:1])
 
 
   # =================================

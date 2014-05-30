@@ -1,0 +1,16 @@
+---
+layout: page
+---
+<div>
+  <% for level, levelnum in ['Begin', 'Explore', 'Challenge']: %>
+    <h3><%= level %></h3>
+      <% for document in @getCollection('examples').findAll({relativeDirPath: @document.relativeDirPath, codeLevel: levelnum}).toJSON(): %>
+      <% if document.mission: %>
+        <% thumb = document.thumb or 'default' %>
+        <a class="indextile" href="<%= document.url %>">
+        <img width=100 src="/images/thumbs/<%= thumb %>.png">
+        <%= document.title %></a>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
