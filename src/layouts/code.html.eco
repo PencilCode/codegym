@@ -33,12 +33,12 @@ popup = (t) ->
     <center>#{t}</center>
   """
   thepopup.css
-    background: 'lightblue'
-    opacity: 0.8
+    background: rgba(235,235,235,0.5)
     fontFamily: 'Arial'
     margin: '5px 15%'
     padding: '8px'
     borderRadius: '8px'
+    boxShadow: '0 0 5px dimgray'
 <%- @content %>
 </xmp>
 </article>

@@ -1,29 +1,42 @@
 ---
-title: Draw a Dot
-mission: Pick a <a href="/ref/colors.html">color</a> and make a dot.
+title: A Line
+mission: Pick a <a href="/ref/colors.html">color</a> and make a line.
 layout: code
 codeLevel: 0
-codeOrder: 1
+codeOrder: 3
 thumb: 'dot'
-tags: ['draw','index']
-refs: ['colors', 'dot']
+refs: ['pen', 'fd']
 code: |
-  dot purple, 100
+  pen red
 ---
 dotcount = 0
 colors = {}
 sizes = []
+pencolor = null
+pensize = null
 originaldot = window.dot
-window.dot = ->
-  dotcount += 1
+window.pen = ->
+  pencount += 1
+  pencolor = black
+  pensize = 1.5
   for a in arguments
-    if isNaN(a) then colors[a] = true
-    else sizes.push(a)
-  originaldot.apply(null, arguments)
+    if isNaN(a) then pencolor = a
+    else pensize = a
+
 hints = ->
   if dotcount == 0
     return
-  if dotcount == 1
+  if dotcount == 1 and sizes[0] == 100 and colors.purple
+    popup """
+      <p>Can you change the color?
+      <p>HINT: find the colors reference page.
+    """
+  else if dotcount == 1 and sizes[0] == 100
+    popup """
+      <p>Can you make a different size?
+      <p>HINT: the number is the diameter.
+    """
+  else if dotcount == 1
     popup """
       <p>Try adding a second dot!<br>
       <p>HINT: add a second line of code.

@@ -1,6 +1,5 @@
 $ ->
-  $('code.jumbo').each ->
-    maxheight = 0
+  $('code.jumbo,pre.jumbo').each ->
     $(@).find('span[data-dfn]').each ->
       span = $(@)
       span.css
@@ -22,9 +21,10 @@ $ ->
         height: 5
       middiv.appendTo(annotation)
       exp = $('<div>').text(span.data('dfn'))
+      exp.css
+        whiteSpace: 'nowrap'
       exp.appendTo(annotation)
       annotation.appendTo(span)
-      maxheight = Math.max(maxheight, annotation.height())
     $(@).find('span[data-note]').each ->
       span = $(@)
       span.css
@@ -40,14 +40,25 @@ $ ->
         height: 48
       middiv.appendTo(annotation)
       exp = $('<div>').text(span.data('note'))
+      exp.css
+        whiteSpace: 'nowrap'
       exp.appendTo(annotation)
       annotation.appendTo(span)
-      maxheight = Math.max(maxheight, annotation.height())
       exp.css
         position: 'absolute'
       exp.css
         marginLeft: (span.width() - exp.width()) / 2
-    if maxheight > 0
-      $(@).css
-        height: ($(@).height() + maxheight)
+    box = $(@).offset()
+    box.bottom = box.top + $(@).outerHeight()
+    box.right = box.left + $(@).outerWidth()
+    $(@).find('div').each ->
+      divbox = $(@).offset()
+      divbox.bottom = divbox.top + $(@).outerHeight()
+      divbox.right = divbox.left + $(@).outerWidth()
+      console.log(@, divbox)
+      box.bottom = Math.max(divbox.bottom, box.bottom)
+      box.right = Math.max(divbox.right, box.right)
+    $(@).css
+      height: box.bottom - box.top
+      width: box.right - box.left
 
