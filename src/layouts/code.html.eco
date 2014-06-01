@@ -1,22 +1,42 @@
 ---
-layout: default
+layout: bare
 ---
 
-<article id="code" class="code">
-<h1><%= @document.title %></h1>
-<h3><%- @document.mission %></h3>
-<div class="page-content">
+<div id="instructions" class="carousel slide" data-interval="false">
+  <div class="carousel-inner">
+    <div class="item active">
+      <div class="instruction container">
+        <h1><%= @document.title %> <small><%= @document.subtitle %></small></h1>
+        <p><%- @document.mission %>
+      </div>
+    </div>
+    <% if @document.instructions then for inst in @document.instructions: %>
+    <div class="item">
+      <div class="instruction container">
+        <h2><%= inst.title %> <small><%= inst.subtitle %></small></h1>
+        <p><%- inst.mission %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <a class="left carousel-control" href="#instructions" style="display:none" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+  <a class="right carousel-control" href="#instructions" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+</div>
+
+<div class="container">
 <div id="codeframe"><%- @document.code %></div>
 <div>
 </div>
-<% if @document.refs: %>
-  <center class="reflinks">
-  Reference: &nbsp;
-  <% for ref in (@document.refs or []): %>
-    <a href="/ref/<%= ref %>.html"><%=ref%></a> &nbsp
-  <% end %>
-</center>
+<center class="reflinks">
+<div id="reset" class="btn btn-default pull-left">Reset Code</div>
+<span class="btn">Reference: &nbsp;</span>
+<% if @document.refs then for ref in (@document.refs or []): %>
+<a target="reference" class="btn btn-default" href="/ref/<%= ref %>.html"><%=ref%></a> &nbsp
 <% end %>
+<% if @document.instructions: %>
+<div id="more" class="btn btn-default pull-right">More Ideas</div>
+<% end %>
+</center>
 </div>
 <xmp id="setupcode" style="display:none">
 # common setup code here.
@@ -44,9 +64,31 @@ popup = (t) ->
 </article>
 <script src="//pencilcode.net/lib/pencilcodeembed.js"></script>
 <script>
+
+$('.carousel').carousel();
+function updatePagers() {
+  var self = $(this);
+  self.children('.carousel-control').show();
+  if ($('.carousel-inner .item:first').hasClass('active')) {
+    console.log('first has active');
+    self.children('.left.carousel-control').hide();
+  }
+  if ($('.carousel-inner .item:last').hasClass('active')) {
+    console.log('last has active');
+    self.children('.right.carousel-control').hide();
+  }
+}
+$('#instructions').each(updatePagers).on('slid', '', updatePagers);
+
 var cf = document.getElementById('codeframe'),
     code = cf.innerHTML,
     setup = document.getElementById('setupcode').innerHTML,
     pce = new PencilCodeEmbed(cf);
 pce.beginLoad({code: code, setup: [{code: setup, type: 'text/coffeescript'}]});
+
+$('#more').click(function() { $('#instructions').carousel('next'); });
+$('#reset').click(function() {
+  pce.setCode(code);
+});
+
 </script>
