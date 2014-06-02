@@ -1,0 +1,29 @@
+---
+title: Make chords
+subtitle: amazing harmony
+mission: Explore the sounds of several notes at once.
+layout: code
+codeLevel: 0
+codeOrder: 4
+thumb: 'pianochord'
+tags: ['draw','index']
+refs: ['play']
+instructions:
+  - title: Triads
+    subtitle: three notes at once
+    mission: >
+      Put three notes in square brackets <code>[FAc]</code> to
+      form a triad.  A number after a chord counts its beats.
+  - title: Tetrads
+    subtitle: add more notes for richer sound
+    mission: >
+      Try adding lower notes to the chord such as <code>F,</code> or
+      <code>C,</code>.  A comma after a note makes it an octave lower.
+  - title: Next step
+    subtitle:
+    mission: Go on to <a href="chord.html">Make a chord</a>
+code: |
+  p = new Piano
+  p.play "[FAc]4[GEc]4"
+
+---
