@@ -1,0 +1,53 @@
+---
+title: First Note
+subtitle: start with a single note
+mission: Can you hear it?  Plug in your headphones; check your volume.
+layout: code
+codeLevel: 0
+codeOrder: 1
+thumb: 'dot'
+tags: ['draw','index']
+refs: ['play']
+instructions:
+  - title: Experiment with different notes
+    subtitle: what do you discover?
+    mission: Musical notes are named C,D,E,F,G,A,B
+  - title: Make a melody
+    subtitle: use more than one note
+    mission: Remember to put all the notes inside "quotes"
+  - title: Next step
+    subtitle:
+    mission: Go on to <a href="tune.html">Play a piano</a>
+code: |
+  play "c"
+---
+songs = []
+originalplay = window.play
+window.play = ->
+  for a in arguments
+    if 'string' is typeof a
+      songs.push(a)
+  originalplay.apply(null, arguments)
+
+hints = ->
+  if songs.length == 0
+    return
+  allnotes = songs.join('')
+  unmatched = _.uniq(allnotes.match(/[h-w]/ig)).join('')
+  matched = allnotes.match(/[a-g]/ig).join('')
+  if not /[+!\n]/.test(allnotes) and unmatched.length
+    popup """
+      <p>Musical notes are named A-G: played
+      "#{matched}", not "#{unmatched}".
+    """
+  else if allnotes == 'c'
+    popup """
+      <p>Want more ideas? Click on More Ideas.
+    """
+click ->
+  if songs.length is 0
+    popup """
+      <p>Click on the blue play button to run the program.
+    """
+
+setTimeout((-> done -> setTimeout hints, 500), 500)
