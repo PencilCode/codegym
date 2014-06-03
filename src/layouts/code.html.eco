@@ -1,5 +1,5 @@
 ---
-layout: bare
+layout: framed
 ---
 
 <div id="instructions" class="carousel slide" data-interval="false">

@@ -36,36 +36,7 @@
   <!-- Styles -->
   <%- @getBlock('styles').add(@localBlock('styles')).toHTML() %>
 </head>
-<body>
-  <!-- Menu -->
-  <div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-flex">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/">Code Gym</a>
-      </div>
-      <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-          <% for document in @getCollection('pages').toJSON(): %>
-            <li
-              typeof="sioc:Page"
-              about="<%= document.url %>"
-              class="<%= 'active'  if @document.url is document.url %>"
-            >
-              <a href="<%= document.url %>" property="dc:title">
-                <%= document.title %>
-              </a>
-            </li>
-          <% end %>
-        </ul>
-      </div><!--/.navbar-collapse -->
-    </div>
-  </div>
-
+<body class="framed">
   <!-- Scripts -->
   <%- @getBlock('scripts').add(@localBlock('scripts'), {defer:false, async:false}).toHTML() %>
 
