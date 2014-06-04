@@ -26,7 +26,7 @@ layout: framed
 </div>
 
 <div id="codeframe" class="container-margins" style="flex-grow:1"
-><%- @document.code %></div>
+><%= @document.code %></div>
 
 <center class="container-margins reflinks">
 <div id="reset" class="btn btn-default pull-left">Reset Code</div>
@@ -89,7 +89,7 @@ function updatePagers() {
 $('#instructions').each(updatePagers).on('slid', '', updatePagers);
 
 var cf = document.getElementById('codeframe'),
-    code = cf.innerHTML,
+    code = cf.textContent,
     setup = document.getElementById('setupcode').innerHTML,
     pce = new PencilCodeEmbed(cf);
 pce.beginLoad({code: code, setup: [{code: setup, type: 'text/coffeescript'}]});
