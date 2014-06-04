@@ -32,7 +32,23 @@ table
     border none
 
 .reflinks
-  padding: 10px
+  padding 10px
+
+#leftnav
+  position fixed
+  top 50px
+  left 0
+  bottom 0
+  width 180px
+  overflow-y scroll
+
+#rightpane
+  position fixed
+  top 50px
+  left 180px
+  bottom 0
+  right 0
+  padding 0
 
 code.jumbo, pre.jumbo
   padding 2px 4px
@@ -58,10 +74,12 @@ code.jumbo, pre.jumbo
   padding 5px
   margin 5px
   background white
+  border-radius 13px
   img
     width 100%
     border 1px solid silver
     margin-bottom 5px
+    border-radius 8px
 
 .indextile:hover
   box-shadow 0 0 10px black
