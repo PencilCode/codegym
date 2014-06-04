@@ -1,0 +1,59 @@
+---
+title: play
+description: plays notes
+layout: reference
+tags: ['music']
+---
+
+<code>play</code> will sound out a sequence of musical notes.
+
+<code class="jumbo">play <span data-dfn="notes">"GEC"</span></code>
+
+The notes are written in standard
+<a target="_blank" href="//abcnotation.com/">ABC notation</a>, which
+uses the capital letter <code>"C"</code> for middle C.
+In ABC notation, the C major scale can be written <code>"CDEFGABC'"</code>.
+(The final apostrophe is used to play the C an octave higher than middle C.)
+
+<h3>Quotes</h3>
+
+Put all the notes inside quotes.  The quotes are needed
+to indicate that a tune like <code>"CEG"</code> is a literal string of
+letters, not the name of a variable or a function.
+
+<h3>Triple-Quotes</h3>
+
+To play a longer song that fills up more than one line of code, use
+triple-quotes.
+
+<pre class="jumbo">play <span data-dfnup="triple-quote">"""</span>
+  F ^G C' F'
+  [=G'E] C' ^G
+  =G' [^G'^D] C'
+  ^G ^G' [=D'D]
+  ^A F D'
+  [^C=C'] ^G F
+  ^G21/3 C' ^G F
+  [=G^DG,][F,F^G]
+  [^GFF,]2
+<span data-dfn="matching triple-quote">"""</span></pre>
+
+Triple quotes must match, just like regular quotes.  Put a triple
+quote before the first line of mustic, and the put one
+after the last line of music.
+
+<h3>Options</h3>
+
+<code>play</code> accepts an optional options object as a first argument:
+
+<pre class="jumbo">play <span data-dfnup="options">{tempo: 200}</span>,
+  "GEC"</pre>
+
+Options include:
+* <code>tempo</code> specifies a number of beats per minute.
+  The normal tempo is 120 beats per minute.
+* <code>wait</code> can be set to <code>false</code> to start
+  a song and then proceed to the next animation without waiting for
+  it to finish. This can be used, for example, to have a turtle
+  play a song while it is simultaneously drawing; or to play two songs
+  at once.

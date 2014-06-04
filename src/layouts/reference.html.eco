@@ -47,6 +47,7 @@ setTimeout(function() {
   var firstcode = $('.jumbo').eq(0);
   firstcode.tooltipster({
     content: 'click me',
+    positionTracker: true,
     position: 'right'
   });
   firstcode.tooltipster('show');

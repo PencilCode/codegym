@@ -36,9 +36,9 @@ src="<%= firstlink %>">
 <script>
 $('#refframe').on('load', function() {
   if (!$('#overlay').is(':visible')) {
-    $('#overlay .overlay-box-50').css('margin-top', 1000);
+    // $('#overlay .overlay-box-50').css('margin-top', 1000);
     $('#overlay').show();
-    $('#overlay .overlay-box-50').animate({'margin-top': 0});
+    // $('#overlay .overlay-box-50').animate({'margin-top': 0});
   }
 });
 $('#workframe').on('load', function() {

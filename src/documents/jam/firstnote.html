@@ -6,20 +6,13 @@ layout: code
 codeLevel: 0
 codeOrder: 1
 thumb: cnote
-tags: ['draw','index']
 refs: ['play']
 instructions:
   - title: Experiment with different notes
     subtitle: what do you discover?
     mission: Musical notes are named C,D,E,F,G,A,B
-  - title: Make a melody
-    subtitle: use more than one note
-    mission: Try putting several notes inside the "quotes".
-  - title: Next step
-    subtitle:
-    mission: Go on to <a href="piano.html">Play a piano</a>
 code: |
-  play "c"
+  play "C"
 ---
 songs = []
 originalplay = window.play
@@ -40,7 +33,7 @@ hints = ->
       <p>Musical notes are named A-G: played
       "#{matched}", not "#{unmatched}".
     """
-  else if allnotes == 'c'
+  else if allnotes == 'C'
     popup """
       <p>Want more ideas? Click on More Ideas.
     """

@@ -1,7 +1,8 @@
 $ ->
-  $('code.jumbo,pre.jumbo').each ->
-    $(@).find('span[data-dfn]').each ->
-      span = $(@)
+  $('code.jumbo,pre.jumbo').each (j) ->
+    jumbo = $(this)
+    jumbo.find('span[data-dfn]').each ->
+      span = $(this)
       span.css
         position: 'relative'
       annotation = $('<dfn>').css
@@ -20,13 +21,40 @@ $ ->
         width: span.width() / 2
         height: 5
       middiv.appendTo(annotation)
-      exp = $('<div>').text(span.data('dfn'))
+      sexp = $('<span>').text(span.data('dfn'))
+      exp = $('<div>').append(sexp)
       exp.css
         whiteSpace: 'nowrap'
       exp.appendTo(annotation)
       annotation.appendTo(span)
-    $(@).find('span[data-note]').each ->
-      span = $(@)
+    jumbo.find('span[data-dfnup]').each ->
+      span = $(this)
+      span.css
+        position: 'relative'
+      annotation = $('<dfn>').css
+        position: 'absolute'
+        left: 0
+        bottom: span.height()
+        width: span.width()
+      sexp = $('<span>').text(span.data('dfnup'))
+      exp = $('<div>').append(sexp)
+      exp.css
+        whiteSpace: 'nowrap'
+      exp.appendTo(annotation)
+      middiv = $('<div>').css
+        borderRight: '1px solid black'
+        width: span.width() / 2
+        height: 5
+      middiv.appendTo(annotation)
+      botdiv = $('<div>').css
+        borderTop: '1px solid black'
+        borderLeft: '1px solid black'
+        borderRight: '1px solid black'
+        height: 5
+      botdiv.appendTo(annotation)
+      annotation.appendTo(span)
+    jumbo.find('span[data-note]').each ->
+      span = $(this)
       span.css
         position: 'relative'
       annotation = $('<dfn>').css
@@ -39,6 +67,8 @@ $ ->
         width: span.width() / 2
         height: 48
       middiv.appendTo(annotation)
+      sexp = $('<span>').text(span.data('note'))
+      exp = $('<div>').append(sexp)
       exp = $('<div>').text(span.data('note'))
       exp.css
         whiteSpace: 'nowrap'
@@ -48,17 +78,21 @@ $ ->
         position: 'absolute'
       exp.css
         marginLeft: (span.width() - exp.width()) / 2
-    box = $(@).offset()
-    box.bottom = box.top + $(@).outerHeight()
-    box.right = box.left + $(@).outerWidth()
-    $(@).find('div').each ->
-      divbox = $(@).offset()
-      divbox.bottom = divbox.top + $(@).outerHeight()
-      divbox.right = divbox.left + $(@).outerWidth()
-      console.log(@, divbox)
-      box.bottom = Math.max(divbox.bottom, box.bottom)
-      box.right = Math.max(divbox.right, box.right)
-    $(@).css
-      height: box.bottom - box.top
-      width: box.right - box.left
+    box = jumbo.offset()
+    box.bottom = box.top + jumbo.outerHeight()
+    box.right = box.left + jumbo.outerWidth()
+    origbox = $.extend {}, box
+    jumbo.find('span').each ->
+      spanbox = $(this).offset()
+      spanbox.bottom = spanbox.top + $(this).outerHeight()
+      spanbox.right = spanbox.left + $(this).outerWidth()
+      box.bottom = Math.max(spanbox.bottom, box.bottom)
+      box.right = Math.max(spanbox.right, box.right)
+      box.top = Math.min(spanbox.top, box.top)
+      box.left = Math.min(spanbox.left, box.left)
+    jumbo.css
+      paddingRight: "+=" + (box.right - origbox.right)
+      paddingLeft: "+=" + (origbox.left - box.left)
+      paddingBottom: "+=" + (box.bottom - origbox.bottom)
+      paddingTop: "+=" + (origbox.top - box.top)
 
