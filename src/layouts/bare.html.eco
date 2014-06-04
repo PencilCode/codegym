@@ -54,7 +54,7 @@
             <li
               typeof="sioc:Page"
               about="<%= document.url %>"
-              class="<%= 'active'  if @document.url is document.url %>"
+              class="<%= 'active'  if @document.relativeDirPath is document.relativeDirPath %>"
             >
               <a href="<%= document.url %>" property="dc:title">
                 <%= document.title %>

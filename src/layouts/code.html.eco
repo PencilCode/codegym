@@ -2,10 +2,12 @@
 layout: framed
 ---
 
+<div style="position:fixed;top:0;left:0;right:0;bottom:0;">
+
 <div id="instructions" class="carousel slide" data-interval="false">
   <div class="carousel-inner">
     <div class="item active">
-      <div class="instruction container">
+      <div class="instruction container-margins">
         <h1><%= @document.title %> <small><%= @document.subtitle %></small></h1>
         <p><%- @document.mission %>
       </div>
@@ -23,21 +25,27 @@ layout: framed
   <a class="right carousel-control" href="#instructions" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
 </div>
 
-<div class="container">
-<div id="codeframe"><%- @document.code %></div>
-<div>
-</div>
-<center class="reflinks">
+<div id="codeframe" class="container-margins" style="flex-grow:1"
+><%- @document.code %></div>
+
+<center class="container-margins reflinks">
 <div id="reset" class="btn btn-default pull-left">Reset Code</div>
+<% if not @document.refs: %>
+<span class="btn">&nbsp;</span>
+<% end %>
+<% if @document.refs: %>
 <span class="btn">Reference: &nbsp;</span>
-<% if @document.refs then for ref in (@document.refs or []): %>
+<% for ref in (@document.refs or []): %>
 <a target="reference" class="btn btn-default" href="/ref/<%= ref %>.html"><%=ref%></a> &nbsp
+<% end %>
 <% end %>
 <% if @document.instructions: %>
 <div id="more" class="btn btn-default pull-right">More Ideas</div>
 <% end %>
 </center>
 </div>
+
+</div> <!-- end flex container -->
 <xmp id="setupcode" style="display:none">
 # common setup code here.
 _error = {}
@@ -90,5 +98,15 @@ $('#more').click(function() { $('#instructions').carousel('next'); });
 $('#reset').click(function() {
   pce.setCode(code);
 });
+
+function doresize() {
+  $('#codeframe').height(
+    $(window).height() -
+    $('#instructions').outerHeight() -
+    $('.reflinks').outerHeight());
+}
+
+doresize();
+$(window).resize(doresize);
 
 </script>

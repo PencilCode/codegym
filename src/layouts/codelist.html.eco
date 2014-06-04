@@ -1,10 +1,6 @@
 ---
 layout: bare
 ---
-<div class="container-fluid">
-
-<div class="row">
-
 <div id="leftnav">
 <div class="container">
   <% firstlink = "" %>
@@ -25,11 +21,49 @@ layout: bare
 
 
 <div id="rightpane">
-<iframe name="workarea" width=100% height=100% style="margin:0;border:0"
+<iframe id="workframe" name="workarea" width=100% height=100% style="border:0"
 src="<%= firstlink %>">
 </iframe>
 </div>
 
+<div id="overlay">
+<div class="overlay-box-50">
+<iframe id="refframe" name="reference" class="heavyframe"></iframe>
+<div class="closebox glyphicon glyphicon-remove-circle"></div>
 </div>
 </div>
 
+<script>
+$('#refframe').on('load', function() {
+  if (!$('#overlay').is(':visible')) {
+    $('#overlay .overlay-box-50').css('margin-top', 1000);
+    $('#overlay').show();
+    $('#overlay .overlay-box-50').animate({'margin-top': 0});
+  }
+});
+$('#workframe').on('load', function() {
+  try {
+    var url = this.contentWindow.location.href, selectedtile = null;
+    console.log('url', url);
+    $('a.indextile').removeClass('active');
+    $('a.indextile').each(function() {
+      var href = $(this).attr('href');
+      console.log('href', href);
+      console.log('substr', url.substr(url.length - href.length));
+      if (url.substr(url.length - href.length) == href) {
+        selectedtile = this;
+      }
+    });
+    if (selectedtile) {
+      var offset = $(selectedtile).position().top -
+                   $(selectedtile).parent().position().top;
+      $('#leftnav').animate({scrollTop: offset - 50});
+      $(selectedtile).addClass('active');
+    }
+  } catch(e) { }
+});
+
+$('#overlay .closebox, #overlay').on('click', function() {
+  $('#overlay').hide();
+});
+</script>

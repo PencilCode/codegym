@@ -4,7 +4,7 @@ a, a:link
   cursor pointer
 
 body.framed
-  padding-top 10px
+  padding-top 0
 
 body
   padding-top 60px
@@ -26,10 +26,30 @@ table
     margin-top: -10px
 
 #codeframe
-  height 60vh
-  box-shadow 0 0 10px black
   iframe
+    height 100%
     border none
+    box-shadow 0 0 10px black
+
+#codeframe.refcode
+  position absolute
+  top 0
+  right 10px
+  left 10px
+  bottom 10px
+
+.refleft
+  position fixed
+  top 80px
+  bottom 0
+  left 0
+  overflow-y scroll
+
+.refright
+  position fixed
+  top 80px
+  bottom 0
+  right 0
 
 .reflinks
   padding 10px
@@ -84,3 +104,48 @@ code.jumbo, pre.jumbo
 .indextile:hover
   box-shadow 0 0 10px black
   background azure
+
+.indextile.active
+  background paleturquoise
+
+#overlay
+  display none
+  position fixed
+  top 0
+  left 0
+  right 0
+  bottom 0
+  background rgba(0,0,0,0.2)
+  z-index 2000
+
+.overlay-box-50
+  position absolute
+  top 60px
+  left 50px
+  right 50px
+  bottom 50px
+
+.heavyframe
+  border 3px solid black
+  box-shadow 0 0 10px black
+  height 100%
+  width 100%
+
+.closebox
+  font-size 30px
+  position absolute
+  right 0
+  top 0
+  padding 5px
+
+.closebox:hover
+  color crimson
+  text-shadow 0 0 5px white
+
+.container-margins
+  margin-left 20px
+  margin-right 20px
+
+.container-margins:before, .container-margins:after
+  content: ""
+  display: table

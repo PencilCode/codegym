@@ -1,18 +1,19 @@
 ---
-layout: default
+layout: framed
 ---
 
-<div class="col-md-12">
+<div class="reftop col-md-12">
 <h1><%= @document.title %> <small><%= @document.description %></small></h1>
 </div>
 
-<div class="col-md-6">
+<div class="refleft col-md-6">
 <%- @content %>
 </div>
 
-<div class="col-md-6">
-<div id="codeframe" style="min-height:60vh"></div>
+<div class="refright hidden-xs hidden-sm col-md-6">
+<div id="codeframe" class="refcode" style="position:absolute;top:0;right:10px;left:10px;bottom:10px;"></div>
 </div>
+
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/tooltipster/3.0.5/css/tooltipster.min.css">
 <style>
 .jumbo:hover { background: azure; }
@@ -59,5 +60,7 @@ pce.on('load', function() {
   }
   else { $('.jumbo').eq(0).click(); }
 });
-pce.beginLoad();
+setTimeout(function() {
+  pce.beginLoad();
+}, 1000);
 </script>
