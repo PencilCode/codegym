@@ -24,3 +24,8 @@ before the note name:
 <pre class="jumbo">
 play "<span data-dfnup="flat">_</span>B <span data-dfnup="natural">=</span>B C' <span data-dfn="still natural">B</span>"
 </pre>
+
+Occassionally a double-flat is needed, and it can be written as `__`.
+
+Read about <a href="key.html">key signatures</a> if you are writing
+music with many flats.

@@ -13,7 +13,11 @@ The notes are written in standard
 <a target="_blank" href="http://www.lesession.co.uk/abc/abc_notation.htm">ABC notation</a>, which
 uses the capital letter <code>"C"</code> for middle C.
 In ABC notation, the C major scale can be written <code>"CDEFGABC'"</code>.
-(The final apostrophe is used to play the C an octave higher than middle C.)
+
+Read about <a href="pitch.html">pitch</a>, <a href="sharps.html">sharps</a>,
+<a href="flats.html">flats</a>, <a href="beats.html">beats</a>,
+<a href="rests.html">rests</a>, and <a href="chords.html">chords</a>
+in ABC notation.
 
 <h3>Quotes</h3>
 

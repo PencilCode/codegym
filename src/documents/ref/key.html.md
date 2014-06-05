@@ -9,6 +9,8 @@ Key signatures are the fast way to indicate flat and sharp notes
 for an entire melody.  Keys can be Major or Minor and exist for
 every note in the 12 tone scale. 
 
+<h3>Major Key Signature</h3>
+
 In a multiline song, indicate key signatures with a <code>K:</code>
 line, like this:
 
@@ -25,7 +27,7 @@ Names of key signatures are written using `b` (lowercase b) for flat
 and `#` (shift-3) for sharp.  This is different from the way
 sharps and flats are written for individual notes in a melody.
 
-<h3>A Minor Key Signature</h3>
+<h3>Minor Key Signature</h3>
 
 In the key of D sharp minor, every D, E, F, G, A, and C is sharp.
 
