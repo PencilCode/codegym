@@ -43,7 +43,7 @@ triple-quotes.
 <span data-dfn="matching triple-quote">"""</span></pre>
 
 Triple quotes must match, just like regular quotes.  Put a triple
-quote before the first line of mustic, and the put one
+quote before the first line of music, and the put one
 after the last line of music.
 
 <h3>Options</h3>
