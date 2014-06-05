@@ -10,7 +10,7 @@ tags: ['music']
 <code class="jumbo">play <span data-dfn="notes">"GEC"</span></code>
 
 The notes are written in standard
-<a target="_blank" href="//abcnotation.com/">ABC notation</a>, which
+<a target="_blank" href="http://www.lesession.co.uk/abc/abc_notation.htm">ABC notation</a>, which
 uses the capital letter <code>"C"</code> for middle C.
 In ABC notation, the C major scale can be written <code>"CDEFGABC'"</code>.
 (The final apostrophe is used to play the C an octave higher than middle C.)

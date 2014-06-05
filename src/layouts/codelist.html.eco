@@ -35,10 +35,14 @@ src="<%= firstlink %>">
 
 <script>
 $('#refframe').on('load', function() {
+  try {
+    // Do nothing if there is nothing to show.
+    if (this.contentWindow.location.href == 'about:blank') { return; }
+  } catch (e) { }
   if (!$('#overlay').is(':visible')) {
-    // $('#overlay .overlay-box-50').css('margin-top', 1000);
+    $('#overlay .overlay-box-50').css('margin-top', 500);
     $('#overlay').show();
-    // $('#overlay .overlay-box-50').animate({'margin-top': 0});
+    $('#overlay .overlay-box-50').animate({'margin-top': 0});
   }
 });
 $('#workframe').on('load', function() {
@@ -64,6 +68,13 @@ $('#workframe').on('load', function() {
 });
 
 $('#overlay .closebox, #overlay').on('click', function() {
-  $('#overlay').hide();
+  $('#overlay .overlay-box-50').animate({'margin-top': 500})
+  .queue(function(next) {
+    $('#overlay').hide();
+    $('#refframe').each(function() {
+      this.contentWindow.location.href = 'about:blank';
+    });
+    next();
+  });
 });
 </script>
