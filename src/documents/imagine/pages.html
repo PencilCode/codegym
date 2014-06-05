@@ -1,0 +1,47 @@
+---
+title: Choices
+mission: Add choices to your story.
+layout: code
+codeLevel: 1
+codeOrder: 2
+thumb: 'dot'
+tags: ['imagine','index']
+refs: ['write', 'type']
+code: |
+  start = ->
+    write """
+      I ran around the corner, chasing the dognapper! 
+      But which way had he gone?
+    """
+    menu
+      "Down the street, at top speed!": street
+      "Up that ladder, it's swaying like someone just climbed it!": ladder
+      "Into the pet store to hide with the other dogs!": store
+  ladder = ->
+    write """
+      I climbed up the rickety ladder -- no luck! 
+      But from here, I could see all around...
+      <br>
+      (What choices might happen next?)
+    """
+  store = ->
+    write """
+      I went into the pet store and straight to the back. 
+      There were three dogs in the store, and 
+      any one of them could have been my best 
+      friend's beloved Fido...
+      <br>
+      (What choices might happen next?)
+    """
+  street = ->
+    write """
+      I sprinted down the street as fast as I could! 
+      As I came up to a corner, I caught
+      a glimpse of the dognapper just ahead of me --
+    """  
+    menu
+      "Keep going!": start
+  
+  # Run the first function to start the game!
+  do start
+---

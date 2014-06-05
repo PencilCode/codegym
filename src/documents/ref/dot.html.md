@@ -17,6 +17,6 @@ a comma.
 
 Coffeescript needs at least two words to run a function, but
 you can use the word <code>do</code> to run a function without
-aguments. <code>do dot</code> draws a default black dot.
+arguments. <code>do dot</code> draws a default black dot.
 
 <code class="jumbo" data-after="fd 20"><span data-dfn="just do it">do</span> dot</code>
