@@ -1,0 +1,39 @@
+---
+title: Happy
+subtitle: excerpt from the song by Pharrell Williams
+mission: >
+  Can you modify these chords to make them sound different?
+layout: code
+codeLevel: 1
+codeOrder: 1
+thumb: 'happy'
+tags: ['draw','index']
+refs: ['play','pitch','Piano']
+instructions:
+  - title: Extend the tune
+    subtitle: can you play Happy?
+    mission: >
+        Try extending the the tune and make your own version of Happy.
+        The most memorable parts of Pharrell Williams song are a
+        musical back-and-forth.  Each phrase starts something like this:
+        <code>_E/_A/A/Z/AZ/E/E/E/F/F</code>
+        or this: <code>C/F/FFC/C/C/_E/E/F</code> (an octave higher),
+        with this sort of answer: <code>F_A_BA/C'BAB/AF</code>
+        (an octave lower).
+code: |
+  # From Happy
+  # by Pharrell Williams
+  p = new Piano
+  p.play """
+  [A,C,_E,F_E]2|
+  [A,C,_E,F_E]2|
+  [A,C,_E,F_E] 
+  [A,C,_E,F_E]|
+  [A,C,_E,F_E]
+  [A,C,_E,F_E]|
+  F'F'F'/2G'
+  _E'_E'_E'/2F'2 |
+  F,_A,/2F,/2_A,/2
+  _B,C_B,_A,B,/2_A,/2F,
+  """
+---

@@ -1,0 +1,39 @@
+---
+title: Rounds
+subtitle: harmonizing by shifting a melody in time
+mission: >
+  Songs like Frère Jacques make a <em>round</em> if sung with itself
+  shifted in time.  Here we play the <code>song</code> with two
+  <code>Piano</code> objects.
+  Try playing a third Piano after a <code>Z16</code> rest.
+layout: code
+codeLevel: 1
+codeOrder: 0
+thumb: 'belltower'
+tags: ['draw','index']
+refs: ['play','pitch','Piano']
+instructions:
+  - title: Make a different round
+    subtitle: row your boat or three blind mice
+    mission: >
+        Other traditional songs such as "Row Your Boat" or "Three Blind Mice"
+        also make rounds.  Try constructing another round.
+code: |
+  song = """
+    F G A F F G A F
+    A _B C'2 A B C'2
+    C'/ D'/ C'/ _B/ A F
+    C'/ D'/ C'/ _B/ A F
+    F C F2 F C F2
+  """
+  # create and move two pianos
+  p1 = new Piano
+  p1.fd 100
+  p2 = new Piano
+  p2.bk 100
+
+  # synchronize the pianos
+  sync p1, p2
+  p1.play song
+  p2.play "Z8" + song
+---

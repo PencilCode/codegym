@@ -5,59 +5,54 @@ layout: reference
 tags: ['music']
 ---
 
-A Piano object is a visual element that can show notes while
-playing them.
+A Piano is an object that shows notes while playing them.
 
-To make a Piano, use `p = new Piano` (`p` is any variable name
-we choose), and to play the piano, use `p.play`:
+To make a Piano, use `p = new Piano`. (Here `p` can be any variable
+name we choose).  A Piano can be moved like any other visual element.
+
+To play the piano, use `p.play`:
 
 <pre class="jumbo">
 p = new Piano
-p.play """
-  C C C3/4 D/4 E
-  E3/4 D/4 E3/4 F/4 G2
-  (3:1:12 C'C'C' GGG EEE CCC
-  G3/4 F/4 E3/4 D/4 C
-"""
+p.lt 90
+p.play "C C C3/4 D/4 E"
 </pre>
 
+<h3>Multiple Pianos</h3>
 
-
- Any number of Pianos can be created, and they
+Any number of Pianos can be created, and they
 can play songs simultaneously.
 
 
-
-A rest is a pause in a melody when there is a break in the sound for a
-particular musical phrase.
-
-Rests in a musical phrase hold silence for some number of beats,
-but they do not indicate a break anywhere else in the melody.
-
-A single beat of rest is written `Z`.
-
 <pre class="jumbo">
-play "G G <span data-dfn="one beat of rest">Z</span> G G"
+ryb = """
+  C C C3/4 D/4 E
+  E3/4 D/4 E3/4 F/4 G2
+"""
+p1 = new Piano
+p1.fd 100
+p2 = new Piano
+p2.bk 100
+p1.play ryb
+p2.play "Z4" + ryb
 </pre>
 
-<h3>Longer and Shorter Rests</h3>
+<h3>Piano Options</h3>
 
-A rest can be followed by
-a number or fraction for a different number of beats of silence.
+A piano can be created with any number of keys:
+
+<pre class="jumbo" data-after="p.lt 75">
+p = new Piano 88
+</pre>
+
+More options can be specified by creating a Piano with an options object:
 
 <pre class="jumbo">
-play """
-  D''/2 B'/2 <span data-dfnup="three beats of rest">Z3</span>
-  D''/2 B'/2 Z3
-  Z3/2 E''/2
-  G''/2 <span data-dfn="half beat of rest">Z/2</span> G''
-"""</pre>
-
-More about beat notation on the
-<a href="beats.html">reference page for beats</a>.
-
-<h3>Staccato</h3>
-
-If you are using rests to separate notes to create a "plucky" sound,
-consider using <a href="staccato.html">staccato</a> notation instead.
+p = new Piano
+  width: 100
+  height: 50
+  keys: 36
+  color: pink
+<span data-dfn="indent options">  </span>lineWidth: 0.2
+</pre>
 

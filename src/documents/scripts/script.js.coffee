@@ -69,7 +69,6 @@ $ ->
       middiv.appendTo(annotation)
       sexp = $('<span>').text(span.data('note'))
       exp = $('<div>').append(sexp)
-      exp = $('<div>').text(span.data('note'))
       exp.css
         whiteSpace: 'nowrap'
       exp.appendTo(annotation)
