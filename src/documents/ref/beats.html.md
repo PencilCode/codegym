@@ -39,6 +39,15 @@ play "C C <span data-dfn="rest">Z</span> C"
 See more examples on the reference page for
 <a href="rests.html">rests</a>.
 
+<h3>Abbreviations</h3>
+
+A fraction of a beat can be written `C1/3` or just `C/3` for short.
+If the fraction is one-half, `C/2` can be further shortened to `C/`:
+
+<pre class="jumbo">
+play "C/F/FFC/C/C/_E/E/F"
+</pre>
+
 <h3>Triplet Notation</h3>
 
 Playing three notes in two beats time is an interesting and distinctive
