@@ -17,10 +17,15 @@ x = 2.875
 write x * x * x
 </pre>
 
-<h3>Variable Names versus Strings</h3>
+The single equals `=` assigns or changes a variable value.
+Be sure to not try to use `=` to test equality, because it
+will change your variable instead of testing it.  Tests
+are done with `is`.
 
-A variable can also remember a string, which can be
-any sequence of text characters.
+<h3>Variable Names and Strings</h3>
+
+A variable can also remember any sequence of text characters,
+called a <em>string</em>.
 
 <pre class="jumbo">
 song = "GEC"
@@ -28,25 +33,16 @@ write song
 play song + song
 </pre>
 
-Notice that the word "song" does not appear in the output,
-but rather the letters "CEG".  If we wanted to write the word
-"song", then we would have had to use quotes: `write "song"`
-(try it).
+Here `song` is a name for the sequence of letters `"GEG"`.
+Notice that `song` is unquoted and `"CEG"` is quoted.
+If we wanted to literally write the word "song", then we would
+have had to use quotes: `write "song"`.
 
-When an unquoted word is used in a program, it is a
-variable that represents the <em>name</em> of a value.
-A quoted value is a type of <em>literal</em> value.
+A quoted value is called a <em>literal</em> value: it
+should not be confused with a variable name, which is unquoted.
 
-<h3>Array Literals</h3>
+<h3>Other Types of Values</h3>
 
-A variable can hold a more complex object than a string,
-such as an array or a dictionary.
-
-Here is an array.  Array literals are surrounded by
-square brackets `[` `]`:
-
-<pre class="jumbo">
-s = [2,3,5,7,11,13]
-write 'length', s.length
-write 'item 5', s[5]
-</pre>
+Variables can take on values that are more complex
+than numbers and strings: they can also be [arrays](arrays.html),
+[objects](objects.html), or [functions](functions.html).
