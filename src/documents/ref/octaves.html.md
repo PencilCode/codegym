@@ -9,7 +9,7 @@ An octave is eight notes.  Pitches that are an octave apart
 are twins of each other, sounding the like the same note,
 just higher or lower.
 
-<h3>Octave Marks</h3>
+### Octave Marks
 
 To represent a pitch that is an octave higher, the letter is followed
 by a prime (typed as a single quote `'` next to the Enter key).  To
@@ -23,14 +23,13 @@ play "C<span data-dfn="two octaves down">,,</span> C, C C<span data-dfnup="one o
 Very high and very low pitches can be represented
 by repeating primes and subprimes.
 
-<h3>Small letters</h3>
+### Small letters
 
 Another way of writing higher pitches is to use lowercase letters.
 
 ABC notation follows the Helmoltz pitch notation convention of assigning
 lowercase letters to pitches one octave higher than uppercase letters.
-So the pitch <code>c</code> is the same as <code>C'</code>: one octave
-higher than middle <code>C</code>.
+So the pitch `c` is the same as `C'`: one octave higher than middle `C`.
 
 <pre class="jumbo">
 play "C c C c"
