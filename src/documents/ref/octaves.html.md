@@ -1,5 +1,5 @@
 ---
-title: pitch
+title: note names
 description: naming pitches with letters
 layout: reference
 tags: ['music']

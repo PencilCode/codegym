@@ -36,7 +36,7 @@ layout: framed
 <% if @document.refs: %>
 <span class="btn">Reference: &nbsp;</span>
 <% for ref in (@document.refs or []): %>
-<a target="reference" class="btn btn-default" href="/ref/<%= ref %>.html"><%=ref%></a> &nbsp
+<a target="reference" class="btn btn-default" href="/ref/<%= ref.replace(/\s/g, '_') %>.html"><%=ref%></a> &nbsp
 <% end %>
 <% end %>
 <% if @document.instructions: %>

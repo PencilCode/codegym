@@ -11,8 +11,8 @@ layout: bare
       <% if document.mission: %>
         <% thumb = document.thumb or 'default' %>
         <a class="indextile" target="workarea" href="<%= document.url %>">
-        <img src="/images/thumbs/<%= thumb %>.png">
-        <%= document.title %></a>
+        <span><img src="/images/thumbs/<%= thumb %>.png"></span>
+        <span><%= document.title %></span></a>
       <% end %>
     <% end %>
   <% end %>
