@@ -5,25 +5,41 @@ layout: reference
 tags: ['core']
 ---
 
-An <em>object</em> is a compound value that collects together a
-set of named <em>properties</em>.
+An <em>object</em> is a set of <em>properties</em>,
+each with a name and a value.
 
 <h3>Object Literals</h3>
 
 Here is an example of an object.
 
 <pre class="jumbo">
-d = <span data-dfnup="object literal">{ day: 4, <span data-dfn="property name">month</span>: <span data-dfn="property value">"July"</span> }</span>&nbsp;
+d = <span data-dfnup="object literal"><span data-note="curly brace">{</span> <span data-dfn="property">day: 4</span><span data-note="comma">,</span> <span data-dfn="name">month</span><span data-note="colon">:</span> <span data-dfn="value">"July"</span> <span data-note="curly brace">}</span></span>&nbsp;
+</pre>
 
+This object has two properties named `day` and `month`.
+
+`day` has the value 4 and `month` has the value `"July"`
+
+The punctuation is important.  Each property name
+must be followed by a colon `:` and the property value,
+and when listed on one line, the properties must be collected
+using curly braces and separated with commas.
+
+<h3>Accessing Object Properties</h3>
+
+Object properties are accessed using a dot `.` after the variable name.
+`d.month` refers to the value of the property `month` of the `d` object.
+
+<pre class="jumbo" data-before="d = { day: 4, month: &quot;July&quot;}">
 write d.month, d.day
 </pre>
 
-Object literals can be written as lists of properties surrounded by
-curly braces `{` `}`.  Each property has a name, like `day`, followed
-by a colon `:` and the property value.
+Object properties can be changed just like variables.
 
-Object properties are accessed later using a dot `.`: `d.month`
-refers to the value of the property `month` of the `d` object.
+<pre class="jumbo" data-before="d = { day: 4, month: &quot;July&quot;}"
+data-after="write d.month, d.day" data-after="write d.month, d.day">
+d.day = 17
+</pre>
 
 <h3>Multiline Object Literals</h3>
 
@@ -39,17 +55,18 @@ d =
 </pre>
 
 You often see multiline object literals as arguments
-to functions such as `css`:
+to functions.  Here the `css` function uses the object
+properties to change the style of text on the page:
 
-<pre class="jumbo" data-after="write &quot;hello&quot;">
+<pre class="jumbo" data-after='write "Treasure Map"&#13;type """&#13;  -----&#13;       |&#13;      /&#13;     /&#13;      --- X&#13;"""'>
 $("body").css
-  background: "pink"
+  background: "wheat"
   fontSize: "36px"
-  padding: "50px"
+  textShadow: "0 0 5px"
 </pre>
 
-Here the `css` function is passed a single object argument, and
-that object has properties `background`, `fontSize`, and `padding`.
+The object's properties `background`, `fontSize`,
+and `textShadow` are standard [CSS property names](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Properties_Reference).
 
 <h3>New Constructed Objects</h3>
 
@@ -61,7 +78,7 @@ write t.length
 t.fd 100
 </pre>
 
-Here `Turtle` is a predefined class: when you `new Turtle`, it
+`Turtle` is a predefined class: when you `new Turtle`, it
 creates an object with many properties such as `length` (how
 many turtles is just one) and `fd` (a function that moves
 the turtle forward).
