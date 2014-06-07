@@ -73,6 +73,15 @@ popup = (t) ->
 <script src="//pencilcode.net/lib/pencilcodeembed.js"></script>
 <script>
 
+function fixbase() {
+  if ($('base').length == 0) {
+    $(document.head).append('<base>');
+  }
+  $('base').attr('href', "BASEURL");
+}
+var fixbasescript =
+  fixbase.toString().replace('BASEURL', location.href) + "\nfixbase();"
+
 $('.carousel').carousel();
 function updatePagers() {
   var self = $(this);
@@ -92,7 +101,10 @@ var cf = document.getElementById('codeframe'),
     code = cf.textContent,
     setup = document.getElementById('setupcode').innerHTML,
     pce = new PencilCodeEmbed(cf);
-pce.beginLoad({code: code, setup: [{code: setup, type: 'text/coffeescript'}]});
+pce.beginLoad({code: code, setup: [
+  {code: fixbasescript, type: 'text/javascript'},
+  {code: setup, type: 'text/coffeescript'}
+]});
 
 $('#more').click(function() { $('#instructions').carousel('next'); });
 $('#reset').click(function() {
