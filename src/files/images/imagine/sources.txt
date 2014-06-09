@@ -1,4 +1,10 @@
-All images public domain/Creative Commons Zero License
+Public domain/Creative Commons Zero License images sourced from
 http://open.commonly.cc/ Open Game Art Bundle 
-http://opengameart.org/content/dragons OpenGameArt.org 
-http://en.wikipedia.org/wiki/Skeleton_key#mediaviewer/File:Llave_bronce.jpg 
+http://opengameart.org/ OpenGameArt.org 
+http://en.wikipedia.org/
+http://commons.wikimedia.org/
+Some images cropped and resized but not otherwise altered.
+
+CC BY 3.0 images:
+ESO/L. Calçada - http://www.eso.org/public/images/eso1402a/
+ESO/L. Calçada/ESA/AOES Medialab - http://www.eso.org/public/images/eso1330a/
