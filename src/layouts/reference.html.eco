@@ -61,7 +61,15 @@ pce.on('load', function() {
   }
   else { $('.jumbo').eq(0).click(); }
 });
+function fixbase() {
+  if ($('base').length == 0) {
+    $(document.head).append('<base>');
+  }
+  $('base').attr('href', "BASEURL");
+}
+var fixbasescript =
+  fixbase.toString().replace('BASEURL', location.href) + "\nfixbase();"
 setTimeout(function() {
-  pce.beginLoad();
+  pce.beginLoad({setup: [ {code: fixbasescript, type: 'text/javascript'} ]});
 }, 1000);
 </script>
