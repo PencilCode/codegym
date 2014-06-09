@@ -97,6 +97,7 @@ docpadConfig = {
           {codeLevel: $exists: true}, [codeLevel:1, codeOrder:1])
 
 
+  # =================================
   # Regenerate Delay
   regenerateDelay: 0
   watchOptions: preferredMethods: ['watchFile','watch']
@@ -145,6 +146,10 @@ docpadConfig = {
           res.redirect(newUrl+req.url, 301)
         else
           next()
+
+  # =================================
+  prompts: false
+  checkVersion: false
 }
 
 
