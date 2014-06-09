@@ -6,7 +6,7 @@ tags: ['do']
 
 Coffeescript needs at least two words to run a function, but
 you can use the word <code>do</code> to run a function without
-aguments.
+arguments.
 
 Hide the turtle with <code>do ht</code>.
 
