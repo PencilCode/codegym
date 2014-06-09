@@ -8,7 +8,7 @@ tags: ['img']
 <code>img</code> is an HTML tag that you can use inside your <code>write</code> blocks. 
 The <code>src</code> attribute is set to the name of the image file you want to inclode
 
-<code class="jumbo">write &lt;img src="<span data-dfn="image file name">dragon.png</span>"&gt;</code>
+<code class="jumbo">write '&lt;img src="<span data-dfn="image file name">dragon.png</span>"&gt;'</code>
 
 When you write HTML files on the web, you can include images from anywhere online.
 For today, we've put together a set of images to use. Here is a list of them:
