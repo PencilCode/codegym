@@ -1,28 +1,20 @@
 {
-  "name": "twitter-bootstrap.docpad",
-  "version": "0.10.0",
-  "description": "Bootstrap skeleton for DocPad. Simple and flexible HTML, CSS, and Javascript for popular user interface components and interactions.",
-  "homepage": "https://github.com/bevry/twitter-bootstrap.docpad",
+  "name": "fieldhouse",
+  "version": "0.0.1",
+  "description": "Activity website for Pencil Code",
+  "homepage": "https://github.com/PencilCode/fieldhouse",
   "keywords": [
-    "docpad-skeleton",
-    "docpad",
-    "website",
-    "bootstrap",
-    "twitter bootstrap"
+    "pencil",
+    "coffeescript",
+    "website"
   ],
-  "author": "Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
-  "maintainers": [
-    "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
-  ],
-  "contributors": [
-    "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
-  ],
+  "author": "Pencil Code",
   "bugs": {
-    "url": "https://github.com/docpad/twitter-bootstrap.docpad/issues"
+    "url": "https://github.com/PencilCode/fieldhouse/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/docpad/twitter-bootstrap.docpad.git"
+    "url": "https://github.com/PencilCode/fieldhouse.git"
   },
   "engines": {
     "node": "0.10",
