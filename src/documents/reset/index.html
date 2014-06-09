@@ -1,0 +1,33 @@
+---
+title: Reset
+layout: bare
+---
+
+<div class="container">
+<h1>Reset</h3>
+
+<p>This button clears all modified Code Gym
+programs saved on this computer:</p>
+
+<a id="reset" class="btn btn-primary">Reset All State</a>
+
+<div>
+</div>
+</div>
+
+<script>
+$('#reset').on('click', function() {
+  $('#reset').text('Erasing...').css('background-color', 'red');
+  var eraseKeys = [], j, key;
+  for (j = 0; j < localStorage.length; ++j) {
+    key = localStorage.key(j);
+    if (/^gym:/.test(key)) {
+      eraseKeys.push(key);
+    }
+  }
+  for (j = 0; j < eraseKeys.length; ++j) {
+    localStorage.removeItem(eraseKeys[j]);
+  }
+  $('#reset').text('All state erased').css('background-color', 'green');
+});
+</script>
