@@ -1,13 +1,28 @@
 ---
 title: Straight Line Shapes
-mission: Change this (house or sailboat)
+subtitle: lines and angles
+mission: >
+  By combining <code>pen</code>, <code>fd</code>, <code>rt</code>,
+  and <code>lt</code>, we can make lines and angles, and we can
+  create any straight-line shape.  Try customizing this sailboat
+  or making a different straight-line shape like a stop-sign or
+  a house.
 layout: code
 codeLevel: 0
 codeOrder: 4
 thumb: 'dot'
 refs: ['pen', 'fd']
+instructions:
+  - title: Multicolor Shapes
+    mission: >
+      Try changing pen color to make a multicolor shape.
+      Try changing pen thickness for other interesting effects.
+  - title: Separate Shapes
+    mission: >
+      To draw separate shapes, try turning off the pen by using
+      <code>pen null</code>.
 code: |
-  speed 10
+  speed 2
   pen skyblue, 3
   rt 135
   fd 71
@@ -22,5 +37,4 @@ code: |
   lt 150
   fd 200
   lt 120
-  fd 100
 ---

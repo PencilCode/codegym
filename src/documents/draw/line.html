@@ -1,84 +1,36 @@
 ---
 title: Line Techniques
-mission: Pick a <a href="/ref/colors.html">color</a> and make a line.
+mission: >
+  Pick a <a href="/ref/colors.html" target="reference">color</a>
+  and make a line.  There are <a href="/ref/colors.html"
+  target="reference">140 color names</a> including most common
+  color names, plus some interesting ones like <code>gold</code>,
+  <code>seagreen</code>, <code>aquamarine</code>, <code>rosybrown</code>,
+  and <code>darkviolet</code>.
 layout: code
 codeLevel: 0
 codeOrder: 3
 thumb: 'dot'
 refs: ['pen', 'fd']
 instructions:
+  - title: Pen Thickness
+    mission: >
+      Experiment with wider pens and narrower pens. Using a comma,
+      you can add a number which is the pen thickness, in pixels:
+      <code>pen red, 10</code>.
   - title: Speed
-    mission: Experiment with faster and slower drawing.
-  - title: Pen Width
-    mission: Experiment with wider pens and narrower pens.
+    mission: >
+      Experiment with faster and slower drawing. You can use
+      the command <code>speed 10</code> to tell the turtle
+      to do 10 moves per second.
   - title: Angles
-    mission: Experiment with turning the line in a different direction.
+    mission: >
+      Experiment with turning the line in a different direction.
+      The <a href="/ref/rt.html" target="reference">rt</a>
+      and <a href="/ref/rt.html" target="reference">lt</a>
+      commands can pivot the turtle in a new direction.  Try
+      <code>rt 90</code> or <code>lt 135</code>.
 code: |
   pen red
+  fd 100
 ---
-dotcount = 0
-colors = {}
-sizes = []
-pencolor = null
-pensize = null
-originaldot = window.dot
-window.pen = ->
-  pencount += 1
-  pencolor = black
-  pensize = 1.5
-  for a in arguments
-    if isNaN(a) then pencolor = a
-    else pensize = a
-
-hints = ->
-  if dotcount == 0
-    return
-  if dotcount == 1 and sizes[0] == 100 and colors.purple
-    popup """
-      <p>Can you change the color?
-      <p>HINT: find the colors reference page.
-    """
-  else if dotcount == 1 and sizes[0] == 100
-    popup """
-      <p>Can you make a different size?
-      <p>HINT: the number is the diameter.
-    """
-  else if dotcount == 1
-    popup """
-      <p>Try adding a second dot!<br>
-      <p>HINT: add a second line of code.
-    """
-  else if _.keys(colors).length == 1
-    popup """
-      <p>Are your dots all the same color?
-      <p>HINT: try picking different colors.
-    """
-  else if _.uniq(sizes).length == 1
-    popup """
-      <p>Are your dots all the same size?
-      <p>HINT: try picking a different size for a dot.
-    """
-  else if _.min(sizes) <= 16
-    popup """
-      <p>HINT: your dot is smaller than the turtle
-    """
-  else if not _.every(sizes, (v, i) -> i is 0 or sizes[i - 1] >= v)
-    popup """
-      <p>Did you cover up a dot?<br>
-      Try drawing the bigger one first.
-    """
-  else if dotcount < 4
-    popup """
-      <p>Challenge: try drawing a bullseye<br>
-    """
-  else
-    popup """
-      <p>Beautiful!
-    """
-click ->
-  if dotcount is 0
-    popup """
-      <p>Click on the blue play button to run the program.
-    """
-
-setTimeout((-> done -> setTimeout hints, 500), 500)

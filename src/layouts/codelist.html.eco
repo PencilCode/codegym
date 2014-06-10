@@ -21,8 +21,7 @@ layout: bare
 
 
 <div id="rightpane">
-<iframe id="workframe" name="workarea" width=100% height=100% style="border:0"
-src="<%= firstlink %>">
+<iframe id="workframe" name="workarea" width=100% height=100% style="border:0">
 </iframe>
 </div>
 
@@ -34,6 +33,29 @@ src="<%= firstlink %>">
 </div>
 
 <script>
+function storageName() {
+  return 'gym:' + location.pathname.replace(/index\.html$/, '');
+}
+
+function loadStorage() {
+  try {
+    return localStorage.getItem(storageName()) || null;
+  } catch (e) {
+    return null;
+  }
+}
+
+function saveStorage(c) {
+  try {
+    localStorage.setItem(storageName(), c);
+  } catch (e) { }
+}
+
+var initurl = loadStorage() || "<%- firstlink %>";
+
+$('#workframe').attr('src', initurl);
+selecturl(initurl, true);
+
 $('#refframe').on('load', function() {
   try {
     // Do nothing if there is nothing to show.
@@ -45,25 +67,39 @@ $('#refframe').on('load', function() {
     $('#overlay .overlay-box-50').animate({'margin-top': 0});
   }
 });
+
+function selecturl(url, quick) {
+  var selectedtile = null;
+  $('a.indextile').removeClass('active');
+  $('a.indextile').each(function() {
+    var href = $(this).attr('href');
+    console.log('href', href);
+    console.log('substr', url.substr(url.length - href.length));
+    if (url.substr(url.length - href.length) == href) {
+      selectedtile = this;
+      saveStorage(href);
+    }
+  });
+  if (selectedtile) {
+    function getOffset() {
+      return $(selectedtile).position().top -
+             $(selectedtile).parent().position().top;
+    }
+    if (quick) {
+      setTimeout(function() {
+        $('#leftnav').scrollTop(getOffset() - 50);
+      }, 0);
+      $('#leftnav').scrollTop(getOffset() - 50);
+    } else {
+      $('#leftnav').animate({scrollTop: getOffset() - 50});
+    }
+    $(selectedtile).addClass('active');
+  }
+}
+
 $('#workframe').on('load', function() {
   try {
-    var url = this.contentWindow.location.href, selectedtile = null;
-    console.log('url', url);
-    $('a.indextile').removeClass('active');
-    $('a.indextile').each(function() {
-      var href = $(this).attr('href');
-      console.log('href', href);
-      console.log('substr', url.substr(url.length - href.length));
-      if (url.substr(url.length - href.length) == href) {
-        selectedtile = this;
-      }
-    });
-    if (selectedtile) {
-      var offset = $(selectedtile).position().top -
-                   $(selectedtile).parent().position().top;
-      $('#leftnav').animate({scrollTop: offset - 50});
-      $(selectedtile).addClass('active');
-    }
+    selecturl(this.contentWindow.location.href);
   } catch(e) { }
 });
 

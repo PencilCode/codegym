@@ -9,6 +9,9 @@ body.framed
 body
   padding-top 60px
   background whitesmoke
+  h1, h2, h3
+    small
+      color #777
 
 table
   tfoot, tbody
@@ -23,7 +26,7 @@ table
     min-height 147px
   .carousel-control.left, .carousel-control.right
     width 100px
-    margin-top: -10px
+    margin-top -10px
 
 #codeframe
   iframe
@@ -34,6 +37,14 @@ table
 code
   background white
   color crimson
+
+.btn.btn-highlight
+  border 2px solid #428bca
+
+.topright
+  position absolute
+  top 20px
+  right 20px
 
 #codeframe.refcode
   position absolute
@@ -87,7 +98,7 @@ code.jumbo, pre.jumbo
     line-height normal
 
   dfn
-    color: dimgray
+    color dimgray
     font-family Arial
     font-size 16px
     text-align center
@@ -100,6 +111,7 @@ code.jumbo, pre.jumbo
   margin 5px
   background white
   border-radius 13px
+  min-height 58px
   width 100%
   span
     display table-cell
@@ -110,6 +122,7 @@ code.jumbo, pre.jumbo
     padding-right 8px
   img
     width 48px
+    height 48px
     border 1px solid silver
     border-radius 8px
 
@@ -118,7 +131,8 @@ code.jumbo, pre.jumbo
   background azure
 
 .indextile.active
-  background paleturquoise
+  background #428bca
+  color white
 
 #overlay
   display none
@@ -160,5 +174,5 @@ code.jumbo, pre.jumbo
   margin-right 20px
 
 .container-margins:before, .container-margins:after
-  content: ""
-  display: table
+  content ""
+  display table
