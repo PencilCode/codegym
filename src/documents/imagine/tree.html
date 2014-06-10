@@ -1,0 +1,42 @@
+---
+title: Tree Climbing
+subtitle: use menus to add choices to your story.
+mission: >
+  Create a game with choices, where the player can decide how the story turns out!
+  Each page of your story is a function. Each choice in your story is a menu.
+layout: code
+instructions:
+  - title: Expand the Story
+    subtitle: using more lines
+    mission: >
+      Try changing the story - make it more exciting, or totally different!
+  - title: Hide the turtle
+    subtitle: to focus on your story
+    mission: >
+          You can hide the turtle with the command "go ht" (ht stands for "hide turtle").
+codeLevel: 1
+codeOrder: 1
+thumb: 'write'
+tags: ['imagine', 'index']
+refs: ['write', 'menu', 'function']
+code: |
+  bottom = ->
+    write "You are in a field with a tree."
+    menu
+      "climb up": middle
+
+  middle = ->
+    write "You are hanging on to a tree branch."
+    menu
+      "climb up": top
+      "climb down": bottom
+
+  top = ->
+    write "You are sitting on the branch of a tree."
+    menu
+      "climb down": middle
+      "jump off": bottom
+
+  write """<img src="/images/tree.png" height=100>"""
+  do bottom
+---

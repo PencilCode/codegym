@@ -30,6 +30,7 @@ For today, we've put together a set of images to use. Here is a list of them:
   orangutan.png
   ship.png
   ship_deck.png
+  tree.png
   village.png
   waterfall.png
   windmill.png

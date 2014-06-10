@@ -6,9 +6,23 @@ codeLevel: 2
 codeOrder: 3
 thumb: 'key'
 tags: ['imagine','index']
-refs: ['do', 'function', 'menu', 'variables']
+refs: ['do', 'function', 'menu', 'variables', 'true', 'false']
+instructions:
+  - title: Pick things up!
+    mission: >
+      When your player does something that you want to keep 
+      track of (like finding an important key) you can use a 
+      variable to make sure you remember that that happened. 
+      What other important items might your player find?
+  - title: Remember other information
+    mission: >
+      true and false are special values, called booleans.
+      Variables can store other things, though -- for example,
+      numbers! Maybe you have to ask the troll three times 
+      before she'll let you cross the bridge...  
 code: |
-  # This is a variable! You can name variables whatever you like.
+  # This is a variable! 
+  # You can name variables whatever you like.
   found_the_key = false
   under_the_hidden_tree = ->
     do cs
@@ -24,11 +38,11 @@ code: |
 
   tree_roots = ->
     do cs
-    write "You dig among the roots with your fingers and find an old key."
-    write "It's dirty and rusty, but it looks like it would still work."
-    write """
-      <img src="/images/key.png">
-      """
+    write """You dig among the roots with your 
+      fingers and find an old key. 
+      It's dirty and rusty, but it 
+      looks like it would still work."""
+    write """<img src="/images/key.png">"""
     # Here's where we make sure to remember you found the key!
     found_the_key = true
     menu
@@ -46,7 +60,8 @@ code: |
         "Unlock the door": treasure_room
     # If you haven't found it yet...
     if not found_the_key
-      write "If only you had the key, you might be able to save the kingdom..."
+      write """If only you had the key, 
+      you might be able to save the kingdom..."""
       menu "Search for the key": under_the_hidden_tree
 
   treasure_room = ->
