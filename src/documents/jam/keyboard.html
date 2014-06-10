@@ -1,0 +1,50 @@
+---
+title: Keyboard
+subtitle: interactive keyboard
+mission: >
+  Connect keyboard events to the Piano.
+layout: code
+codeLevel: 2
+codeOrder: 2
+thumb: 'pianoa'
+tags: ['draw','index']
+refs: ['play','note names','Piano']
+code: |
+  k = new Piano
+  pressed = {}
+  
+  keydown (e) ->
+    if pressed[e.which] then return
+    pressed[e.which] = true
+    note = noteFromKeyEvent e
+    if note
+      k.tone(note)
+  
+  keyup (e) ->
+    delete pressed[e.which]
+    if e.which is 32
+      k.silence()
+    note = noteFromKeyEvent e
+    if note
+      k.tone(note, 0)
+  
+  noteFromKeyEvent = (e) -> 
+    return switch String.fromCharCode(e.which)
+      when 'A' then 'C'
+      when 'S' then 'D'
+      when 'D' then 'E'
+      when 'F' then 'F'
+      when 'G' then 'G'
+      when 'H' then 'A'
+      when 'J' then 'B'
+      when 'K' then 'c'
+      when 'L' then 'd'
+      when 'W' then '^C'
+      when 'E' then '^D'
+      when 'T' then '^F'
+      when 'Y' then '^G'
+      when 'U' then '^A'
+      when 'O' then '^c'
+      when 'P' then '^d'
+      else null
+---

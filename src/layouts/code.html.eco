@@ -23,6 +23,11 @@ layout: framed
   </div>
   <a class="left carousel-control" href="#instructions" style="display:none" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
   <a class="right carousel-control" href="#instructions" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+
+<% if @document.instructions: %>
+<div id="more" class="btn btn-default topright">More Ideas&nbsp;
+<span class="glyphicon glyphicon-circle-arrow-right"></span></div>
+<% end %>
 </div>
 
 <div id="codeframe" class="container-margins" style="flex-grow:1"
@@ -38,9 +43,6 @@ layout: framed
 <% for ref in (@document.refs or []): %>
 <a target="reference" class="btn btn-default" href="/ref/<%= ref.replace(/\s/g, '_') %>.html"><%=ref%></a> &nbsp
 <% end %>
-<% end %>
-<% if @document.instructions: %>
-<div id="more" class="btn btn-default pull-right" style="background-color:azure">Challenges</div>
 <% end %>
 </center>
 </div>
@@ -111,7 +113,11 @@ function loadStorage() {
 
 function saveStorage(c) {
   try {
-    localStorage.setItem(storageName(), c);
+    if (!c) {
+      localStorage.removeItem();
+    } else {
+      localStorage.setItem(storageName(), c);
+    }
   } catch (e) { }
 }
 
@@ -122,11 +128,7 @@ var cf = document.getElementById('codeframe'),
     pce = new PencilCodeEmbed(cf);
 
 pce.on('update', function(c) {
-  if (c.trim() == originalCode.trim()) {
-    $('#reset').css('backgroundColor', '');
-  } else {
-    $('#reset').css('backgroundColor', 'azure');
-  }
+  $('#reset').toggleClass('btn-highlight', (c.trim() != originalCode.trim()));
   saveStorage(c);
 });
 
