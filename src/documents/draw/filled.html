@@ -1,29 +1,32 @@
 ---
 title: Filled Shapes
 mission: >
-  Make more complicated filled shapes by
-  using an invisible "path" pen with <code>pen path</code>, and then
-  using the <code>fill</code> command when the path is complete
-  to fill that path with a color.  Try changing the program
-  to use a regular color like <code>pen red</code> to see the shape
-  traced by the turtle.
+  Fill shapes using an invisible "path" pen with <code>pen path</code>,
+  and then using the <code>fill</code> command when the path is complete
+  to fill that path with a color.  This program defines a <em>function</em>
+  called <code>moon</code> to trace out the shape.
 instructions:
-  - title: Self-Crossing Shapes
+  - title: Outlined and Filled Shapes
+    subtitle: explore functions
     mission: >
-      Experiment with filling different shapes and colors.
-      Try tracing out a shape that crosses itself and then filling it.
-      What is the effect?  Try building a scene that uses both filled
-      shapes and line-stroked shapes.
+      To outline a filled shape, you need to draw the shape twice,
+      once with <code>pen path</code> and <code>fill</code>, and
+      once with a normal colored pen.  Try doing <code>do moon</code>
+      twice to do this.
 layout: code
 codeLevel: 1
-codeOrder: 1
+codeOrder: 4
 thumb: 'moon'
 refs: ['pen', 'fd']
 code: |
-  lt 135
+  moon = ->
+    lt 135
+    rt 270, 85
+    rt 135
+    lt 180, 60
+    lt 90
+
   pen path
-  rt 270, 85
-  rt 135
-  lt 180, 60
+  do moon
   fill violet
 ---

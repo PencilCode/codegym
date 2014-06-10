@@ -2,41 +2,38 @@
 title: Symmetric Drawings
 subtitle: repeat steps in reverse order
 mission: >
-  The dress in this picture should have left-right mirror-image symmetry.
-  To do this, the program should also have mirror-image symmetry!
-  After line 11 (<code>lt 180, 20</code>), the commands should
-  repeat but in reverse order.  Try completing the dress.
+  The shirt in this picture should have left-right mirror-image symmetry.
+  The program can do this if it also has mirror-image symmetry.
+  The commands after the middle (line 12) should repeat the commands
+  before the middle, but in reverse order!  Try completing the shirt.
 instructions:
   - title: Add Color
     subtitle: finish the drawing with style
     mission: >
-      Now that you know how to make it symmetric,
-      tailor the shape of the dress as you like.
+      Now that you know how to make a symmetric shape,
+      tailor it as you like.  Can you make other clothes?
       Experiment with <code>pen path</code> and
-      <code>fill</code> to fill the dress with color,
+      <code>fill</code> to fill your creation with color,
       and try altering the shape, or use lines or dots
       for other details.  Not everything needs
       to be symmetric.
 layout: code
 codeLevel: 1
-codeOrder: 3
-thumb: 'dress'
+codeOrder: 1
+thumb: 'shirt'
 refs: ['pen', 'fd']
 code: |
   speed 5
   pen coral
-  fd 50
-  rt 45, 20 
-  lt 105, 20
-  rt 60
-  fd 20
-  rt 70
-  fd 20
-  rt 110
-  lt 180, 20
-  rt 110
-  fd 20
-  rt 70
-  fd 20
-  rt 60
+  fd 100
+  lt 135
+  fd 30
+  rt 90
+  fd 40
+  rt 90
+  fd 35
+  rt 30, 100
+  rt 90
+  lt 150, 30 # the middle line
+  rt 90
 ---

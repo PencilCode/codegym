@@ -1,31 +1,45 @@
 ---
-title: Composing Elements
-subtitle: move around carefully
+title: Making Commands
+subtitle: inventing functions
 mission: >
-  Can you finish the smiley?  Add all the right turns and
-  subtract all the left turns: 50 + 100 - 120 - 42 = -12, to see that
-  the turtle is pointed left by 12 degrees.  How many degrees are
-  in the left turn that makes the turtle point directly "west"?
+  A <em>function</em> is just a subprogram that you can make by
+  indenting your program after an arrow <code>-&gt;</code>.
+  If you name your functions with a definition like
+  <code>smiley = -&gt;</code>, you can use your function anywhere
+  with <code>do smiley</code>.  Try moving the turtle and
+  making a page with several smileys.
 instructions:
-  - title: Add Personality
-    subtitle: to make a unique emoticon
+  - title: Add Characters
+    subtitle: to make a unique scene
     mission: >
-      Customize your smiley.  Consider adding hair or a hat, or
-      changing its colors or mood.  Or give it a friend.
+      Define a different function and use it to make a scene.
+      Try making a snowman function or customize your smiley to
+      give it personality.
 layout: code
 codeLevel: 1
-codeOrder: 2
+codeOrder: 3
 thumb: 'smiley'
 refs: ['pen', 'fd']
 code: |
-  dot yellow, 160
-  rt 50
-  bk 38
-  pen black, 7
-  rt 100
-  lt 120, 35
-  pen null
-  lt 42
-  fd 50
-  dot black, 20
+  smiley = ->
+    dot yellow, 160
+    rt 50
+    bk 38
+    pen black, 7
+    rt 100
+    lt 120, 35
+    pen null
+    lt 42
+    fd 50
+    dot black, 20
+    lt 78
+    fd 41
+    dot black, 20
+    rt 51
+    bk 31.5
+    rt 39
+
+  speed 10
+  bk 100
+  do smiley
 ---

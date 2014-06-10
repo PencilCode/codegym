@@ -1,0 +1,28 @@
+---
+title: Tree
+subtitle: using recursion
+mission: >
+  A big tree can be drawn by putting together a few little trees,
+  and a little tree can be made out of tiny trees.
+  By making a <code>tree</code> function with a <code>size</code> argument,
+  we can create a tree that is made out of smaller trees.
+layout: code
+codeLevel: 2
+codeOrder: 4
+thumb: 'tree'
+refs: ['pen', 'fd']
+code: |
+  tree = (size) ->
+    if size < 5
+      return
+    fd size
+    lt 30
+    tree(size * 3/4)
+    rt 60
+    tree(size * 3/4)
+    lt 30
+    bk size
+
+  pen green
+  tree 50
+---
