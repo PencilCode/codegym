@@ -2,7 +2,10 @@
 title: Combining Elements
 mission: >
   Compose a shape that combines elements such as dots, curves, and lines.
-  Start by modifying this smiley face.
+  Can you complete the smiley face?  Adding all the right turns and
+  subtracting all the left turns: 50 + 100 - 120 - 42 = -12, which means
+  the turtle is pointed left by twelve degrees.  How many degrees
+  can make the turtle point directly "west"?
 layout: code
 codeLevel: 1
 codeOrder: 1
@@ -10,16 +13,13 @@ thumb: 'smiley'
 refs: ['pen', 'fd']
 code: |
   dot yellow, 160
-  fd 20
-  rt 90
-  fd 25
-  dot black, 20
-  bk 50
-  dot black, 20
-  bk 5
-  rt 90
-  fd 40
+  rt 50
+  bk 38
   pen black, 7
-  lt 30
+  rt 100
   lt 120, 35
+  pen null
+  lt 42
+  fd 50
+  dot black, 20
 ---
