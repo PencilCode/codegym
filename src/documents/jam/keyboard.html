@@ -1,6 +1,6 @@
 ---
-title: Keyboard
-subtitle: interactive keyboard
+title: Interactive Keyboard
+subtitle: using keydown and keyup events
 mission: >
   Connect keyboard events to the Piano.
 layout: code
@@ -11,25 +11,26 @@ tags: ['draw','index']
 refs: ['play','note names','Piano']
 code: |
   k = new Piano
-  pressed = {}
+
+  played = {}
   
   keydown (e) ->
-    if pressed[e.which] then return
-    pressed[e.which] = true
     note = noteFromKeyEvent e
-    if note
+    if note and not played[note]
+      played[note] = true
       k.tone(note)
+      do shownotes
   
   keyup (e) ->
-    delete pressed[e.which]
-    if e.which is 32
-      k.silence()
     note = noteFromKeyEvent e
     if note
+      delete played[note]
       k.tone(note, 0)
+      do shownotes
   
   noteFromKeyEvent = (e) -> 
-    return switch String.fromCharCode(e.which)
+    ch = String.fromCharCode(e.which)
+    return switch ch
       when 'A' then 'C'
       when 'S' then 'D'
       when 'D' then 'E'
@@ -47,4 +48,8 @@ code: |
       when 'O' then '^c'
       when 'P' then '^d'
       else null
+
+  write 'Notes: [<span id=notes></span>]'
+  shownotes = ->
+    $('#notes').text _.keys(played).join('')
 ---

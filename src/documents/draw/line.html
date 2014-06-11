@@ -10,7 +10,7 @@ mission: >
 layout: code
 codeLevel: 0
 codeOrder: 3
-thumb: 'dot'
+thumb: 'redangle'
 refs: ['pen', 'fd']
 instructions:
   - title: Pen Thickness
@@ -18,18 +18,19 @@ instructions:
       Experiment with wider pens and narrower pens. Using a comma,
       you can add a number which is the pen thickness, in pixels:
       <code>pen red, 10</code>.
-  - title: Speed
-    mission: >
-      Experiment with faster and slower drawing. You can use
-      the command <code>speed 10</code> to tell the turtle
-      to do 10 moves per second.
   - title: Angles
     mission: >
       Experiment with turning the line in a different direction.
       The <a href="/ref/rt.html" target="reference">rt</a>
       and <a href="/ref/rt.html" target="reference">lt</a>
       commands can pivot the turtle in a new direction.  Try
-      <code>rt 90</code> or <code>lt 135</code>.
+      <code>rt 90</code> or <code>lt 135</code>.  Combine
+      several lines and angles to make a shape.
+  - title: Speed
+    mission: >
+      Experiment with faster and slower drawing. You can use
+      the command <code>speed 10</code> to tell the turtle
+      to do 10 moves per second.
 code: |
   pen red
   fd 100
