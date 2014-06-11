@@ -1,23 +1,35 @@
 ---
 title: Complex Repetitions
+subtitle: nesting loops
 mission: >
-  Beautiful patterns can be made by nesting loops.
-  Also, explore using loop variables.
+  Intricate effects can be created by nesting <code>for</code> loops
+  inside other <code>for</code> loops.  Experiment with adding
+  more colors or numbers to the outer or inner loops.  How many
+  shapes are drawn when you change the repetitions?
+instructions:
+  - title: Loop Variables
+    subtitle: different each time
+    mission: >
+      <em>Loop variables</em> stand for different values each time the
+      loop is run.  <code>c</code> goes through different colors.
+      <code>sides</code> and <code>x</code> go through different numbers.
+      How would you use a loop variable to label each corner with a
+      different number?
 layout: code
 codeLevel: 1
 codeOrder: 5
-thumb: 'dot'
+thumb: 'nesting'
 refs: ['pen', 'fd']
 code: |
-  pen green
-  rt 360, 10
-  lt 45, 30
-  rt 360, 8
-  lt 90, 50
-  rt 360, 8
-  lt 90, 30
-  rt 360, 8
-  lt 90, 50
-  rt 360, 8
-  lt 45, 30
+  bk 200
+  for c in [red, gold, blue]
+    for sides in [3..5]
+      label c + sides
+      fd 10
+      pen c
+      for x in [1..sides]
+        fd 100 / sides
+        lt 360 / sides
+      pen null
+      fd 40
 ---

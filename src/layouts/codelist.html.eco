@@ -91,7 +91,8 @@ function selecturl(url, quick) {
       }, 0);
       $('#leftnav').scrollTop(getOffset() - 50);
     } else {
-      $('#leftnav').animate({scrollTop: getOffset() - 50}, 1500);
+      var dest = getOffset() - 50;
+      $('#leftnav').animate({scrollTop: dest}, 500);
     }
     $(selectedtile).addClass('active');
   }

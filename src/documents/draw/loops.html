@@ -8,6 +8,13 @@ mission: >
   Try changing this program to repeat the code five or six times,
   or just once or twice.
 instructions:
+  - title: Numbered Dots
+    subtitle: using a loop variable
+    mission: >
+      Try numbering each dot by adding a loop variable
+      <code>x</code>.  Change the loop to say <code>for x in [1..6]</code>.
+      Then after drawing a dot, add the command <code>label x</code>.
+      What is the value of <code>x</code> each time the code repeats?
   - title: Beaded Bracelets
     subtitle: adding more beads
     mission: >
@@ -22,7 +29,7 @@ codeOrder: 4
 thumb: 'hexbracelet'
 refs: ['pen', 'fd']
 code: |
-  pen indigo, 10
+  pen thistle, 10
   for [1..3]
     fd 50
     dot peachpuff, 30

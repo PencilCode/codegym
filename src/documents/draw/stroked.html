@@ -1,0 +1,40 @@
+---
+title: Stroked and Filled Shapes
+subtitle: using functions
+mission: >
+  To have a shape that is both filled and stroked, it has to be drawn
+  twice with different pens.  One nice way to do that is to define a
+  <em>function</em>, which gives a name like <code>moon</code> to a
+  subprogram that you can run whenever you want using <code>do moon</code>.
+instructions:
+  - title: Many Moons
+    subtitle: calling functions
+    mission: >
+      Once you have a function to make a shape, you can use it as
+      many times as you like.  Try making a picture with many moons
+      with different colors around the screen.
+  - title: Your Own Function
+    subtitle: name your own subprogram
+    mission: >
+      Copy some code from another drawing here to create your own
+      function.  Remember to neatly indent your subprogram when
+      you define it, and carefully copy the use of the punctuation
+      <code>= -&gt;</code> when you define the function.
+layout: code
+codeLevel: 2
+codeOrder: 1
+thumb: 'stroked'
+refs: ['pen', 'fd']
+code: |
+  moon = ->
+    lt 135
+    rt 270, 85
+    rt 135
+    lt 180, 60
+    lt 90
+  pen path
+  do moon
+  fill lightblue
+  pen navy
+  do moon
+---
