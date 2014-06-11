@@ -11,7 +11,6 @@ Each menu option must have the text that should be shown, and the function that 
 
 All the menu options must be grouped together, which is done by indenting them all evenly (two spaces).
 
-<code class="jumbo" data-before="firstFn = -> write 'you chose 1'
-secondFn = -> write 'you chose 2'">menu 
-  "first choice": firstFn
-  <span data-dfn="option label">"second choice"</span>: <span data-dfn="function name">secondFn</a></code>
+<code class="jumbo" data-before="act1 = ->&#13;  write 'you chose 1'&#13;&#13;act2 = ->&#13;  write 'you chose 2'">menu 
+  "choice #1": act1
+  <span data-dfn="option label">"choice #2"</span>: <span data-dfn="function name">act2</a></code>

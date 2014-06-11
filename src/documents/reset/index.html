@@ -9,23 +9,37 @@ layout: bare
 <p>This button clears all modified Code Gym
 programs saved on this computer:</p>
 
-<a id="reset" class="btn btn-primary">Reset All State</a>
+<p><a id="reset" class="btn btn-primary">Scanning...</a></p>
 
-<div>
-</div>
+<pre id="messages" style="border:none">
+</pre>
 </div>
 
 <script>
-$('#reset').on('click', function() {
-  $('#reset').text('Erasing...').css('background-color', 'red');
-  var eraseKeys = [], j, key;
-  for (j = 0; j < localStorage.length; ++j) {
-    key = localStorage.key(j);
-    if (/^gym:/.test(key)) {
-      eraseKeys.push(key);
-    }
+var eraseKeys = [], j, key;
+for (j = 0; j < localStorage.length; ++j) {
+  key = localStorage.key(j);
+  if (/^gym:/.test(key)) {
+    eraseKeys.push(key);
   }
+}
+if (eraseKeys.length) {
+  $('#reset').text('Reset All State');
+  $('#messages').text(eraseKeys.join('\n'));
+} else {
+  $('#reset').text('All state erased').css('background-color', 'green');
+}
+
+$('#reset').on('click', function() {
+  if (/erased/.test($('#reset').text())) {
+    console.log('ok');
+    window.location.href = '/';
+    return;
+  }
+  $('#reset').text('Erasing...').css('background-color', 'red');
+  $('#messages').text('');
   for (j = 0; j < eraseKeys.length; ++j) {
+    $('#messages').append("Erasing " + eraseKeys[j] + "\n");
     localStorage.removeItem(eraseKeys[j]);
   }
   $('#reset').text('All state erased').css('background-color', 'green');

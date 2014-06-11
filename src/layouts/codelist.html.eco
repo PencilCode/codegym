@@ -5,7 +5,9 @@ layout: bare
 <div class="container">
   <% firstlink = "" %>
   <% for level, levelnum in ['Begin', 'Explore', 'Challenge']: %>
+    <% if levelnum isnt 0: %>
     <hr>
+    <% end %>
     <% for document in @getCollection('examples').findAll({relativeDirPath: @document.relativeDirPath, codeLevel: levelnum}).toJSON(): %>
       <% if not firstlink then firstlink = document.url %>
       <% if document.mission: %>
@@ -73,8 +75,6 @@ function selecturl(url, quick) {
   $('a.indextile').removeClass('active');
   $('a.indextile').each(function() {
     var href = $(this).attr('href');
-    console.log('href', href);
-    console.log('substr', url.substr(url.length - href.length));
     if (url.substr(url.length - href.length) == href) {
       selectedtile = this;
       saveStorage(href);
@@ -91,7 +91,7 @@ function selecturl(url, quick) {
       }, 0);
       $('#leftnav').scrollTop(getOffset() - 50);
     } else {
-      $('#leftnav').animate({scrollTop: getOffset() - 50});
+      $('#leftnav').animate({scrollTop: getOffset() - 50}, 1500);
     }
     $(selectedtile).addClass('active');
   }

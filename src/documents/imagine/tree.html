@@ -26,17 +26,19 @@ code: |
       "climb up": middle
 
   middle = ->
-    write "You are hanging on to a tree branch."
+    write "You are hanging on to a branch."
     menu
       "climb up": top
       "climb down": bottom
 
   top = ->
-    write "You are sitting on the branch of a tree."
+    write "You are sitting high in a tree."
     menu
       "climb down": middle
       "jump off": bottom
 
-  write """<img src="/images/tree.png" height=200>"""
+  write """
+    <img src="/images/tree.png" height=200>
+  """
   do bottom
 ---

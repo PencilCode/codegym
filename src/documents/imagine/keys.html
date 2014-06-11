@@ -1,5 +1,6 @@
 ---
-title: Keys and Objects
+title: Picking Up a Key
+subtitle: remember a key with a variable
 mission: Find the key and use it to open the door.
 layout: code
 codeLevel: 2
@@ -21,55 +22,65 @@ instructions:
       numbers! Maybe you have to ask the troll three times 
       before she'll let you cross the bridge...  
 code: |
-  # This is a variable! 
-  # You can name variables whatever you like.
+  # This is a variable
   found_the_key = false
-  under_the_hidden_tree = ->
+
+  tree = ->
     do cs
     write """
-      Finally, after a long walk in the forest, you 
-      find yourself under an old, mossy oak tree.
-      The sunlight glimmers against something
-      hidden in its gnarled roots...
+      After a long walk in the forest,
+      you find yourself under an old,
+      mossy oak tree.  The sunlight
+      glimmers against something hidden
+      in its gnarled roots...
     """
     menu
-      "Look closer at the roots": tree_roots
-      "Return to the castle": castle
+      "Keep walking to the castle": castle
+      "Look closer at the roots": roots
 
-  tree_roots = ->
+  roots = ->
     do cs
-    write """You dig among the roots with your 
+    write """
+      You dig among the roots with your 
       fingers and find an old key. 
       It's dirty and rusty, but it 
-      looks like it would still work."""
-    write """<img src="/images/key.png">"""
-    # Here's where we make sure to remember you found the key!
+      looks like it would still work.
+    """
+    write """
+      <img src="/images/key.png">
+    """
+    # Remember that we found the key!
     found_the_key = true
     menu
-      "Go back to the castle": castle
+      "Go to the castle": castle
 
   castle = ->
     do cs
     write """
-      You walk to the castle and go inside
-      to look at the treasury door.
+      You walk to the castle and go
+      inside to look at the treasury
+      door.
     """
-    # If you found the key, then you get to unlock the door.
+    # If you found the key, then you get
+    # this choice.
     if found_the_key
       menu
-        "Unlock the door": treasure_room
+        "Unlock the door": treasure
     # If you haven't found it yet...
     if not found_the_key
-      write """If only you had the key, 
-      you might be able to save the kingdom..."""
-      menu "Search for the key": under_the_hidden_tree
+      write """
+        If only you had the key, you
+        might be able to save the kingdom.
+      """
+      menu "Go for a walk": tree
 
-  treasure_room = ->
+  treasure = ->
     write """
-      The key fits! You open the door, and among 
-      the treasure you see a Crown...
+      The key fits! You open the door,
+      and among the treasure you see a
+      Crown...
     """
 
   # Start the game
-  do castle
+  do tree
 ---
