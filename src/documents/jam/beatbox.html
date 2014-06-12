@@ -6,6 +6,15 @@ mission: >
   The <code>button</code> command puts a button on the screen.
   The code indented after the <code>-&gt;</code> is run when
   the button is pressed.
+instructions:
+  - title: Instant Response
+    subtitle: do not wait
+    mission: >
+      The <code>play</code> command normally sequences things
+      so that the next song waits until this previous one is finished.
+      To play sounds without forcing sequencing, you can either
+      use the "wait" option: <code>play {wait: false}, "CDE"</code>,
+      or you can use the <code>tone</code> function.
 layout: code
 codeLevel: 1
 codeOrder: 3
