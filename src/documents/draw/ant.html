@@ -1,0 +1,43 @@
+---
+title: Draw Using an Ant Instead
+subtitle: making new turtles
+mission: >
+  To make your own turtle shape, create a Sprite and draw on it
+  using <code>drawon</code>.  The example below creates an ant.
+  You can move the ant using commands like <code>ant.fd 100</code>.
+instructions:
+  - title: Create Your Own
+    subtitle: make your own character
+    mission: >
+      Create a snowman object or a smiley object by
+      changing or copying the ant-drawing code.
+      After drawing on your new object but before moving it
+      you should <code>sync yourobject, turtle</code> so that
+      the new object waits to move until after the main
+      turtle is finished drawing.
+layout: code
+codeLevel: 2
+codeOrder: 3
+thumb: 'ant'
+refs: ['pen', 'fd']
+code: |
+  ant = new Sprite
+
+  # Draw the ant. 
+  drawon ant
+  fd 9
+  dot crimson, 10
+  bk 9
+  dot crimson, 8
+  bk 10
+  dot crimson, 12
+  
+  # sync makes the ant wait
+  # until the turtle is done
+  sync ant, turtle
+
+  ant.pen orange
+  for [1..5]
+    ant.fd 100
+    ant.rt 100
+---

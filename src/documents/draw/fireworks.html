@@ -1,24 +1,36 @@
 ---
 title: Fireworks
+subtitle: passing functions as arguments
 mission: >
-  Functions can even be passed as arguments.  Experiment with a
-  fireworks example that calls a function at each end of a starburst.
-  It can be a fireworks of dots, of stars, of smileys, of other stars.
+  Functions can be arguments.
+  <code>starburst</code> draws a burst with any shape at each
+  end.  <code>starburst 5, 50, dot</code> draws a default black
+  <code>dot</code> at each end.  Try changing the program to draw
+  a <code>reddot</code> at each end.
+instructions:
+  - title: Bigger Fireworks
+    subtitle: pass a bigger function
+    mission: >
+      Instead of drawing a dot at each end, try creating a function
+      that draws some other shape at each end of the starburst.
+      Can you draw a smaller starburst at each end of the big
+      starburst?
 layout: code
 codeLevel: 2
-codeOrder: 2
-thumb: 'dot'
+codeOrder: 3
+thumb: 'fireworks'
 refs: ['pen', 'fd']
 code: |
-  pen green
-  rt 360, 10
-  lt 45, 30
-  rt 360, 8
-  lt 90, 50
-  rt 360, 8
-  lt 90, 30
-  rt 360, 8
-  lt 90, 50
-  rt 360, 8
-  lt 45, 30
+  starburst = (x, y, shape) ->
+    for z in [1..x]
+      fd y
+      do shape
+      bk y
+      rt 360 / x
+
+  reddot = ->
+    dot red, 20
+
+  pen gold, 3
+  starburst 5, 50, dot
 ---

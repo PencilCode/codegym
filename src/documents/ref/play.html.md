@@ -21,11 +21,15 @@ in ABC notation.
 
 <h3>Quotes</h3>
 
-Put all the notes inside quotes.  The quotes are needed
-to indicate that a tune like <code>"CEG"</code> is a literal string of
-letters, not the name of a variable or a function.
+Put all the notes inside quotes.
+Quotation marks are used to separate the music written
+in ABC notation from the script code that plays the whole
+piece of music.
 
 <h3>Triple-Quotes</h3>
+
+Triple quotes `"""` separate a large piece of music
+from the rest of the script.
 
 To play a longer song that fills up more than one line of code, use
 triple-quotes.

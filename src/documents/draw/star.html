@@ -1,23 +1,36 @@
 ---
-title: Star
+title: Customized Star
+subtitle: using function arguments
 mission: >
-  Try making a function to make a star.
-  Notice how function arguments work.
+  Functions can take inputs (called <em>arguments</em>).  This function
+  has one argument <code>n</code> that tells how many
+  corners are drawn.  Can you draw a 5-pointed star?  An 8-pointed star?
+instructions:
+  - title: Super Star
+    subtitle: adding more arguments
+    mission: >
+      Add more arguments by declaring <code>star = (n, m, s) -&gt;</code>.
+      <code>m</code> can be the number multiplied by 360 when
+      calculating the angle, and <code>s</code> could be the length
+      of a side.  Now can you draw an 8-pointed star?
+subtitle: using function arguments
+mission: >
+  Functions can take inputs (called <em>arguments</em>).  This function
+  has one argument <code>n</code> that is used to count how many
+  corners are drawn in the star.  Experiment with this function
+  to make a star.  Can you draw a five-pointed star or a nine-pointed
+  star?  Does it work for all numbers?
 layout: code
 codeLevel: 2
 codeOrder: 1
-thumb: 'dot'
+thumb: 'star8'
 refs: ['pen', 'fd']
 code: |
-  pen green
-  rt 360, 10
-  lt 45, 30
-  rt 360, 8
-  lt 90, 50
-  rt 360, 8
-  lt 90, 30
-  rt 360, 8
-  lt 90, 50
-  rt 360, 8
-  lt 45, 30
+  star = (n) ->
+    for [1..n]
+      fd 100
+      rt 2 * 360 / n
+
+  pen turquoise, 10
+  star 7
 ---
