@@ -1,0 +1,37 @@
+---
+title: Clapping
+subtitle: playing different timbre
+mission: >
+  To play with a sound other than a piano, change the waveform
+  used.  The <code>timbre</code> option on play lets you
+  create an instrument sound from a few numbers.  Experiment
+  by changing the numbers in clapsound.
+instructions:
+  - title: Synthesizing Sounds
+    subtitle: using different waveforms
+    mission: >
+      The <code>'noise'</code> waveform is good for percussive
+      sounds.  To make a tonal sound, use the <code>'square'</code>,
+      <code>'sawtooth'</code>, <code>'triangle'</code>, or
+      <code>'sine'</code> waves.  Experiment with waveforms.
+      Try creating a <code>Piano</code> with a custom
+      <code>timbre</code>.
+layout: code
+codeLevel: 2
+codeOrder: 1
+thumb: 'clap'
+tags: ['draw','index']
+refs: ['play','note names','Piano']
+code: |
+  clapsound =
+    wave: 'noise'
+    attack: .01
+    decay: .1
+    cutfollow: 4
+    resonance: 10
+
+  play
+    timbre: clapsound
+    tempo: 120
+    song: "cc/c/ccc/c/c/c//c/c//c2"
+---
