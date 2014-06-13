@@ -1,0 +1,62 @@
+---
+title: Repeated Parts
+subtitle: from Teenage Dream by Katy Perry
+mission: >
+  Teenage Dream has a repeated chord that goes
+  for the whole song. This
+  program repeats the chord by defining the
+  variable <code>b</code>, and then playing
+  <code>p.play b+b+b+b+b+b+b+b+b</code>.
+  The melody is played by a second piano.
+  What happens when you change the definition
+  of <code>b</code>?
+layout: code
+codeLevel: 1
+codeOrder: 2
+thumb: 'dream'
+tags: ['draw','index']
+refs: ['play','note names', 'octaves', 'Piano']
+instructions:
+  - title: Extend the Tune
+    subtitle: can you play Happy?
+    mission: >
+      Try extending the the tune and make your own
+      question-and-answer melodies.
+      It takes a good ear and a lot of hard work
+      to create a number one hit riff!
+code: |
+  p = new Piano
+  p.bk 100
+  m = new Piano
+  m.fd 100
+  sync p, m
+  
+  b = """
+    [D/^A/^D,2][D^A]/[D^A]/[D^A]/
+    [D^A]/[D^A]/[D^A]/[D/^A/G,]
+    [D^A]/[C/^A/F,3][C^A]/[C^A]/
+    [C^A]/[C^A]/[C^A]/[C^A]/
+    """
+    
+  p.play b+b+b+b+b+b+b+b+b
+  
+  m.play """
+    Z8_B/_B/F/_B2Z/
+    F/_B/C'/D'/C'A
+    _BF/_B/_B/_BZ/
+    F/_B/C'/D'/C'A_B/
+    _B/_B/F/_BF
+    Z/_B/C'/D'/C'A_B/
+    _B/_B/F/_B2
+    F/_B/C'/D'/C'
+    [_B,_B][_EG_E,]2G,/G
+    [GG,D,]F/[F,,FC,F,C]Z/
+    D/F/[_E,_B,G]2G,/F[F,FC]2
+    [_B,_B]A[_EG_E,]2G,/G
+    [GG,D,]F/[F,,C,F,C]Z/
+    D/F/[_E,_B,G]2
+    GF[FC,C,F,]Z/
+    [F,FF,,3A][F,,_BF,]
+    [F,,F,DD']2
+    """
+---

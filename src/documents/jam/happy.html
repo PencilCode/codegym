@@ -1,11 +1,15 @@
 ---
 title: Question and Answer
-subtitle: excerpt from Happy by Pharrell Williams
+subtitle: from Happy by Pharrell Williams
 mission: >
-  Notice how the song Happy uses melodies in both high octaves
-  and low octaves to answer each other.  Try to change the song
-  and experiment with octaves.  For example, you might try
-  switching the high notes to low notes or vice-versa.
+  The song Happy has a question-answer theme, answering
+  a melody in high octaves by a tune in the low octaves.
+  This program sets up variables <code>t</code>,
+  <code>intro</code>, <code>q1</code>, <code>q2</code>,
+  <code>q3</code>, <code>q4</code>, <code>a</code>, and
+  <code>b</code> for different parts.
+  Try playing and combining them at the bottom
+  by changing <code>p.play q1 + a + t</code>.
 layout: code
 codeLevel: 1
 codeOrder: 1
@@ -13,30 +17,32 @@ thumb: 'happy'
 tags: ['draw','index']
 refs: ['play','note names', 'octaves', 'Piano']
 instructions:
-  - title: Extend the tune
+  - title: Extend the Tune
     subtitle: can you play Happy?
     mission: >
-        Try extending the the tune and make your own version of Happy.
-        The most memorable parts of Pharrell Williams song are a
-        musical back-and-forth.  Each phrase starts something like this:
-        <code>_E/_A/A/Z/AZ/E/E/E/F/F</code>
-        or this: <code>C/F/FFC/C/C/_E/E/F</code> (an octave higher),
-        with this sort of answer: <code>F_A_BA/C'BAB/AF</code>
-        (an octave lower).
+      Try extending the the tune and make your own
+      question-and-answer melodies.
+      It takes a good ear and a lot of hard work
+      to create a number one hit riff!
 code: |
-  # From Happy
-  # by Pharrell Williams
+  t = "[F,,A,C,_E,F']/Z/"
+  intro = t + t + t + t + t
+  q1 = "Z/C'/F'/F'F'C'/C'/C'/_E'F'"
+  q2 = "_A'_A'_A'_A'_E'/_E'/_E'/_E'/F'"
+  q3 = "Z/F'F'_E'/G'_E'_E'/F'/F'"
+  q4 = "D'/C'/Z/_B'_B'/C'/C'_E'F'"
+  a = """
+    [F'_E,A,C,F,]_A,/Z/
+    [_B,_BD,F,DF]/_A,/Z/ 
+    [C,CE,G]_B,/Z/
+    [_A,_BD,FA]_B,/_A,/Z/
+    """
+  b = """
+    [_D_D,F_AC]F/_E/F3/Z/
+    [C,C,_EG_BG]FFF/_E/
+    [C,C,_EG_BF]FF_E/
+    [F,F,C,A_E]ZC/C_E 
+    """
   p = new Piano
-  p.play """
-  [A,C,_E,F_E]2|
-  [A,C,_E,F_E]2|
-  [A,C,_E,F_E] 
-  [A,C,_E,F_E]|
-  [A,C,_E,F_E]
-  [A,C,_E,F_E]|
-  F'F'F'/2G'
-  _E'_E'_E'/2F'2 |
-  F,_A,/2F,/2_A,/2
-  _B,C_B,_A,B,/2_A,/2F,
-  """
+  p.play q1 + a + t
 ---
