@@ -2,14 +2,14 @@
 title: Repeated Parts
 subtitle: from Teenage Dream by Katy Perry
 mission: >
-  Teenage Dream has a repeated chord that goes
-  for the whole song. This
-  program repeats the chord by defining the
-  variable <code>b</code>, and then playing
-  <code>p.play b+b+b+b+b+b+b+b+b</code>.
+  Teenage Dream has repeated chords in the
+  instrumental part.  This program repeats
+  them by defining the variable
+  <code>b</code>, and then playing
+  <code>p.play b+b+b</code> on line 22.
   The melody is played by a second piano.
-  What happens when you change the definition
-  of <code>b</code>?
+  How many repeats of <code>b</code> are needed?
+  When do you switch to <code>c</code>?
 layout: code
 codeLevel: 1
 codeOrder: 2
@@ -17,46 +17,71 @@ thumb: 'dream'
 tags: ['draw','index']
 refs: ['play','note names', 'octaves', 'Piano']
 instructions:
-  - title: Extend the Tune
-    subtitle: can you play Happy?
+  - title: Change the Pattern
+    subtitle: altering rhythms
     mission: >
-      Try extending the the tune and make your own
-      question-and-answer melodies.
-      It takes a good ear and a lot of hard work
-      to create a number one hit riff!
+      Experiment by changing some of the chords
+      in <code>b</code> or substituting rests.
+      It will line up best if you make sure the
+      variable is still eight beats of music!
+      Can you give the song a different feel
+      just by changing <code>b</code>?
+  - title: Change the Melody
+    mission: >
+      Katy Perry's melody also echoes itself.
+      Can you make the melodic patterns easier
+      to understand by using variables?
+      Try rewriting the melody using a few variables,
+      and experiment with changing the patterns.
 code: |
   p = new Piano
+    lowest: 48
+    keys: 24
   p.bk 100
   m = new Piano
+    lowest: 72
+    keys: 24
   m.fd 100
   sync p, m
   
   b = """
-    [D/^A/^D,2][D^A]/[D^A]/[D^A]/
-    [D^A]/[D^A]/[D^A]/[D/^A/G,]
-    [D^A]/[C/^A/F,3][C^A]/[C^A]/
-    [C^A]/[C^A]/[C^A]/[C^A]/
+    [D_B,]/[D_B,]/[D_B,]/[D_B,]/
+    [D_B,]/[D_B,]/[D_B,]/[D_B,]/
+    [D_B,]/[C_B,]/[C_B,]/[C_B,]/
+    [C_B,]/[C_B,]/[C_B,]/[C_B,]/
+    """
+  c = """
+    [_E_E,]3[GG,]Z/[FF,]3Z/
+    [_E_E,]3[GG,]/[FF,]4Z/
     """
     
-  p.play b+b+b+b+b+b+b+b+b
+  p.play b+b+b
   
   m.play """
-    Z8_B/_B/F/_B2Z/
-    F/_B/C'/D'/C'A
-    _BF/_B/_B/_BZ/
-    F/_B/C'/D'/C'A_B/
-    _B/_B/F/_BF
-    Z/_B/C'/D'/C'A_B/
-    _B/_B/F/_B2
-    F/_B/C'/D'/C'
-    [_B,_B][_EG_E,]2G,/G
-    [GG,D,]F/[F,,FC,F,C]Z/
-    D/F/[_E,_B,G]2G,/F[F,FC]2
-    [_B,_B]A[_EG_E,]2G,/G
-    [GG,D,]F/[F,,C,F,C]Z/
-    D/F/[_E,_B,G]2
-    GF[FC,C,F,]Z/
-    [F,FF,,3A][F,,_BF,]
-    [F,,F,DD']2
+    Z8
+    Z/G'/_B'/G'/_B'/G'/Z/G'/
+    _B'/C''/D''/C''A'_B'/
+    Z/G'/_B'/G'/_B'/G'/Z/F'/
+    _B'/C''/D''/C''A'_B'/
+    Z/G'/_B'/G'/_B'/G'/Z/G'/
+    _B'/C''/D''/C''A'_B'/-
+    _B'2Z/F'/D''/C''/-
+    C''2Z2
+    Z/G'/_B'/G'/_B'/G'/Z/Z/
+    _B'/C''/D''/C''A'_B'/
+    Z/G'/_B'/G'/_B'/G'/Z/F'/
+    _B'/C''/D''/C''A'_B'/
+    Z/G'/_B'/G'/_B'/G'/Z/G'/
+    _B'/C''/D''/C''A'_B'/-
+    _B'2Z/F'/D''/C''/-
+    C''2_B'A'
+    G'3G'/G'/
+    Z/F'/F'2D'/F'/
+    G'3G'/F'/-
+    F'Z_B'A'
+    G'3G'/G'/
+    Z/F'/F'2D'/F'/
+    G'3Z/G'/
+    G'A'_B'C''
     """
 ---

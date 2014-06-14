@@ -1,5 +1,5 @@
 ---
-title: Beat Box
+title: Tone Buttons
 subtitle: making musical buttons
 mission: >
   Make a beat box by making buttons the play pieces of songs.
@@ -16,19 +16,19 @@ instructions:
       use the "wait" option: <code>play {wait: false}, "CDE"</code>,
       or you can use the <code>tone</code> function.
 layout: code
-codeLevel: 1
-codeOrder: 3
+codeLevel: 2
+codeOrder: 2
 thumb: 'pianochord'
 tags: ['draw','index']
 refs: ['play','Piano','note names','chords','beats']
 code: |
-  button "chord 1", ->
-    play "[FAC']4"
+  button "C", ->
+    tone "C"
   
-  button "melody 1", ->
-    play "E/E/D/G"
+  button "D", ->
+    tone "D"
     
-  button "melody 2", ->
-    play "FE/F/C"
+  button "E", ->
+    tone "E"
 ---
 

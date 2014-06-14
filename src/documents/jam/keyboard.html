@@ -5,13 +5,13 @@ mission: >
   Connect keyboard events to the Piano.
 layout: code
 codeLevel: 2
-codeOrder: 2
+codeOrder: 3
 thumb: 'pianoa'
 tags: ['draw','index']
 refs: ['play','note names','Piano']
 code: |
+  write "Click on the piano and type ASDF"
   k = new Piano
-
   played = {}
   
   keydown (e) ->
