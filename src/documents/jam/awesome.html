@@ -1,0 +1,52 @@
+---
+title: Octaves
+subtitle: Everything is Awesome
+mission: >
+  Tegan and Sara's <em>Everything is AWESOME</em> uses
+  <a href="/ref/octaves.html" target="reference">octaves</a>
+  in the baseline for a busy machine-like sound.  Use <code>,</code>
+  to lower a note by an octave and use <code>'</code> to
+  raise a note by an octave.  Can you adjust the baseline
+  to get the right octave sound?
+layout: code
+codeLevel: 1
+codeOrder: 1
+thumb: 'emmet'
+tags: ['draw','index']
+refs: ['play','note names', 'sharps', 'Piano']
+code: |
+  a = new Piano
+  a.fd 100
+  b = new Piano
+    lowest: 36
+    keys: 36
+  b.bk 100
+  sync a, b
+
+  b.play
+    tempo: 150
+    song: """
+      Z2
+      F,,/F,/F,,/F,/F,,/F,/F,,/F,/
+      C,/C,/C,/C,/C,/C,/C,/C,/
+      F,/F,/F,/F,/F,/F,/F,/F,/
+      C,/C,/C,/C,/C,/C,/C,/C,/
+      _B,/B,/B,/B,/B,/B,/B,/B,/
+      C,/C,/C,/C,/C,/C,/C,/C,/
+      F,/F,/F,/F,/F,/F,/F,/F,/
+      F,,4
+    """
+
+  a.play
+    tempo: 150
+    song: """
+      [F_B]/B/B/B/
+      [F_B]/A31/2-
+      A3/2[F_B]B/B/B/
+      [F_B]A/G/F/G/A/G/-
+      G3/2[F_B]B/B/B/
+      [F_B]/C'31/2-
+      C'/C/C/AG/G/F/
+      F8
+    """
+---
