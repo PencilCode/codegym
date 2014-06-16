@@ -14,27 +14,15 @@ thumb: 'queen'
 tags: ['draw','index']
 refs: ['play','note names', 'sharps', 'Piano']
 code: |
-  # one-beat tonic
-  t = "[F,,A,C,_E,F']/Z/"
-  intro = t + t + t + t + t
-  # seven-beat questions
-  q1 = "Z/C'/F'/F'F'C'/C'/C'/_E'F'"
-  q2 = "_A'_A'_A'_A'_E'/_E'/_E'/_E'/F'"
-  q3 = "Z/F'F'_E'/G'_E'_E'/F'/F'"
-  q4 = "D'/C'/Z/_B'_B'/C'/C'_E'F'"
-  # eight-beat answers
-  a = """
-    [F'_E,A,C,F,]_A,/Z/
-    [_B,_BD,F,DF]/_A,/Z/
-    [C,CE,G]_B,/Z/
-    [_A,_BD,FA]_B,/_A,/Z/
-    """
-  b = """
-    [_D_D,F_AC]F/_E/F3/Z/
-    [C,C,_EG_BG]FFF/_E/
-    [C,C,_EG_BF]FF_E/
-    [F,F,C,A_E]ZC/C_E
-    """
   p = new Piano
-  p.play q1 + a + t
+  p.play
+    tempo: 160
+    song: """
+      D/E/E/D/EE/D/EED/E/E/D/|
+      EE/D/E/D/EAGGB,/D/|
+      E/ED/EZEEEZ|
+      D/D/DDA,/B,/A,/G,/E,/E,Z/B,/D/|
+      G2F2E2D2|EEZ6|
+      G2F2E2D2|EEZ6|
+    """
 ---
