@@ -64,9 +64,10 @@ $('#refframe').on('load', function() {
     if (this.contentWindow.location.href == 'about:blank') { return; }
   } catch (e) { }
   if (!$('#overlay').is(':visible')) {
-    $('#overlay .overlay-box-50').css('margin-top', 500);
+    var height = $('#overlay .overlay-box-50').height();
+    $('#overlay .overlay-box-50').css({height: 0});
     $('#overlay').show();
-    $('#overlay .overlay-box-50').animate({'margin-top': 0});
+    $('#overlay .overlay-box-50').animate({height: height});
   }
 });
 
@@ -105,9 +106,10 @@ $('#workframe').on('load', function() {
 });
 
 $('#overlay .closebox, #overlay').on('click', function() {
-  $('#overlay .overlay-box-50').animate({'margin-top': 500})
+  $('#overlay .overlay-box-50').animate({'height': 0})
   .queue(function(next) {
     $('#overlay').hide();
+    $('#overlay .overlay-box-50').css({height: ''});
     $('#refframe').each(function() {
       this.contentWindow.location.href = 'about:blank';
     });
