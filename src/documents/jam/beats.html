@@ -1,7 +1,10 @@
 ---
 title: Count beats
 subtitle: to explore rhythm
-mission: Experiment with numbers after notes to hold for some beats.
+mission: >
+  <code>G/2</code> is a half-beat G, and <code>G2</code> is a double-beat G.
+  Experiment with beat lengths.  For example, try three
+  <code>G/3</code> instead of two <code>G/2</code>.
 layout: code
 codeLevel: 0
 codeOrder: 3
@@ -10,15 +13,17 @@ tags: ['draw','index']
 refs: ['play','note names','Piano','beats','rests']
 instructions:
   - title: Beats
-    subtitle: use fractions for shorter beats
+    subtitle: beat abbreviations
     mission: >
-      <code>G/2</code> is a half-beat G, and <code>G2</code> is a double-beat G.
-      Experiment with three <code>G/3</code> instead of two <code>G/2</code>.
+      In some songs, you will notice notes like <code>G/</code>  without
+      a number.  A <code>/</code> without a number is an abbreviation for
+      </code>1/2</code> and a <code>//</code> without a number is an
+      abbreviation for <code>1/4</code>.  Experiment with beat notation.
   - title: Make a tune
     subtitle: finish the phrase
     mission: >
-      B and C' complete the phrase.  Remember you can use Z for a rest.
-      Try getting the rhythm right.
+      B and C' complete the phrase.  Try finishing the phrase,
+      getting the rhythm right.  Remember you can use Z for a rest.
 code: |
   p = new Piano
   p.play "C' G/2 G/2 A G"

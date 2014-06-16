@@ -8,7 +8,7 @@ mission: >
   Try playing a third Piano after a <code>Z16</code> rest.
 layout: code
 codeLevel: 1
-codeOrder: 2
+codeOrder: 1
 thumb: 'belltower'
 tags: ['draw','index']
 refs: ['play','note names','Piano']
@@ -16,8 +16,13 @@ instructions:
   - title: Make a different round
     subtitle: row your boat or three blind mice
     mission: >
-        Other traditional songs such as "Row Your Boat" or "Three Blind Mice"
-        also make rounds.  Try constructing another round.
+        Other traditional songs such as "Row Your Boat"
+        (<code>CCC2/3D/3EE2/3D/3E2/3F/3G2</code>)
+        or "Three Blind Mice"
+        (<code>EDC2EDC2GF2/3F/3E2GF2/3F/3E2</code>)
+        also make rounds.  Try completing one of these
+        melodies or one of your own, and construct
+        another round.
 code: |
   song = """
     F G A F F G A F
@@ -26,6 +31,7 @@ code: |
     C'/ D'/ C'/ _B/ A F
     F C F2 F C F2
   """
+
   # create and move two pianos
   p1 = new Piano
   p1.fd 100
