@@ -1,29 +1,36 @@
 ---
-title: Question and Answer
+title: Tempo
 subtitle: from Happy by Pharrell Williams
 mission: >
-  The song Happy has a question-answer theme, answering
-  a melody in high octaves by a tune in the low octaves.
-  This program sets up variables <code>t</code>,
-  <code>intro</code>, <code>q1</code>, <code>q2</code>,
-  <code>q3</code>, <code>q4</code>, <code>a</code>, and
-  <code>b</code> for different parts.
-  Try playing and combining them at the bottom
-  by changing <code>p.play q1 + a + t</code>.
+  Pharrell William's Happy has an uptempo, catchy beat,
+  but this program plays it too slowly.  Experiment with
+  the tempo of the song and see if you can find the right
+  speed.
 layout: code
 codeLevel: 1
-codeOrder: 2
+codeOrder: 3
 thumb: 'happy'
 tags: ['draw','index']
 refs: ['play','note names', 'octaves', 'Piano']
 instructions:
+  - title: Question and Answer
+    subtitle: a musical back and forth
+    mission: >
+      Happy has a question-answer theme, answering
+      a melody in high octaves by a tune in the low octaves.
+      This program sets up variables <code>t</code>,
+      <code>intro</code>, <code>q1</code>, <code>q2</code>,
+      <code>q3</code>, <code>q4</code>, <code>a</code>, and
+      <code>b</code> for different parts.
+      Try playing and combining them at the bottom
+      by changing the song on line 25.
   - title: Extend the Tune
     subtitle: can you play Happy?
     mission: >
       Try extending the the tune and make your own
       question-and-answer melodies.
-      It takes a good ear and a lot of hard work
-      to create a number one hit riff!
+      It takes a good ear and a lot of experimentation
+      to create a catchy riff!
 code: |
   # one-beat tonic
   t = "[F,,A,C,_E,F']/Z/"
@@ -47,5 +54,8 @@ code: |
     [F,F,C,A_E]ZC/C_E
     """
   p = new Piano
-  p.play q1 + a + t
+  p.play
+    tempo: 90
+    song: intro + q1 + a +
+          t + q2 + a + b + b
 ---
