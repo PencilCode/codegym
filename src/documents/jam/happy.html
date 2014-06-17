@@ -18,10 +18,10 @@ instructions:
     mission: >
       Happy has a question-answer theme, answering
       a melody in high octaves by a tune in the low octaves.
-      This program sets up variables <code>t</code>,
+      This program sets up variables <code>t</code>, <code>t2</code>,
       <code>intro</code>, <code>q1</code>, <code>q2</code>,
-      <code>q3</code>, <code>q4</code>, <code>a</code>, and
-      <code>b</code> for different parts.
+      <code>q3</code>, <code>q4</code>, <code>a</code>,
+      <code>a2</code>, and <code>b</code> for different parts.
       Try playing and combining them at the bottom
       by changing the song on line 25.
   - title: Extend the Tune
@@ -32,20 +32,24 @@ instructions:
       It takes a good ear and a lot of experimentation
       to create a catchy riff!
 code: |
-  # one-beat tonic
-  t = "[F,,A,C,_E,F']/Z/"
+  t = "[F'F,,A,C,_E,]/Z/"
+  t2 = "[F,,A,C,_E,]/Z/"
   intro = t + t + t + t + t
-  # seven-beat questions
-  q1 = "Z/C'/F'/F'F'C'/C'/C'/_E'F'"
-  q2 = "_A'_A'_A'_A'_E'/_E'/_E'/_E'/F'"
-  q3 = "Z/F'F'_E'/G'_E'_E'/F'/F'"
-  q4 = "D'/C'/Z/_B'_B'/C'/C'_E'F'"
-  # eight-beat answers
+  q1 = "Z/C'/F'/F'/Z/F'C'/C'/C'/_E'/F'/F'"
+  q2 = "Z/A'/A'/_A'_A'_E'/_E'/_E'/E'/F'/F'"
+  q3 = "F'F'/Z/_E'/G'/Z/_E'/Z/_E'/E'/E'/F'"
+  q4 = "=D'/C'/Z/_B/Z/_BA_B/A/F"
   a = """
     [F'_E,A,C,F,]_A,/Z/
-    [_B,_BD,F,DF]/_A,/Z/
+    [_B,_BD,F,DF]_A,/
     [C,CE,G]_B,/Z/
-    [_A,_BD,FA]_B,/_A,/Z/
+    [_A,_BD,FA]_B,/_A,/
+    """
+  a2 = """
+    [F'_E,A,C,F,]_A,/Z/
+    [_B,_BD,F,DF]_A,/
+    [C,CE,G]_B,/Z/
+    [_A,_BD,FA][E'_B,]/[E'_A,]/E'/
     """
   b = """
     [_D_D,F_AC]F/_E/F3/Z/
@@ -55,7 +59,10 @@ code: |
     """
   p = new Piano
   p.play
-    tempo: 90
-    song: intro + q1 + a +
-          t + q2 + a + b + b
+    tempo: 150
+    song: intro + q1 +
+          a + t + q2 +
+          a + t + q3 +
+          a2 + t2 + q4 +
+          a + b + b
 ---
