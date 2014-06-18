@@ -8,7 +8,7 @@ layout: framed
   <div class="carousel-inner">
     <div class="item active">
       <div class="instruction container-margins">
-        <h1><%= @document.title %> <small><%= @document.subtitle %></small></h1>
+        <h2><%= @document.title %> <small><%= @document.subtitle %></small></h2>
         <p><%- @document.mission %>
       </div>
     </div>
