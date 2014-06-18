@@ -3,6 +3,7 @@ title: dot
 description: draws a dot under the turtle
 layout: reference
 tags: ['dot']
+section: basic
 ---
 
 <b>dot</b> can make a dot in any <a href="colors.html">color</a>.

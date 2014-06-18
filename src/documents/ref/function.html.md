@@ -2,6 +2,7 @@
 title: function (->)
 layout: reference
 tags: ['function']
+section: language
 ---
 
 A function is a list of commands for the computer to execute. 

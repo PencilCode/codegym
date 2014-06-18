@@ -2,6 +2,7 @@
 title: arcs
 description: draw a curve with a turning radius
 layout: reference
+section: drawing
 ---
 
 Arcs can be drawn by giving a second argument to `rt` and `lt`.

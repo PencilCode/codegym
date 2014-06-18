@@ -3,6 +3,7 @@ title: play
 description: plays notes
 layout: reference
 tags: ['music']
+section: sound
 ---
 
 <code>play</code> will sound out a sequence of musical notes.

@@ -2,6 +2,7 @@
 title: rt
 description: turns the turtle right
 layout: reference
+section: basic
 ---
 
 <b>rt</b> pivots the clockwise (Right Turn).

@@ -3,6 +3,7 @@ title: write
 description: writes words onto the page
 layout: reference
 tags: ['write']
+section: text
 ---
 
 Write takes one argument: the text you want to write. Wrap it up in quotes.

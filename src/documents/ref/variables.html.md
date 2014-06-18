@@ -3,6 +3,7 @@ title: variables
 description: names for values
 layout: reference
 tags: ['core']
+section: language
 ---
 
 A variable is a name for a remembered value.

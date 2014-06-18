@@ -3,6 +3,7 @@ title: menu
 description: create a menu of choices
 layout: reference
 tags: ['menu']
+section: text
 ---
 
 <b>menu</b> creates a menu with one or more options.

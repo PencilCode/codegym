@@ -3,6 +3,7 @@ title: beats
 description: counting time
 layout: reference
 tags: ['music']
+section: music
 ---
 
 The pulse of a melody defines its beats, and rhythm comes from

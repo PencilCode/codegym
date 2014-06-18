@@ -2,6 +2,7 @@
 title: fd
 description: moves the turtle forward
 layout: reference
+section: basic
 ---
 
 <b>fd</b> tells the turtle to move <mark>f</mark>orwar<mark>d</mark>.

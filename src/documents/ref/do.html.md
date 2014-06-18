@@ -2,6 +2,7 @@
 title: do
 layout: reference
 tags: ['do']
+section: language
 ---
 
 Coffeescript needs at least two words to run a function, but

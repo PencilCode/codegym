@@ -3,6 +3,7 @@ title: rests
 description: silent beats
 layout: reference
 tags: ['music']
+section: music
 ---
 
 A rest is a pause in a melody when there is a break in the sound for a

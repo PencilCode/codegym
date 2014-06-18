@@ -2,6 +2,7 @@
 title: bk
 description: moves the turtle backward
 layout: reference
+section: basic
 ---
 
 <b>bk</b> tells the turtle to move <mark>b</mark>ac<mark>k</mark>ward.

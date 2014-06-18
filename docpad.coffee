@@ -96,6 +96,9 @@ docpadConfig = {
       database.findAllLive(
           {codeLevel: $exists: true}, [codeLevel:1, codeOrder:1])
 
+    references: (database) ->
+      database.findAllLive(
+          {layout: 'reference'}, [title: 1])
 
   # =================================
   # Regenerate Delay

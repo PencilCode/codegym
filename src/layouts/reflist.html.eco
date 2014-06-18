@@ -1,0 +1,11 @@
+---
+layout: bare
+---
+<div class="container">
+  <% for document in @getCollection('references').toJSON(): %>
+    <p>
+    <a href="<%= document.url %>">
+      <span><%= document.title %></span></a>
+  <% end %>
+</div>
+

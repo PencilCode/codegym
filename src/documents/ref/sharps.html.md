@@ -3,6 +3,7 @@ title: sharps
 description: raising a note
 layout: reference
 tags: ['music']
+section: music
 ---
 
 Notes that are raised by half a step (one semitone) are

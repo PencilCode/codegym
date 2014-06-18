@@ -3,6 +3,7 @@ title: objects
 description: sets of properties
 layout: reference
 tags: ['core']
+section: language
 ---
 
 An <em>object</em> is a set of <em>properties</em>,

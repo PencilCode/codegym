@@ -3,6 +3,7 @@ title: img
 description: puts an image into your page
 layout: reference
 tags: ['img']
+section: html
 ---
 
 <code>img</code> is an HTML tag that you can use inside your <code>write</code> blocks. 
