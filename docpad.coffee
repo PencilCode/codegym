@@ -96,7 +96,7 @@ docpadConfig = {
 
     references: (database) ->
       database.findAllLive(
-          {layout: 'reference'}, [section:1, refOrder:1, title: 1])
+          {refOrder: $exists: true}, [section:1, refOrder:1, title: 1])
 
   # =================================
   # Regenerate Delay

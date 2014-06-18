@@ -2,8 +2,8 @@
 title: pen
 description: changes the pen color
 layout: reference
-tags: ['dot']
 section: basic
+refOrder: 2
 ---
 
 Pen will pick any color (see [the color table](colors.html))

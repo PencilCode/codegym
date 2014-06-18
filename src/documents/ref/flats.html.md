@@ -3,6 +3,7 @@ title: flats
 description: lowering a note
 layout: reference
 section: abc
+refOrder: 4
 ---
 
 Notes that are lowered by half a step (one semitone) are

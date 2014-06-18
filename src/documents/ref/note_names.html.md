@@ -3,6 +3,7 @@ title: note names
 description: naming pitches with letters
 layout: reference
 section: abc
+refOrder: 1
 ---
 
 <h3>Letter Notes</h3>

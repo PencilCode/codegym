@@ -2,8 +2,8 @@
 title: menu
 description: create a menu of choices
 layout: reference
-tags: ['menu']
 section: text
+refOrder: 3
 ---
 
 <b>menu</b> creates a menu with one or more options.

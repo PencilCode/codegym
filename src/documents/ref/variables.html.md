@@ -2,8 +2,8 @@
 title: variables
 description: names for values
 layout: reference
-tags: ['core']
 section: language
+refOrder: 4
 ---
 
 A variable is a name for a remembered value.

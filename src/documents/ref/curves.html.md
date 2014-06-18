@@ -1,14 +1,15 @@
 ---
-title: arcs
+title: curves
 description: draw a curve with a turning radius
 layout: reference
 section: drawing
+refOrder: 1
 ---
 
-Arcs can be drawn by giving a second argument to `rt` and `lt`.
+Curves can be drawn by giving a second argument to `rt` and `lt`.
 
 The optional second argument for `rt` and `lt` is a <em>turning radius</em>.
-The turn is made while tracing out a circle of that radius.
+The turn is made while tracing out part of a circle of that radius.
 
 <code class="jumbo" data-before="pen olive">rt&nbsp;<span data-dfn="degrees">180</span>, <span data-dfn="radius">50</span></code>
 

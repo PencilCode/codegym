@@ -3,6 +3,7 @@ title: beats
 description: counting time
 layout: reference
 section: abc
+refOrder: 5
 ---
 
 The pulse of a melody defines its beats, and rhythm comes from
@@ -14,7 +15,7 @@ a fraction like `/2` or `2/3` after the pitch.
 
 <h3>Combining Beats into a Rhythm</h3>
 
-Consider the difference between these two examples.  
+Consider the difference between these two examples.
 First, five notes, each one beat:
 
 <pre class="jumbo">

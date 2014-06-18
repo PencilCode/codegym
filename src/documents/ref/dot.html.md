@@ -4,6 +4,7 @@ description: draws a dot under the turtle
 layout: reference
 tags: ['dot']
 section: basic
+refOrder: 1
 ---
 
 <b>dot</b> can make a dot in any <a href="colors.html">color</a>.

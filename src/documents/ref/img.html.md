@@ -1,12 +1,12 @@
 ---
-title: img
+title: <img>
 description: puts an image into your page
 layout: reference
-tags: ['img']
 section: html
+refOrder: 1
 ---
 
-<code>img</code> is an HTML tag that you can use inside your <code>write</code> blocks. 
+<code>img</code> is an HTML tag that you can use inside your <code>write</code> blocks.
 The <code>src</code> attribute is set to the name of the image file you want to inclode
 
 <code class="jumbo">write '&lt;img src="<span data-dfn="image file name">/images/dragon.png</span>"&gt;'</code>

@@ -3,6 +3,7 @@ title: key
 description: a set of sharps or flats
 layout: reference
 section: abc
+recOrder: 9
 ---
 
 Key signatures are the fast way to indicate flat and sharp notes

@@ -1,11 +1,10 @@
 ---
-title: play
-description: plays notes
+title: play options
+description: altering the sound
 layout: reference
 section: music
+refOrder: 3
 ---
-
-<h3>Play Options</h3>
 
 <code>play</code> accepts an optional options object as a first argument:
 

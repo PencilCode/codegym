@@ -3,6 +3,7 @@ title: play
 description: plays notes
 layout: reference
 section: music
+refOrder: 1
 ---
 
 <code>play</code> will sound out a sequence of musical notes.

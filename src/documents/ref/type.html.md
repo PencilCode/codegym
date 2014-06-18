@@ -2,8 +2,8 @@
 title: type
 description: types monospace words onto the page
 layout: reference
-tags: ['type']
 section: text
+refOrder: 2
 ---
 
 Type takes one argument: the text you want to write. Wrap it up in quotes. Your text will show up in a monospace font, with every letter the same width. This is useful for drawing ASCII art, indenting code, and anything else where you want to line text up neatly.

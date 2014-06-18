@@ -2,8 +2,8 @@
 title: tempo
 description: musical pacing
 layout: reference
-tags: ['music']
 section: music
+refOrder: 4
 ---
 
 Tempo (meaning "time" in Italian) is a melody's pacing or speed.

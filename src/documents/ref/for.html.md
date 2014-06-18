@@ -3,6 +3,7 @@ title: for
 description: repeats a block of code
 layout: reference
 section: language
+refOrder: 2
 ---
 
 Repeat a block of code using <code>for</code>.

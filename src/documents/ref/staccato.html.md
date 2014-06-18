@@ -3,6 +3,7 @@ title: staccato
 description: popping notes
 layout: reference
 section: abc
+refOrder: 8
 ---
 
 The term "staccato" comes from the Italian word meaning "detached".

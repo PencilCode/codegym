@@ -3,6 +3,7 @@ title: chords
 description: making harmonies
 layout: reference
 section: abc
+refOrder: 7
 ---
 
 A musical chord is a collection of two or more notes that are played

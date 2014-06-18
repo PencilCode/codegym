@@ -3,6 +3,7 @@ title: Piano
 description: an instrumental turtle
 layout: reference
 section: music
+refOrder: 2
 ---
 
 A Piano is an object that shows notes while playing them.

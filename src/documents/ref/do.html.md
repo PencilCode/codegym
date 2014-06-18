@@ -1,8 +1,8 @@
 ---
 title: do
 layout: reference
-tags: ['do']
 section: language
+refOrder: 1
 ---
 
 Coffeescript needs at least two words to run a function, but

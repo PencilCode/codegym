@@ -2,8 +2,8 @@
 title: objects
 description: sets of properties
 layout: reference
-tags: ['core']
 section: language
+refOrder: 7
 ---
 
 An <em>object</em> is a set of <em>properties</em>,
@@ -13,8 +13,8 @@ each with a name and a value.
 
 Here is an example of an object.
 
-<pre class="jumbo">
-d = <span data-dfnup="object literal"><span data-note="curly brace">{</span> <span data-dfn="property">day: 4</span><span data-note="comma">,</span> <span data-dfn="name">month</span><span data-note="colon">:</span> <span data-dfn="value">"July"</span> <span data-note="curly brace">}</span></span>&nbsp;
+<pre class="jumbo" data-after="write JSON.stringify(d)">
+d = <span data-dfnup="object literal"><span data-note="curly brace">{</span><span data-dfn="property">day: 4</span><span data-note="comma">,</span> <span data-dfn="name">month</span><span data-note="colon">:</span> <span data-dfn="value">"July"</span><span data-note="curly brace">}</span></span>&nbsp;
 </pre>
 
 This object has two properties named `day` and `month`.
