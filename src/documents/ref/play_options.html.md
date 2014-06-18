@@ -2,8 +2,7 @@
 title: play
 description: plays notes
 layout: reference
-tags: ['music']
-section: sound
+section: music
 ---
 
 <h3>Play Options</h3>

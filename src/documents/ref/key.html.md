@@ -2,8 +2,7 @@
 title: key
 description: a set of sharps or flats
 layout: reference
-tags: ['music']
-section: music
+section: abc
 ---
 
 Key signatures are the fast way to indicate flat and sharp notes

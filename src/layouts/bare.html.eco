@@ -50,7 +50,20 @@
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <% for document in @getCollection('pages').toJSON(): %>
+          <% for document in @getCollection('pages').toJSON() when document.pageOrder >= 0: %>
+            <li
+              typeof="sioc:Page"
+              about="<%= document.url %>"
+              class="<%= 'active'  if @document.relativeDirPath is document.relativeDirPath %>"
+            >
+              <a href="<%= document.url %>" property="dc:title">
+                <%= document.title %>
+              </a>
+            </li>
+          <% end %>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <% for document in @getCollection('pages').toJSON() when document.pageOrder < 0: %>
             <li
               typeof="sioc:Page"
               about="<%= document.url %>"

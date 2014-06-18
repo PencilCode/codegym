@@ -1,0 +1,26 @@
+---
+layout: framed
+---
+<div style="margin:10px 20px">
+  <h2>Reference Index</h2>
+  <% sections = @getFile({refSections: $exists: true}).toJSON().refSections %>
+  <% refs = @getCollection('references').toJSON() %>
+  <% for section, sect of sections: %>
+    <div class="panel panel-info">
+    <div class="panel-heading"><h4><%= sect.title %></h4>
+    <p><%= sect.description %></p>
+    </div>
+    <div class="panel-body">
+    <div class="row">
+    <% for document in refs when document.section is section: %>
+      <div class="col-sm-2 col-xs-4">
+      <a href="<%= document.url %>">
+      <span><%= document.title %></span></a>
+      </div>
+    <% end %>
+    </div>
+    </div>
+    </div>
+  <% end %>
+</div>
+

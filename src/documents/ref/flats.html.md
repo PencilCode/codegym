@@ -2,8 +2,7 @@
 title: flats
 description: lowering a note
 layout: reference
-tags: ['music']
-section: music
+section: abc
 ---
 
 Notes that are lowered by half a step (one semitone) are

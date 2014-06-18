@@ -2,8 +2,7 @@
 title: staccato
 description: popping notes
 layout: reference
-tags: ['music']
-section: music
+section: abc
 ---
 
 The term "staccato" comes from the Italian word meaning "detached".

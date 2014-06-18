@@ -1,11 +1,25 @@
 ---
 layout: bare
 ---
+<div id="leftnav">
 <div class="container">
-  <% for document in @getCollection('references').toJSON(): %>
-    <p>
-    <a href="<%= document.url %>">
-      <span><%= document.title %></span></a>
+<h3><a href="intro.html" target="workarea">Reference</a></h3>
+<% sections = @getFile({refSections: $exists: true}).toJSON().refSections %>
+<% refs = @getCollection('references').toJSON() %>
+<% for section, sect of sections: %>
+  <h5 style="margin-bottom:5px"><%= sect.title %></h5>
+  <ul style="list-style-type:none;padding-left:10px">
+  <% for document in refs when document.section is section: %>
+  <li><a href="<%= document.url %>" target="workarea">
+    <span><%= document.title %></span></a></li>
   <% end %>
+  </ul>
+<% end %>
+</div>
+</div>
+
+<div id="rightpane">
+<iframe id="workframe" name="workarea" src="intro.html" width=100% height=100% style="border:0">
+</iframe>
 </div>
 

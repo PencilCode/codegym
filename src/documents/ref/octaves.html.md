@@ -2,8 +2,7 @@
 title: octaves
 description: writing high and low notes
 layout: reference
-tags: ['music']
-section: music
+section: abc
 ---
 
 An octave is eight notes.  Pitches that are an octave apart

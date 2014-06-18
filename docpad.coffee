@@ -51,8 +51,6 @@ docpadConfig = {
         "/scripts/script.js"
       ]
 
-
-
     # -----------------------------
     # Helper Functions
 
@@ -98,7 +96,7 @@ docpadConfig = {
 
     references: (database) ->
       database.findAllLive(
-          {layout: 'reference'}, [title: 1])
+          {layout: 'reference'}, [section:1, refOrder:1, title: 1])
 
   # =================================
   # Regenerate Delay
