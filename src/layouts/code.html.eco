@@ -21,8 +21,8 @@ layout: framed
     </div>
     <% end %>
   </div>
-  <a class="left carousel-control" href="#instructions" style="display:none" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-  <a class="right carousel-control" href="#instructions" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+  <a class="left carousel-control" href="#instructions" style="display:none" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" style="left:5px"></span></a>
+  <a class="right carousel-control" href="#instructions" data-slide="next"><span class="glyphicon glyphicon-chevron-right" style="right:5px;left:inherit"></span></a>
 
 <% if @document.instructions: %>
 <div id="more" class="btn btn-default topright">More Ideas&nbsp;
