@@ -26,6 +26,35 @@ code: |
   dot purple, 100
 ---
 dotcount = 0
+cssc = [
+  "aliceblue", "antiquewhite", "aqua", "aquamarine", "azure", "beige",
+  "bisque", "black", "blanchedalmond", "blue", "blueviolet", "brown",
+  "burlywood", "cadetblue", "chartreuse", "chocolate", "coral",
+  "cornflowerblue", "cornsilk", "crimson", "cyan", "darkblue", "darkcyan",
+  "darkgoldenrod", "darkgray", "darkgreen", "darkkhaki", "darkmagenta",
+  "darkolivegreen", "darkorange", "darkorchid", "darkred", "darksalmon",
+  "darkseagreen", "darkslateblue", "darkslategray", "darkturquoise",
+  "darkviolet", "deeppink", "deepskyblue", "dimgray", "dodgerblue",
+  "firebrick", "floralwhite", "forestgreen", "fuchsia", "gainsboro",
+  "ghostwhite", "gold", "goldenrod", "gray", "green", "greenyellow",
+  "honeydew", "hotpink", "indianred", "indigo", "ivory", "khaki",
+  "lavender", "lavenderblush", "lawngreen", "lemonchiffon", "lightblue",
+  "lightcoral", "lightcyan", "lightgoldenrodyellow", "lightgray",
+  "lightgreen", "lightpink", "lightsalmon", "lightseagreen", "lightskyblue",
+  "lightslategray", "lightsteelblue", "lightyellow", "lime", "limegreen",
+  "linen", "magenta", "maroon", "mediumaquamarine", "mediumblue",
+  "mediumorchid", "mediumpurple", "mediumseagreen", "mediumslateblue",
+  "mediumspringgreen", "mediumturquoise", "mediumvioletred", "midnightblue",
+  "mintcream", "mistyrose", "moccasin", "navajowhite", "navy", "oldlace",
+  "olive", "olivedrab", "orange", "orangered", "orchid", "palegoldenrod",
+  "palegreen", "paleturquoise", "palevioletred", "papayawhip", "peachpuff",
+  "peru", "pink", "plum", "powderblue", "purple", "red", "rosybrown",
+  "royalblue", "saddlebrown", "salmon", "sandybrown", "seagreen",
+  "seashell", "sienna", "silver", "skyblue", "slateblue", "slategray",
+  "snow", "springgreen", "steelblue", "tan", "teal", "thistle", "tomato",
+  "turquoise", "violet", "wheat", "white", "whitesmoke", "yellow",
+  "yellowgreen", "transparent"
+]
 colors = {}
 sizes = []
 originaldot = window.dot
@@ -41,6 +70,42 @@ window.dot = ->
   originaldot.apply(null, arguments)
 hints = ->
   if dotcount == 0
+    # Catch common beginner typos.
+    if ide
+      dotline = /(?:^|\n)[^\n\S]*dot[^\n#]*/.exec(ide.getEditorText())
+      if dotline
+        dotline = dotline[0]
+    if dotline
+      if /^dot\s+[a-z]+\s+[a-z]+/i.test(dotline)
+        popup """
+          <p>Did you put a space in the middle of a color?
+          <p>HINT: colors are spelled without a space.
+        """
+      else if /^dot\s+[a-z0-9]+\s*[0-9]+/i.test(dotline)
+        popup """
+          <p>Did you forget a comma?
+          <p>HINT: use a comma between the color and size.
+        """
+      else if /^dot[a-z]/i.test(dotline)
+        popup """
+          <p>Did you forget a space?
+          <p>HINT: put a space before the color.
+        """
+      else if dotline.toLowerCase() != dotline
+        popup """
+          <p>Did you use capital letters?
+          <p>HINT: most built-in names are lowercase.
+        """
+      else if /^\s+/.test(dotline)
+        popup """
+          <p>Did you indent your code?
+          <p>HINT: line up your code on the left.
+        """
+      else if (m = /^dot\s+([a-z]+)/.exec(dotline)) and not (m[1] in cssc)
+        popup """
+          <p>#{m[1]} is not a color name I know.
+          <p>HINT: look for the color reference.
+        """
     return
   if dotcount == 1 and sizes[0] == 100 and colors.purple
     popup """
