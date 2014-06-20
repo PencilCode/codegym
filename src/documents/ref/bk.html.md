@@ -6,7 +6,7 @@ section: basic
 refOrder: 4
 ---
 
-<b>bk</b> tells the turtle to move <mark>b</mark>ac<mark>k</mark>ward.
+<b>bk</b> tells the turtle to move backward.
 
 The distance is measured in pixels.
 
