@@ -1,0 +1,76 @@
+---
+title: Answering a Riddle
+subtitle: having a conversaion
+mission: Answer the troll's riddle and see if you can make it laugh.
+layout: code
+codeLevel: 2
+codeOrder: 4
+thumb: 'troll'
+refs: ['do', 'function', 'menu', 'variables', 'true', 'false']
+instructions:
+  - title: Add more personality.
+    mission: >
+      The troll would have more personality if it had more
+      things to say.  What should it say if you try to "go"
+      without permission?  Or what should it say if you try
+      to "hit" the troll?
+  - title: Change the conversation.
+    mission: >
+      The troll program is called a "chatbot".  Chatbots can
+      have all sorts of conversations, not just riddles, and
+      some chatbots are good enough that they can fool you
+      into thinking they are really a person.  Can you make a
+      chatbot that chats like a person?
+code: |
+  # This function looks at the words in your
+  # answer and picks the troll's response.
+  replyto = (a) ->
+    for word in a.toLowerCase().split /\W+/
+      switch word
+        when "secret"
+          return "Right."
+        when "money"
+          return "I don't want your money!"
+        when "advice"
+          return "My advice: think again."
+        when "who"
+          return "I am the Bridge Troll!"
+        when "troll"
+          return "The troll laughs at you."
+        when "know"
+          return "I know the answer. Do you?"
+    # If no words were recognized, a random
+    # canned response is picked.
+    return random [
+      "That doesn't make sense."
+      "Guess again!"
+      "That is not right!"
+    ]
+
+  riddle = ->
+    write """
+      A troll blocks the bridge and asks:
+    """
+    type """
+      When you don’t have me,
+      you want me,
+      but when you do have me,
+      you want to give me away.
+      What am I?
+    """
+    while s isnt "Right."
+      # Wait for an answer and reply to it.
+      await readstr defer a
+      s = replyto a
+      write s
+    do proceed
+
+  proceed = ->
+    write """
+      The troll steps aside, and you cross.
+      (what happens next?)
+    """
+
+  # start the game
+  do riddle
+---
