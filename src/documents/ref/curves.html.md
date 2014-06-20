@@ -1,6 +1,6 @@
 ---
 title: curves
-description: draw a curve with a turning radius
+description: using a turning radius
 layout: reference
 section: drawing
 refOrder: 1

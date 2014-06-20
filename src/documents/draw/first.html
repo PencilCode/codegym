@@ -104,7 +104,7 @@ hints = ->
       else if (m = /^dot\s+([a-z]+)/.exec(dotline)) and not (m[1] in cssc)
         popup """
           <p>#{m[1]} is not a color name I know.
-          <p>HINT: look for the color reference.
+          <p>HINT: look for the color reference below.
         """
     return
   if dotcount == 1 and sizes[0] == 100 and colors.purple
