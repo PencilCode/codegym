@@ -3,7 +3,7 @@ title: ln
 description: natural logarithm
 layout: reference
 section: math
-refOrder: 5
+refOrder: 10
 ---
 
 `ln x` computes the natural logarithm of `x`:
