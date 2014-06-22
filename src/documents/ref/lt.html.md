@@ -30,5 +30,5 @@ For example, the 60 degree interior angle drawn by the program
 above corresponds to the 120 degree exterior angle swept out by
 the tultle.
 
-`lt can also be used to draw arcs by using a second argument.
+`lt` can also be used to draw arcs by using a second argument.
 Read the reference page on <a href="arcs.html">arcs</a>.
