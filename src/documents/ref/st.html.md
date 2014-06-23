@@ -17,5 +17,5 @@ shown again with `do st`.
 To fade in the turtle slowly, try [`fadeIn`](fadeIn.html).
 
 Saying `st` by itself will not do anything, because
-CoffeeScript only runs commands with at least two words:
+our language only runs commands with at least two words:
 you need to use `do st`.

@@ -19,5 +19,5 @@ See [`home`](home.html) to move the turtle back to
 the middle.
 
 Saying `cs` by itself will not do anything, because
-CoffeeScript only runs commands with at least two words:
+our language only runs commands with at least two words:
 you need to use `do cs`.

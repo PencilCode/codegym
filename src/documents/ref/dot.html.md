@@ -17,7 +17,7 @@ a comma.
 
 <code default class="jumbo">dot <span data-dfn="color">fuchsia</span><span data-note="comma">,</span>&nbsp;<span data-dfn="size">100</span></code>
 
-Coffeescript needs at least two words to run a function, but
+In our code, we need at least two words to run a function, but
 you can use the word <code>do</code> to run a function without
 arguments. <code>do dot</code> draws a default black dot.
 

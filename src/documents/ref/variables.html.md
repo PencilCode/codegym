@@ -8,6 +8,10 @@ refOrder: 4
 
 A variable is a name for a remembered value.
 
+You can create your own variables using `=`.  You need to
+define your variables before you can ask the comptuer to
+use them.
+
 <h3>Storing a Number</h3>
 
 Once you have defined a variable, you can refer to the value
@@ -25,8 +29,8 @@ are done with `is`.
 
 <h3>Variable Names and Strings</h3>
 
-A variable can also remember any sequence of text characters,
-called a <em>string</em>.
+A variable can also remember any word or other sequence of
+characters, called a <em>string</em>.
 
 <pre class="jumbo">
 song = "GEC"
@@ -41,6 +45,18 @@ have had to use quotes: `write "song"`.
 
 A quoted value is called a <em>literal</em> value: it
 should not be confused with a variable name, which is unquoted.
+
+<h3>Built-in Variables</h3>
+
+Built-in names such as as [`red`](colors.html),
+[`pen`](pen.html), [`dot`](dot.html),
+[`play`](play.html), [`Turtle`](Turtle.html),
+and [`write`](write.html), are variables that
+are predefined by the system before your program runs.
+
+It is best to avoid using these names for your own
+variables, because when you redefine these variables,
+their built-in meaning may become unavailable in your program.
 
 <h3>Other Types of Values</h3>
 
