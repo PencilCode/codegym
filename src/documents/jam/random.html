@@ -1,0 +1,20 @@
+---
+title: Random Music
+subtitle: generating songs
+mission: >
+  A program can generate music randomly by choosing between
+  a few patterns.
+layout: code
+codeLevel: 2
+codeOrder: 1
+thumb: 'dice'
+refs: ['for','random','play','note names','beats','octaves''sharps']
+code: |
+  for [1..5]
+    s = random [
+      "G/G/EB,C"
+      "G,B,D/^C/=C"
+      "G/F/G/F/E/D/C"
+    ]
+    play s
+---
