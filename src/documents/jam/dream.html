@@ -10,8 +10,7 @@ layout: code
 codeLevel: 1
 codeOrder: 3
 thumb: 'dream'
-tags: ['draw','index']
-refs: ['play','note names', 'octaves', 'Piano']
+refs: ['chords', 'octaves', 'beats', 'rests', 'variables', 'new', 'Piano', 'sync']
 instructions:
   - title: Change the Pattern
     subtitle: altering rhythms
@@ -24,12 +23,12 @@ instructions:
       just by changing <code>b</code>?
 code: |
   p = new Piano
-    lowest: 48
-    keys: 24
+    lowest: "F,,"
+    keys: 36
   p.bk 100
   m = new Piano
-    lowest: 72
-    keys: 24
+    lowest: "C"
+    keys: 36
   m.fd 100
   sync p, m
 

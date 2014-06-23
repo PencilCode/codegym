@@ -37,7 +37,6 @@ does this for the main turtle:
 
 <pre class="jumbo">
 s = new Sprite
-  color: gray
 t = new Turtle
 t.drawon s
 t.dot red, 100
@@ -50,3 +49,9 @@ s.lt 90
 s.fd 200
 </pre>
 
+<h3>Built-in Sprite subclasses</h3>
+
+There are several built-in subclasses of Sprite. They include
+[`Turtle`](Turtle.html), which looks like the main turtle;
+[`Piano`](Piano.html), which looks like a piano keyboard;
+and [`Webcam`](Webcam.html), which reflects a laptop webcam.

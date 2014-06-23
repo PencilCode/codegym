@@ -1,6 +1,6 @@
 ---
 title: button
-description: srites a button
+description: writes a button
 layout: reference
 section: interaction
 refOrder: 1

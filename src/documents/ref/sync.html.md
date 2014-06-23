@@ -32,3 +32,7 @@ insert a pause into their animation queue, and wait
 for all the other elements to reach the same point.
 Once all elements have caught up, all the elements
 resume animating.
+
+To synchronize an element with the main turtle,
+use the special varible `turtle` to represent
+the main turtle.
