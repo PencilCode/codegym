@@ -19,5 +19,5 @@ will not clear turtles made by `new Turtle`.  See
 clear the whole screen.
 
 Saying `cg` by itself will not do anything, because
-CoffeeScript only runs commands with at least two words:
+our language only runs commands with at least two words:
 you need to use `do cg`.

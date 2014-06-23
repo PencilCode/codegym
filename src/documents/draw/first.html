@@ -1,8 +1,8 @@
 ---
 title: First Dot
 mission: >
-  Pick a <a href="/ref/colors.html">color</a> and make a dot.
-  Can you adjust the color and the size?
+  Pick a <a href="/ref/colors.html" target="reference">color</a>
+  and make a dot.  Can you adjust the color and the size?
 instructions:
   - title: Donut
     mission: >
@@ -20,8 +20,7 @@ layout: code
 codeLevel: 0
 codeOrder: 1
 thumb: 'dot'
-tags: ['draw','index']
-refs: ['colors', 'dot']
+refs: ['colors', 'dot', 'pen', 'fd']
 code: |
   dot purple, 100
 ---
@@ -141,13 +140,14 @@ hints = ->
       <p>Did you cover up a dot?<br>
       Try drawing the bigger one first.
     """
-  else if dotcount < 4
+  else if dotcount < 3
     popup """
       <p>Challenge: try drawing a bullseye<br>
     """
   else
     popup """
-      <p>Beautiful!
+      <p>Beautiful! You may want to try<br>
+      "More Ideas" or explore other projects.
     """
 click ->
   if dotcount is 0

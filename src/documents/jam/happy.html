@@ -10,20 +10,15 @@ layout: code
 codeLevel: 1
 codeOrder: 4
 thumb: 'happy'
-tags: ['draw','index']
-refs: ['play','note names', 'octaves', 'Piano']
+refs: ['chords', 'octaves', 'beats', 'rests', 'variables', 'new', 'Piano', 'sync']
 instructions:
-  - title: Question and Answer
-    subtitle: a musical back and forth
+  - title: Variables
+    subtitle: musical algebra
     mission: >
-      Happy has a question-answer theme, answering
-      a melody in high octaves by a tune in the low octaves.
-      This program sets up variables <code>t</code>, <code>t2</code>,
-      <code>intro</code>, <code>q1</code>, <code>q2</code>,
-      <code>q3</code>, <code>q4</code>, <code>a</code>,
-      <code>a2</code>, and <code>b</code> for different parts.
-      Try playing and combining them at the bottom
-      by changing the song on line 25.
+      This program sets up variables to represent entire lines of
+      the song Happy.  Variables need to be defined before you ask
+      the computer to `play` them.  What happens if you reorder
+      or add variables?
   - title: Extend the Tune
     subtitle: can you play Happy?
     mission: >
@@ -59,7 +54,7 @@ code: |
     """
   p = new Piano
   p.play
-    tempo: 150
+    tempo: 100
     song: intro + q1 +
           a + t + q2 +
           a + t + q3 +

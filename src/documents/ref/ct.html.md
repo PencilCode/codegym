@@ -19,5 +19,5 @@ clear graphics or turtles made by `new Turtle`.  See
 or to clear the whole screen.
 
 Saying `ct` by itself will not do anything, because
-CoffeeScript only runs commands with at least two words:
+our language only runs commands with at least two words:
 you need to use `do ct`.

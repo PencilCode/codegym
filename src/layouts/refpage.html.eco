@@ -6,10 +6,9 @@ layout: framed
   <% sections = @getFile({refSections: $exists: true}).toJSON().refSections %>
   <% refs = @getCollection('references').toJSON() %>
   <% for section, sect of sections: %>
-    <div class="panel panel-info">
-    <div class="panel-heading"><h4><%= sect.title %></h4>
+    <h4><%= sect.title %></h4>
     <p><%= sect.description %></p>
-    </div>
+    <div class="panel panel-info">
     <div class="panel-body">
     <div class="row">
     <% for document in refs when document.section is section: %>

@@ -3,7 +3,7 @@ title: fadeOut
 description: fades and hides the turtle
 layout: reference
 section: animation
-refOrder: 3
+refOrder: 8
 ---
 
 `do fadeOut` will fade out the turtle and hide it.

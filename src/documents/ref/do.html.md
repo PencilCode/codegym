@@ -5,11 +5,11 @@ section: language
 refOrder: 1
 ---
 
-Coffeescript needs at least two words to run a function, but
-you can use the word <code>do</code> to run a function without
-arguments.
+The language we are using, Coffeescript, needs at least two words
+to run a function. You can use the word <code>do</code> to run a
+function without arguments.
 
-Hide the turtle with <code>do ht</code>.
+For example, hide the turtle with <code>do ht</code>.
 
 <code class="jumbo" data-before="pause 3"><span data-dfn="just do it">do</span> ht</code>
 

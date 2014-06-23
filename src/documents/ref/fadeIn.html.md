@@ -3,7 +3,7 @@ title: fadeIn
 description: shows the turtle after fading in
 layout: reference
 section: animation
-refOrder: 4
+refOrder: 7
 ---
 
 `do fadeIn` will show the turtle slowly.

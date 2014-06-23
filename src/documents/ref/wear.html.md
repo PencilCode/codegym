@@ -3,7 +3,7 @@ title: wear
 description: changes the appearance of the turtle
 layout: reference
 section: animation
-refOrder: 1
+refOrder: 3
 ---
 
 <b>wear</b> can change the look of a turtle.

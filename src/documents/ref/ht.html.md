@@ -17,5 +17,5 @@ draw.  To fade out the turtle slowly, try [`fadeOut`](fadeOut.html).
 To show the turtle again, see [`st`](st.html).
 
 Saying `ht` by itself will not do anything, because
-CoffeeScript only runs commands with at least two words:
+our language only runs commands with at least two words:
 you need to use `do ht`.
