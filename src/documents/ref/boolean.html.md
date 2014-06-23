@@ -16,15 +16,20 @@ numbers.
 hasKey = false
 room = ->
   if hasKey
-    menu
-      "unlock door": -> write "the door is unlocked!"
+    do roomWithKey
   else
-    menu
-      "unlock door": -> 
-        write "you can't without the key!"
-        do room
-      "pick up key": -> 
-        hasKey = true
-        do room
+    do roomWithoutKey
+roomWithKey = ->
+  menu
+    "unlock door": -> 
+      write "the door is unlocked!"
+roomWithoutKey = ->
+  menu
+    "unlock door": -> 
+      write "you can't without the key!"
+      do room
+    "pick up key": -> 
+      hasKey = true
+      do room
 do room
 </code>
