@@ -1,9 +1,9 @@
 ---
 title: button
-description: Writes a button
+description: srites a button
 layout: reference
-section: html
-refOrder: 2
+section: interaction
+refOrder: 1
 ---
 
 Add buttons for interactive controls using <code>button</code>.
@@ -14,3 +14,7 @@ Add buttons for interactive controls using <code>button</code>.
 button <span data-dfn="button label">"Forward"</span>, ->
   <span data-dfn="what to do">fd 50</span>
 </pre>
+
+`button` it takes two arguments:
+first is the text for the button; second is
+a function to call whenever the user clicks the button.

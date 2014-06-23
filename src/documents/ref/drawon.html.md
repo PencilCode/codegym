@@ -3,7 +3,7 @@ title: drawon
 description: for drawing on a Sprite
 layout: reference
 section: animation
-refOrder: 3
+refOrder: 6
 ---
 
 `drawon` is used to draw on another Turtle or Sprite.

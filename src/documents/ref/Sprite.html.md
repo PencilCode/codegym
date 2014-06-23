@@ -3,7 +3,7 @@ title: Sprite
 description: for drawing your own turtle
 layout: reference
 section: animation
-refOrder: 2
+refOrder: 5
 ---
 
 The Sprite class is a "blank" turtle that you can draw on yourself.

@@ -3,7 +3,7 @@ title: Turtle
 description: creating new turtles
 layout: reference
 section: animation
-refOrder: 1
+refOrder: 4
 ---
 
 The Turtle class can be used to create new turtles.
