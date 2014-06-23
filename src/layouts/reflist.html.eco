@@ -1,7 +1,7 @@
 ---
 layout: bare
 ---
-<div id="leftnav">
+<div id="leftnav" class="reflist">
 <div class="container">
 <h3><a href="intro.html" target="workarea">Reference</a></h3>
 <% sections = @getFile({refSections: $exists: true}).toJSON().refSections %>
@@ -19,7 +19,51 @@ layout: bare
 </div>
 
 <div id="rightpane">
-<iframe id="workframe" name="workarea" src="intro.html" width=100% height=100% style="border:0">
+<iframe id="workframe" name="workarea" src="about:blank" width=100% height=100% style="border:0">
 </iframe>
 </div>
+<script>
+function storageName() {
+  return 'gym:' + location.pathname.replace(/index\.html$/, '');
+}
 
+function loadStorage() {
+  try {
+    return localStorage.getItem(storageName()) || null;
+  } catch (e) {
+    return null;
+  }
+}
+
+function saveStorage(c) {
+  try {
+    localStorage.setItem(storageName(), c);
+  } catch (e) { }
+}
+
+var initurl = loadStorage() || "intro.html";
+$('#workframe').attr('src', initurl);
+selecturl(initurl);
+
+function selecturl(url) {
+  var selectedtile = null;
+  $('a[target=workarea]').each(function() {
+    var href = $(this).attr('href');
+    if (url.substr(url.length - href.length) == href) {
+      selectedtile = this;
+      saveStorage(href);
+    }
+  });
+  if (selectedtile) {
+    $('a[target=workarea]').removeClass('active');
+    $(selectedtile).addClass('active');
+  }
+}
+
+$('#workframe').on('load', function() {
+  try {
+    selecturl(this.contentWindow.location.href);
+  } catch(e) { }
+});
+
+</script>
