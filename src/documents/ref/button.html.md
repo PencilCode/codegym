@@ -2,8 +2,8 @@
 title: button
 description: Writes a button
 layout: reference
-section: drawing
-refOrder: 0
+section: html
+refOrder: 2
 ---
 
 Add buttons for interactive controls using <code>button</code>.
