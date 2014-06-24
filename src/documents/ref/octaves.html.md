@@ -7,15 +7,15 @@ refOrder: 2
 ---
 
 An octave is eight notes.  Pitches that are an octave apart
-are twins of each other, sounding the like the same note,
+are twins of each other, sounding like the same note,
 just higher or lower.
 
 ### Octave Marks
 
 To represent a pitch that is an octave higher, the letter is followed
-by a prime (typed as a single quote `'` next to the Enter key).  To
+by a prime (typed as a single quote <code>'</code> next to the Enter key).  To
 represent notes that are an octave lower, the letter is followed by a
-subprime (typed as a comma `,`).
+subprime (typed as a comma <code>,</code>).
 
 <pre class="jumbo">
 play "C<span data-dfn="two octaves down">,,</span> C, C C<span data-dfnup="one octave up">'</span> C''"

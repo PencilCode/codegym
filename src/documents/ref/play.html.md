@@ -24,13 +24,13 @@ in ABC notation.
 
 Put all the notes inside quotes.
 Quotation marks are used to separate the music written
-in ABC notation from the script code that plays the whole
+in ABC notation from the code that plays the whole
 piece of music.
 
 <h3>Triple-Quotes</h3>
 
 Triple quotes `"""` separate a large piece of music
-from the rest of the script.
+from the rest of the code.
 
 To play a longer song that fills up more than one line of code, use
 triple-quotes.
@@ -48,7 +48,7 @@ triple-quotes.
 <span data-dfn="matching triple-quote">"""</span></pre>
 
 Triple quotes must match, just like regular quotes.  Put a triple
-quote before the first line of music, and the put one
+quote before the first line of music, and then put one
 after the last line of music.
 
 <h3>Options</h3>
@@ -59,10 +59,12 @@ after the last line of music.
   "GEC"</pre>
 
 Options include:
-* <code>tempo</code> specifies a number of beats per minute.
-  The normal tempo is 120 beats per minute.
-* <code>wait</code> can be set to <code>false</code> to start
+<ul>
+<li> <code>tempo</code> specifies a number of beats per minute.
+  The normal tempo is 120 beats per minute.</li>
+<li> <code>wait</code> can be set to <code>false</code> to start
   a song and then proceed to the next animation without waiting for
-  it to finish. This can be used, for example, to have a turtle
-  play a song while it is simultaneously drawing; or to play two songs
-  at once.
+  it to finish. This can be used to have a turtle
+  play a song while it is simultaneously drawing, or to play two songs
+  at once.</li>
+</ul>
