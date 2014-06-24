@@ -44,6 +44,7 @@ layout: framed
 <a target="reference" class="btn btn-default" href="/ref/<%= ref.replace(/\s/g, '_') %>.html"><%=ref%></a> &nbsp
 <% end %>
 <% end %>
+<div id="save" class="btn btn-default pull-right"><span class="glyphicon glyphicon-cloud-upload"></span></div>
 </center>
 </div>
 
@@ -82,7 +83,7 @@ function fixbase() {
   $('base').attr('href', "BASEURL");
 }
 var fixbasescript =
-  fixbase.toString().replace('BASEURL', location.href) + "\nfixbase();"
+  fixbase.toString().replace('BASEURL', location.href) + "\nfixbase();";
 
 $('.carousel').carousel();
 function updatePagers() {
@@ -148,6 +149,37 @@ function doresize() {
     $('#instructions').outerHeight() -
     $('.reflinks').outerHeight());
 }
+
+$('#save').click(function() {
+  var name, prefix;
+  name = prompt(
+    'To share your creation, give it a short name:');
+  name = name.replace(/\W+/g, '_').replace(/^_+|_+$/g, '');
+  if (!name) {
+    return;
+  }
+  prefix = (60466175 -
+      (Math.floor((new Date).getTime()/1000) % (24*60*60*500))).toString(36);
+  name = prefix + "-" + name;
+  payload = {
+    data: pce.getCode(),
+    key: 943
+  }
+  $.ajax({
+    url: 'http://gymstage.pencilcode.net/save/' + name,
+    data: payload,
+    dataType: 'json',
+    type: 'GET',
+    success: function(m) {
+      if (m.error) {
+        alert('error: ' + m.error);
+      } else {
+        alert('saved as http://gymstage.pencilcode.net/home/' + name);
+      }
+    }
+  });
+});
+
 
 doresize();
 $(window).resize(doresize);
