@@ -3,6 +3,8 @@ title: html
 description: decorate your writing with HTML tags
 layout: reference
 tags: ['html']
+section: html
+refOrder: 0
 ---
 
 HTML tags are a special set of commands that you can use when you're making 
