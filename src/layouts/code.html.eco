@@ -40,21 +40,21 @@ layout: framed
 <% end %>
 <% if @document.refs: %>
 <span class="btn"><a target="reference" style="color:inherit;text-decoration:inherit" href="/ref/reference.html">Reference</a>: &nbsp;</span>
+<div id="save" class="btn btn-default pull-right"><span class="glyphicon glyphicon-cloud-upload"></span></div>
 <% for ref in (@document.refs or []): %>
 <a target="reference" class="btn btn-default" href="/ref/<%= ref.replace(/\s/g, '_') %>.html"><%=ref%></a> &nbsp
 <% end %>
 <% end %>
-<div id="save" class="btn btn-default pull-right"><span class="glyphicon glyphicon-cloud-upload"></span></div>
 </center>
 </div>
 
 </div> <!-- end flex container -->
 <xmp id="setupcode" style="display:none">
 # common setup code here.
-_error = {}
+window.print = ->
+  write 'Try using <b>write</b> instead of <b>print</b>.'
+# remove default error handling UI.
 window.removeEventListener 'error', see
-window.addEventListener 'error', (e) ->
-  _error.message = e.message
 thepopup = null
 popup = (t) ->
   if thepopup
@@ -64,12 +64,76 @@ popup = (t) ->
     <center>#{t}</center>
   """
   thepopup.css
-    background: rgba(235,235,235,0.5)
+    background: rgba(240,240,240,0.8)
     fontFamily: 'Arial'
     margin: '5px 15%'
     padding: '8px'
     borderRadius: '8px'
     boxShadow: '0 0 5px dimgray'
+
+hints = null
+
+$(window).on 'error', (e) ->
+  if hints then do hints
+  if thepopup then return
+  advice = '<p>Oops, the computer got confused.'
+  msg = e.message || e.originalEvent.message
+  if msg
+    msg = msg.replace(/^Uncaught [a-z]*Error: /i, '')
+    if msg isnt "Cannot read property '0' of null" # CS bug
+      advice += '<p>It says: ' + msg
+  m = /(\w+) is not defined/.exec(msg)
+  if m
+    if /^[a-z]{2,}[0-9]+$/i.test(m[1])
+      advice += "<p>Is there a missing space in '<b>#{m[1]}</b>'?"
+    else if /[A-Z]/.test(m[1]) and m[1].toLowerCase() in [
+        'dot', 'pen', 'fd', 'bk', 'lt', 'rt', 'write', 'type', 'menu', 'play',
+        'speed', 'ht', 'st', 'cs', 'cg', 'ct', 'fill', 'rgb', 'rgba', 'hsl',
+        'hsla', 'red', 'blue', 'black', 'green', 'gray', 'orange', 'purple',
+        'pink', 'yellow', 'gold', 'aqua', 'tan', 'white', 'violet', 'snow',
+        'true', 'false', 'null', 'for', 'if', 'else', 'do', 'in', 'return']
+      advice += "<p>Did you mean '<b>#{m[1].toLowerCase()}</b>' " +
+                "instead of '<b>#{m[1]}</b>'?"
+    else if m[1].toLowerCase() in ['infinity', 'inf']
+      advice += "<p><b>Infinity</b> is spelled out with a captial I."
+    else
+      if m[1].length > 3
+        advice += "<p>Is <b>#{m[1]}</b> spelled right?"
+      else
+        advice += "<p>Is '<b>#{m[1]} = </b><em>something</em>' " +
+                  "needed first?"
+      advice += "<p>Or are quotes needed around <b>\"#{m[1]}\"</b>?"
+  else if /object is not a function/.test(msg)
+    advice += "<p>Is there missing punctuation like a dot?"
+  else if /undefined is not a function/.test(msg)
+    advice += "<p>Is a command misspelled here?"
+  else if /indentation/.test(msg)
+    advice += "<p>Is the code lined up neatly?"
+    advice += "<p>Or is something unfinished before this?"
+  else if /not a function/.test(msg)
+    advice += "<p>Is there a mising comma?"
+  else if /octal literal/.test(msg)
+    advice += "<p>Avoid extra 0 digits before a number."
+  else if /unexpected newline/.test(msg)
+    advice += "<p>Is something missing on the previous line?"
+  else if /unexpected ,/.test(msg)
+    advice += "<p>You might not need a comma here."
+  else if /unexpected ->/.test(msg)
+    advice += "<p>Is a comma or '=' missing before the arrow?"
+  else if /unexpected end of input/.test(msg)
+    advice += "<p>Is there some unfinished code around here?"
+  else if (m = /unexpected (\S+)/.exec(msg))
+    advice += "<p>Is something missing before #{m[1]}?"
+  else if /missing ["']/.test(msg) or (
+      msg is "Cannot read property '0' of null") # CS bug
+    advice += "<p>Is there a string with an unmatched quote?"
+    advice += "<p>It might be on an higher line."
+  else if /missing [\])}]/.test(msg)
+    advice += "<p>It might be missing on an higher line."
+  else if (m = /unexpected (\w+)$/.exec(msg))
+    advice += "<p>You might try removing '#{m[1]}'"
+  popup advice
+
 <%- @content %>
 </xmp>
 </article>
@@ -77,6 +141,7 @@ popup = (t) ->
 <script>
 
 function fixbase() {
+  if (!window.$) return; // skip if jquery is undefined.
   if ($('base').length == 0) {
     $(document.head).append('<base>');
   }
