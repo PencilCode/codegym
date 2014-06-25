@@ -33,13 +33,17 @@ Another way to write an RGB color is to use a CSS hex color code.
 Convert each of the components to a two-digit base-16 number, and
 then put them together in a string with a `#`:
 
-<table>
+<table class="table">
 <tr><td></td><td>decimal</td><td>base-16</td></tr>
 <tr><td>Red</td><td>176</td><td>b0</td></tr>
 <tr><td>Green</td><td>224</td><td>e0</td></tr>
 <tr><td>Blue</td><td>230</td><td>e6</td></tr>
 <tr><td>total</td><td>`rgb(176,224,230)`</td><td>`#b0e0e6`</td></tr>
 </table>
+
+Adding light colors can sometimes be unintuitive: for example, red
+and green make yellow. For an alternative to `rgb`, see
+[`hsl`](hsl.html), which allows you to specify colors by hue.
 
 <h3>Partial transparency using rgba</h3>
 

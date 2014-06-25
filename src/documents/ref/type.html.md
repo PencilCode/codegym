@@ -6,18 +6,45 @@ section: text
 refOrder: 2
 ---
 
-Type takes one argument: the text you want to write. Wrap it up in quotes. Your text will show up in a monospace font, with every letter the same width. This is useful for drawing ASCII art, indenting code, and anything else where you want to line text up neatly.
+Type takes one argument: the text you want to write.
+Wrap it up in quotes. Your text will show up in a monospace font,
+with every letter the same width. This is useful for drawing letter
+art, indenting pre, and anything else where you want to line
+text up neatly.
 
-<code class="jumbo">type <span data-dfn="text">""</span></code>
+<pre class="jumbo" data-before='write "happy cat!"'>type <span data-dfn="text">"<(^.^)>"</span></pre>
 
-If your text takes up more than one line, you can use a set of 3 quotes to include line breaks inside your text.
-<code default class="jumbo">write """What's black and 
-  white and red all over?"""</code>
+If your text takes up more than one line, you can use a set of 3
+quotes to include line breaks inside your text.
 
-You can use HTML tags to decorate your writing.
+<pre default class="jumbo">
+type """
+    o    __________
+   /\\_  _|        |
+   \\__`[__________|
+   ][ \\, ][    ][
+"""
+</pre>
 
-<code class="jumbo">write "<span data-dfn="start bold">&lt;b&gt;</span>A sunburned zebra!<span data-dfn="end bold">&lt;/b&gt;</span>"</code>
+One important trick when making letter art with punctuation:
+The backslash character `\` is special, and if you want to include
+it in a string, you must type it twice: `"\\"`.
 
-<code class="jumbo">write """<span data-dfn="start color">&lt;font color="red"&gt;</span>
-ouch!
-<span data-dfn="end color">&lt;/font&gt;"""</span></code>
+<h3>Backslashes and Unicode</h3>
+
+Backslash is also used to write codes for special characters that
+are not easy to type.  For example, `\u2602` stands for the
+special "umbrella" character.
+
+<pre default class="jumbo">
+type """
+  when it's \u2601
+  pack an \u2602
+  and \u2600 will come
+"""
+</pre>
+
+The numbers used after `\u` are called
+<a href="http://www.unicode.org/charts/">Unicode</a> codes.
+Every letter and character that can be written on a
+computer has a unicode number.

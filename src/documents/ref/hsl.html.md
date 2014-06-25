@@ -17,16 +17,18 @@ The `hsl` function can be used to create a color
 code that can be used with [`dot`](dot.html) or
 [`pen`](pen.html) or [`fill`](fill.ntml):
 
-<pre class="jumbo">
-dot <span data-dfn="HSL color">hsl(135, 0.8, 0.5)</span>, <span data-dfn="diameter">150</span>
+<pre class="jumbo" data-after="dot c, 150">
+c = hsl(<span data-dfnup="hue">270</span>, <span data-dfnup="saturation">.8</span>, <span data-dfn="lightness">.5</span>)
 </pre>
 
-The program above specifies a greenish color.  The "hue"
+The program above specifies a purplish color.  The "Hue"
 is a number that ranges from 0 to 360, representing a color
-on a color wheel.  "Saturation" is a number from 0 to 1
+on a color wheel (pictured below).  "Saturation" is a number from 0 to 1
 giving the intensitity of the color, and "Lightness" is
-a number from 0 to 1 which ranges the color from blackness
-to whitness.
+a number from 0 to 1 which adjusts the color from blackness
+to whiteness.
+
+<center><img src="/images/colorwheel.png" style="border:1px solid gray;border-radius:128px"></center>
 
 <h3>Partial transparency using hsla</h3>
 

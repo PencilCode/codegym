@@ -114,6 +114,8 @@ $(window).on 'error', (e) ->
     advice += "<p>Is there a mising comma?"
   else if /octal literal/.test(msg)
     advice += "<p>Avoid extra 0 digits before a number."
+  else if /unexpected when/.test(msg)
+    advice += "<p>Is the 'when' indented correctly?"
   else if /unexpected newline/.test(msg)
     advice += "<p>Is something missing on the previous line?"
   else if /unexpected ,/.test(msg)
