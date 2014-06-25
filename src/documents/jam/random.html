@@ -10,11 +10,18 @@ codeOrder: 1
 thumb: 'dice'
 refs: ['for','random','play','note names','beats','octaves''sharps']
 code: |
+  p = new Piano
   for [1..5]
-    s = random [
-      "G/G/EB,C"
-      "G,B,D/^C/=C"
-      "G/F/G/F/E/D/C"
+    p.play random [
+      "CZ/C/E/E/G/G,/"
+      "Z/CC/EG"
+      "C/C,/C/C,/Z/C,/C/Z/"
+      "G/G,/C/E/G/G,G,/"
     ]
-    play s
+    p.play random [
+      "F,Z/F,/A,C/D/"
+      "Z/F,/Z/F,/F,/F,/F,"
+      "Z/F,/F,/Z/A,/A,B,/"
+    ]
+  p.play "[C'CC,]2"
 ---
