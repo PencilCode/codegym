@@ -155,11 +155,9 @@ function updatePagers() {
   var self = $(this);
   self.children('.carousel-control').show();
   if ($('.carousel-inner .item:first').hasClass('active')) {
-    console.log('first has active');
     self.children('.left.carousel-control').hide();
   }
   if ($('.carousel-inner .item:last').hasClass('active')) {
-    console.log('last has active');
     self.children('.right.carousel-control').hide();
   }
 }
