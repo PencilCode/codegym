@@ -196,6 +196,7 @@ var cf = document.getElementById('codeframe'),
 pce.on('update', function(c) {
   $('#reset').toggleClass('btn-highlight', (c.trim() != originalCode.trim()));
   saveStorage(c);
+  updateShareButton(c);
 });
 
 pce.beginLoad({code: code, setup: [
@@ -215,10 +216,28 @@ function doresize() {
     $('.reflinks').outerHeight());
 }
 
+var sharedCode = null;
+var sharedUrl = null;
+
+function updateShareButton(c) {
+  if ((c == sharedCode) != /ok/.test($('#save span').attr('class'))) {
+    $('#save span').attr('class', (c == sharedCode) ?
+       'glyphicon glyphicon-ok' : 'glyphicon glyphicon-cloud-upload');
+  }
+}
+
 $('#save').click(function() {
-  var name, prefix;
+  var name, prefix, payload, code;
+  code = pce.getCode();
+  if (code == sharedCode && sharedUrl) {
+    window.open(sharedUrl);
+    return;
+  }
   name = prompt(
-    'To share your creation, give it a short name:');
+    'To share your creation, give it a short name.\n' +
+    'It will be posted with everybody else\'s shared ' +
+    'projects on gymstage.pencilcode.net.\n' +
+    'Make the name distinctive so you can find it.');
   name = name.replace(/\W+/g, '_').replace(/^_+|_+$/g, '');
   if (!name) {
     return;
@@ -227,7 +246,7 @@ $('#save').click(function() {
       (Math.floor((new Date).getTime()/1000) % (24*60*60*500))).toString(36);
   name = prefix + "-" + name;
   payload = {
-    data: pce.getCode(),
+    data: code,
     key: 943
   }
   $.ajax({
@@ -239,7 +258,10 @@ $('#save').click(function() {
       if (m.error) {
         alert('error: ' + m.error);
       } else {
-        alert('saved as http://gymstage.pencilcode.net/home/' + name);
+        sharedCode = code;
+        sharedUrl ='http://gymstage.pencilcode.net/home/' + name;
+        alert('saved as ' + sharedUrl);
+        updateShareButton(pce.getCode());
       }
     }
   });

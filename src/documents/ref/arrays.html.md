@@ -12,7 +12,7 @@ An <em>array</em> is a list of values.
 
 Here is an example of an array.
 
-<pre class="jumbo" data-after="write JSON.stringify(p)">
+<pre class="jumbo" data-after="for x in p&#13;  type x&#13;  for [1..x]&#13;    type '*'&#13;  type '\n'">
 p = <span data-note="square brace">[</span><span data-dfn="comma-separated values">2, 3, 5, 7, 11</span><span data-note="square brace">]</span>
 </pre>
 

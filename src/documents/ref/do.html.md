@@ -11,11 +11,11 @@ function without arguments.
 
 For example, hide the turtle with <code>do ht</code>.
 
-<code class="jumbo" data-before="pause 3"><span data-dfn="just do it">do</span> ht</code>
+<code class="jumbo" data-before="pause 3" data-after="pen blue&#13;bk 100"><span data-dfn="just do it">do</span> ht</code>
 
 Show the turtle with <code>do st</code>.
 
-<code class="jumbo" data-before="do ht; pen red; fd 50">do st</code>
+<code class="jumbo" data-before="do ht&#13pen red&#13;fd 50">do st</code>
 
 Draw a default black dot with <code>do dot</code>
 
