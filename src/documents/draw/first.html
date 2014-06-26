@@ -68,7 +68,7 @@ window.dot = ->
   sizes.push(size)
   originaldot.apply(null, arguments)
 hints = ->
-  if dotcount == 0
+  if lasterrorevent or dotcount == 0
     # Catch common beginner typos.
     if ide
       dotline = /(?:^|\n)[^\n\S]*dot[^\n#]*/.exec(ide.getEditorText())
@@ -105,6 +105,8 @@ hints = ->
           <p>#{m[1]} is not a color name I know.
           <p>HINT: look for the color reference below.
         """
+    return
+  if lasterrorevent
     return
   if dotcount == 1 and sizes[0] == 100 and colors.purple
     popup """

@@ -72,8 +72,10 @@ popup = (t) ->
     boxShadow: '0 0 5px dimgray'
 
 hints = null
+lasterrorevent = null
 
 $(window).on 'error', (e) ->
+  lasterrorevent = e
   if hints then do hints
   if thepopup then return
   advice = '<p>Oops, the computer got confused.'
