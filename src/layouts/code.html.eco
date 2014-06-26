@@ -111,7 +111,7 @@ $(window).on 'error', (e) ->
     advice += "<p>Is the code lined up neatly?"
     advice += "<p>Or is something unfinished before this?"
   else if /not a function/.test(msg)
-    advice += "<p>Is there a mising comma?"
+    advice += "<p>Is there a missing comma?"
   else if /octal literal/.test(msg)
     advice += "<p>Avoid extra 0 digits before a number."
   else if /unexpected when/.test(msg)

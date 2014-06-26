@@ -15,9 +15,9 @@ To synchronize the motion of multiple elements, use `sync`.
 <pre class="jumbo">
 a = new Turtle red
 b = turtle
-c = new turtle green
+c = new Turtle green
 for [1..20]
-  (random [a,b,c]).fd 100
+  (random [a,b,c]).fd 20
   (random [a,b,c]).rt 88
 
 sync <span data-dfnup="elements to synchronize">a, b, c</span>
