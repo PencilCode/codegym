@@ -95,7 +95,7 @@ $(window).on 'error', (e) ->
       advice += "<p>Did you mean '<b>#{m[1].toLowerCase()}</b>' " +
                 "instead of '<b>#{m[1]}</b>'?"
     else if m[1].toLowerCase() in ['infinity', 'inf']
-      advice += "<p><b>Infinity</b> is spelled out with a captial I."
+      advice += "<p><b>Infinity</b> is spelled out with a capital I."
     else
       if m[1].length > 3
         advice += "<p>Is <b>#{m[1]}</b> spelled right?"
@@ -111,7 +111,7 @@ $(window).on 'error', (e) ->
     advice += "<p>Is the code lined up neatly?"
     advice += "<p>Or is something unfinished before this?"
   else if /not a function/.test(msg)
-    advice += "<p>Is there a mising comma?"
+    advice += "<p>Is there a missing comma?"
   else if /octal literal/.test(msg)
     advice += "<p>Avoid extra 0 digits before a number."
   else if /unexpected when/.test(msg)
