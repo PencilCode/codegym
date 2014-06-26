@@ -95,7 +95,7 @@ $(window).on 'error', (e) ->
       advice += "<p>Did you mean '<b>#{m[1].toLowerCase()}</b>' " +
                 "instead of '<b>#{m[1]}</b>'?"
     else if m[1].toLowerCase() in ['infinity', 'inf']
-      advice += "<p><b>Infinity</b> is spelled out with a captial I."
+      advice += "<p><b>Infinity</b> is spelled out with a capital I."
     else
       if m[1].length > 3
         advice += "<p>Is <b>#{m[1]}</b> spelled right?"
