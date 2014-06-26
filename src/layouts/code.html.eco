@@ -223,6 +223,14 @@ function updateShareButton(c) {
   if ((c == sharedCode) != /ok/.test($('#save span').attr('class'))) {
     $('#save span').attr('class', (c == sharedCode) ?
        'glyphicon glyphicon-ok' : 'glyphicon glyphicon-cloud-upload');
+    if (c == sharedCode) {
+      $('#save').tooltip({
+        title: "View Shared Page",
+      });
+      $('#save').tooltip('show');
+    } else {
+      $('#save').tooltip('destroy');
+    }
   }
 }
 
@@ -260,7 +268,6 @@ $('#save').click(function() {
       } else {
         sharedCode = code;
         sharedUrl ='http://gymstage.pencilcode.net/home/' + name;
-        alert('saved as ' + sharedUrl);
         updateShareButton(pce.getCode());
       }
     }
