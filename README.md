@@ -1,42 +1,60 @@
-# [Bootstrap](http://getbootstrap.com) skeleton for [DocPad](https://github.com/bevry/docpad)
-Simple and flexible HTML, CSS, and Javascript for popular user interface components and interactions.
+How To Build and Test gym.pencilcode.net
+========================================
+First install the prerequisites: git and nodejs (see "prequisites"
+below if you don't yet have them.)
 
+Then just do this:
 
-## Getting Started
+<pre>
+git clone https://github.com/PencilCode/fieldhouse.git
+cd fieldhouse
+npm install
+npm run devserver
+</pre>
 
-1. [Install DocPad](https://github.com/bevry/docpad)
+This will generate the website and start a copy at
+[localhost:9778](http://localhost:9778/).
 
-1. Clone the project and run the server
+You can edit the contents of the `src` subdirectory, and the
+docpad process will regenerate the website as-needed.
 
-	``` bash
-	git clone git://github.com/docpad/twitter-bootstrap.docpad.git
-	cd twitter-bootstrap.docpad
-	npm install
-	docpad run
-	```
+To generate a static website (e.g., for serving through nginx or apache),
+just `npm run generate`.  The static website is generated in the
+`out` subdirectory.
 
-1. [Open http://localhost:9778/](http://localhost:9778/)
+Prerequisites
+-------------
 
-1. Start hacking away by modifying the `src` directory
+Getting git is easy:  On Linux, just `sudo apt-get install git` or
+`sudo yum install git-core` if you don't have it.  On Mac, install
+Apple's XCode package.  On Windows, there are git installers.
 
+Next, you need node.js (which is the `node` and `npm` binaries).
+The Ubuntu and Debian packages for node.js are pretty old, so don't
+just apt-get install the packages.  Get and build the latest `node` and
+`npm` and `grunt` binaries as follows:
 
-## I'm getting EMFILE errors
+(For Linux:)
 
-[See here for the reason why and the solution](http://docpad.org/docs/troubleshoot#i-m-getting-emfile-too-many-open-files)
+<pre>
+mkdir -p /tmp/nodejs && cd /tmp/nodejs
+wget -N http://nodejs.org/dist/node-latest.tar.gz
+tar xzvf node-latest.tar.gz && cd `ls -rd node-v*`
+./configure --prefix=$HOME/local
+make install
+echo 'export PATH=$HOME/local/bin:$PATH' &gt;&gt; ~/.bashrc
+source ~/.bashrc
+</pre>
 
+(For Mac:)
 
-## License
+<pre>
+mkdir -p /tmp/nodejs && cd /tmp/nodejs
+curl http://nodejs.org/dist/node-latest.tar.gz > node-latest.tar.gz
+tar xzvf node-latest.tar.gz && cd `ls -rd node-v*`
+./configure --prefix=$HOME/local
+make install
+echo 'export PATH=$HOME/local/bin:$PATH' &gt;&gt; ~/.profile
+source ~/.profile
+</pre>
 
-This skeleton is made ["public domain"](http://en.wikipedia.org/wiki/Public_domain) using the [Creative Commons Zero](http://creativecommons.org/publicdomain/zero/1.0/), as such before you publish your website you should place your desired license here and within the `LICENSE.md` file.
-
-If you are wanting to open-source your website, we suggest using the [Creative Commons Attribution License](http://creativecommons.org/licenses/by/3.0/) for content and the [MIT License](http://creativecommons.org/licenses/MIT/) for code. In which case you'd probably want to use the following as your license:
-
-	Unless stated otherwise, all content is licensed under the [Creative Commons Attribution License](http://creativecommons.org/licenses/by/3.0/) and code licensed under the [MIT License](http://creativecommons.org/licenses/MIT/), © [Your Name](http://your.website)
-
-If you are wanting to close-source your website, we'd suggest using the following:
-
-	Copyright [Your Name](http://your.website). All rights reserved.
-
-Other included things such as themes and libraries are likely already licensed by their own individual licenses, so be sure to respect their licenses too.
-
-Thanks, the DocPad team loves you.
