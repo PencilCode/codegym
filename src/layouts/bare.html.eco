@@ -56,7 +56,7 @@
               about="<%= document.url %>"
               class="<%= 'active'  if @document.relativeDirPath is document.relativeDirPath %>"
             >
-              <a href="<%= document.url %>" property="dc:title">
+              <a href="<%= document.url.replace(/\/index\.html$/, '/')  %>" property="dc:title">
                 <%= document.title %>
               </a>
             </li>
@@ -69,7 +69,7 @@
               about="<%= document.url %>"
               class="<%= 'active'  if @document.relativeDirPath is document.relativeDirPath %>"
             >
-              <a href="<%= document.url %>" property="dc:title">
+              <a href="<%= document.url.replace(/\/index\.html$/, '/') %>" property="dc:title">
                 <%= document.title %>
               </a>
             </li>
