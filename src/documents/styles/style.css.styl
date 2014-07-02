@@ -43,6 +43,9 @@ table
     background-color #428bca
     color white
 
+iframe.teaser
+  background white
+
 #instructions
   .instruction
     min-height 147px
@@ -51,10 +54,21 @@ table
     margin-top -10px
 
 #codeframe
+  position relative
   iframe
+    position absolute
+    top 0
+    left 0
     height 100%
+    width 100%
     border none
     box-shadow 0 0 10px black
+
+#tframe
+  z-index 1
+
+xmp.data
+  display:none
 
 code
   background white
@@ -191,6 +205,7 @@ code.jumbo, pre.jumbo
   top 0
   padding 5px
   text-shadow 0 0 5px white
+  z-index 2
 
 .closebox:hover
   color crimson

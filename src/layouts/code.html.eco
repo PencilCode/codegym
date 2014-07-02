@@ -30,8 +30,15 @@ layout: framed
 <% end %>
 </div>
 
-<div id="codeframe" class="container-margins" style="flex-grow:1"
-><%= @document.code %></div>
+<% if @document.teaser : %>
+<xmp id="teaser" class="data"><%= @document.teaser %></xmp>
+<% end %>
+
+<xmp id="starter" class="data"><%= @document.code %></xmp>
+<xmp id="hint" class="data"><%= @document.hint %></xmp>
+
+<div id="codeframe" class="container-margins" style="flex-grow:1">
+</div>
 
 <center class="container-margins reflinks">
 <div id="reset" class="btn btn-default pull-left">Reset Code</div>
@@ -190,8 +197,10 @@ function saveStorage(c) {
 }
 
 var cf = document.getElementById('codeframe'),
-    originalCode = cf.textContent,
+    starter = document.getElementById('starter'),
+    originalCode = starter.textContent,
     code = loadStorage() || originalCode,
+    modified = (code.trim() != originalCode.trim()),
     setup = document.getElementById('setupcode').innerHTML,
     pce = new PencilCodeEmbed(cf);
 
@@ -279,5 +288,23 @@ $('#save').click(function() {
 
 doresize();
 $(window).resize(doresize);
+
+if (!modified && $('#teaser').length) {
+  $(cf).append('<div id="tlayer">' +
+    '<iframe class="teaser" id="tframe"></iframe>' +
+    '<div class="closebox glyphicon glyphicon-remove-circle"></div>' +
+  '</div>');
+  var contents =
+    '<!doctype html>\n' +
+    '<html><base href="' + location.href + '">\n' +
+    '<body><script src="http://pencilcode.net/turtlebits.js" ' +
+    'crossorigin="anonymous"><\x2fscript><script type="text/coffeescript">' +
+    $(teaser).text() + '<\x2fscript></body></html>';
+  $('#tframe')[0].contentWindow.document.write(contents);
+  $('#tframe')[0].contentWindow.document.close();
+  $('#tlayer .closebox').click(function() {
+    $('#tlayer').fadeOut();
+  });
+}
 
 </script>
