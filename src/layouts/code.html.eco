@@ -41,7 +41,7 @@ layout: framed
 </div>
 
 <center class="container-margins reflinks">
-<div id="reset" class="btn btn-default pull-left">Reset Code</div>
+<div id="reset" class="btn btn-default pull-left">Reset</div>
 <% if not @document.refs: %>
 <span class="btn">&nbsp;</span>
 <% end %>
@@ -292,7 +292,8 @@ $(window).resize(doresize);
 if (!modified && $('#teaser').length) {
   $(cf).append('<div id="tlayer">' +
     '<iframe class="teaser" id="tframe"></iframe>' +
-    '<div class="closebox glyphicon glyphicon-remove-circle"></div>' +
+    '<div title="close the example" data-placement="left" ' +
+      'class="closebox glyphicon glyphicon-remove-circle"></div>' +
   '</div>');
   var contents =
     '<!doctype html>\n' +
@@ -305,6 +306,11 @@ if (!modified && $('#teaser').length) {
   $('#tlayer .closebox').click(function() {
     $('#tlayer').fadeOut();
   });
+  setTimeout(function() {
+    if ($('#tlayer').is(':visible')) {
+      $('#tlayer .closebox').tooltip('show');
+    }
+  }, <%- @document.teasersecs || 20 %> * 1000);
 }
 
 </script>
