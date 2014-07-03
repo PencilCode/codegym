@@ -31,11 +31,11 @@ layout: framed
 </div>
 
 <% if @document.teaser : %>
-<xmp id="teaser" class="data"><%= @document.teaser %></xmp>
+<xmp id="teaser" class="data"><%- @document.teaser %></xmp>
 <% end %>
 
-<xmp id="starter" class="data"><%= @document.code %></xmp>
-<xmp id="hint" class="data"><%= @document.hint %></xmp>
+<xmp id="starter" class="data"><%- @document.code %></xmp>
+<xmp id="hint" class="data"><%- @document.hint %></xmp>
 
 <div id="codeframe" class="container-margins" style="flex-grow:1">
 </div>

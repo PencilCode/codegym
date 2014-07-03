@@ -18,6 +18,37 @@ codeLevel: 1
 codeOrder: 1
 thumb: 'shirt'
 refs: ['speed', 'curves', 'colors', 'pen', 'dot', 'fd', 'bk', 'rt', 'lt', 'fill']
+teaser: |
+  shirt = ->
+    rt 3
+    fd 100
+    lt 138
+    fd 30
+    rt 90
+    fd 40
+    rt 90
+    fd 35
+    rt 30, 100
+    rt 90
+    lt 150, 30 # the middle line
+    rt 90
+    rt 30, 100
+    fd 34
+    rt 90
+    fd 40
+    rt 90
+    fd 30
+    lt 138
+    fd 100
+  slide -50, -50
+  pen coral
+  do shirt
+  speed Infinity
+  do home
+  slide -50, -50
+  pen path
+  do shirt
+  fill coral
 code: |
   speed 5
   pen coral
