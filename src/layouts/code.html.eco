@@ -51,7 +51,7 @@ layout: framed
 <% if @document.refs: %>
 <span class="btn"><a target="reference" style="color:inherit;text-decoration:inherit" href="/ref/reference.html">Reference:&nbsp;</a></span>
 <div id="share" title="Share on Gymstage" class="btn btn-default pull-right"><span class="glyphicon glyphicon-cloud-upload"></span></div>
-<div id="save" title="Save to Pencil Code" class="btn btn-default pull-right gap-right"><span style="background:url(http://pencilcode.net/pencil_16.png);padding-left:16px;background-repeat:no-repeat;background-position:center;"></span></div>
+<div id="save" title="Save to Pencil Code" class="btn btn-default pull-right gap-right"><span class="pencil-icon"></span></div>
 <% for ref in (@document.refs or []): %><a target="reference" class="btn btn-default gap-right" href="/ref/<%= ref.replace(/\s/g, '_') %>.html"><%=ref%></a><% end %>
 <% end %>
 </center>
