@@ -6,8 +6,8 @@ below if you don't yet have them.)
 Then just do this:
 
 <pre>
-git clone https://github.com/PencilCode/fieldhouse.git
-cd fieldhouse
+git clone https://github.com/PencilCode/codegym.git
+cd codegym
 npm install
 npm run devserver
 </pre>
