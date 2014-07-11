@@ -25,4 +25,4 @@ write """
   <span data-dfn="end color">&lt;/font&gt;</span>
 """</pre>
 
-<a href="color.html">Here is the list of all the colors you can use.</a>
+<a href="colors.html">Here is the list of all the colors you can use.</a>
