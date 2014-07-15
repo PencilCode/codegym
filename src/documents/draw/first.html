@@ -95,7 +95,7 @@ hints = ->
           <p>Did you use capital letters?
           <p>HINT: most built-in names are lowercase.
         """
-      else if /^\s+/.test(dotline)
+      else if /^[ \t]+/.test(dotline)
         popup """
           <p>Did you indent your code?
           <p>HINT: line up your code on the left.
