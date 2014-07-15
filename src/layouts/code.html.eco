@@ -214,7 +214,12 @@ pce.on('update', function(c) {
   updateShareButton(c);
 });
 
-pce.beginLoad({code: code, setup: [
+var mode = '';
+<% if @document.mode: %>
+mode = "<%= @document.mode %>";
+<% end %>
+
+pce.beginLoad({code: code, mode: mode, setup: [
   {code: fixbasescript, type: 'text/javascript'},
   {code: setup, type: 'text/coffeescript'}
 ]});
