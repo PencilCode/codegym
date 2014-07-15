@@ -66,6 +66,8 @@ window.print = ->
 window.removeEventListener 'error', see
 thepopup = null
 popup = (t) ->
+  if $('#error-advice').length
+    thepopup = $('#error-advice')
   if thepopup
     thepopup.html t
     return
