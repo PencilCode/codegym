@@ -212,7 +212,8 @@ $('#share').click(function() {
     'To share your creation, give it a short name.\n' +
     'It will be posted with everybody else\'s shared ' +
     'projects on gymstage.pencilcode.net.\n' +
-    'Make the name distinctive so you can find it.');
+    'Make the name distinctive so you can find it.',
+    defaultname);
   name = name.replace(/\W+/g, '_').replace(/^_+|_+$/g, '');
   if (!name) {
     return;
@@ -242,9 +243,12 @@ $('#share').click(function() {
 });
 
 
+var defaultname = window.location.pathname.replace(/^.*\/|\.[^\/\.]*$/g, '') +
+  (mode ? "." + mode : "");
+
 $('#save').click(function() {
   $('#tlayer').hide();
-  pce.save();
+  pce.save(defaultname);
 });
 
 $('.btn[title]').tooltip();
