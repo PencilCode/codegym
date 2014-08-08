@@ -148,6 +148,13 @@ docpadConfig = {
         else
           next()
 
+      # Redirect /img/ urls to public site.
+      server.use (req,res,next) ->
+        if /^\/img(?:\/|$)/.test(req.path)
+          res.redirect('http://gym.pencilcode.net' + req.path, 301)
+        else
+          next()
+
   # =================================
   prompts: false
   checkVersion: false
