@@ -6,33 +6,19 @@ section: html
 refOrder: 1
 ---
 
-<code>img</code> is an HTML tag that you can use inside your <code>write</code> blocks.
-The <code>src</code> attribute is set to the name of the image file you want to inclode
+<code>img</code> is an HTML tag that you can use to put an image into your HTML document.
+The <code>src</code> attribute is set to the name of the image file you want to include.
 
-<code class="jumbo">write '&lt;img src="<span data-dfn="image file name">/images/dragon.png</span>"&gt;'</code>
+<code class="jumbo">&lt;img src="<span data-dfn="image query">/img/dragon</span>"&gt;</code>
 
-When you write HTML files on the web, you can include images from anywhere online.
-For today, we've put together a set of images to use. Here is a list of them:
+This searches google images for the first image result given your query.
 
-<pre>
-  brain.png
-  bridge.png
-  cave.png
-  dog.png
-  dragon.png
-  exoplanet.png
-  fish.png
-  galaxy.png
-  grasshopper.png
-  key.png
-  mountain.png
-  mouse.png
-  moth.png
-  orangutan.png
-  ship.png
-  ship_deck.png
-  tree.png
-  village.png
-  waterfall.png
-  windmill.png
-</pre>
+When you write HTML files on the web, you can also just include images from anywhere online.
+<pre class="jumbo" style="font-size:20px">
+&lt;img src=
+"<span data-dfn="image file URL">http://beyondheroes2.zxq.net/BlackDragon.jpg</span>"&gt;</pre>
+Want to resize your image? There's an attribute for that!</br>
+Add in <code>height='50' width='50'</code> inside your tag, to resize it.</br>
+<b>height</b>, and <b>width</b> are attributes of the img tag. They set the size.
+
+
