@@ -159,15 +159,24 @@ var mode = '';
 mode = "<%= @document.mode %>";
 <% end %>
 
-pce.on('load', function() {
-  pce.setupScript([
+if (navigator.appName.indexOf('Internet Explorer') != -1) {
+  pce.on('load', function() {
+    pce.setupScript([
+      {code: fixbasescript, type: 'text/javascript'},
+      {code: setup, type: 'text/coffeescript'}
+    ]);
+    pce.setCode(code);
+  });
+  pce.beginLoad({mode:mode});
+} else {
+  // Using the url for all initialization is less buggy, if supported
+  // URLs are long enough.
+  pce.beginLoad({code: code, mode: mode, setup: [
     {code: fixbasescript, type: 'text/javascript'},
     {code: setup, type: 'text/coffeescript'}
-  ]);
-  pce.setCode(code);
-});
+  ]});
+}
 
-pce.beginLoad({mode:mode});
 
 $('#more').click(function() { $('#instructions').carousel('next'); });
 $('#reset').click(function() {
