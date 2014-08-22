@@ -159,7 +159,7 @@ var mode = '';
 mode = "<%= @document.mode %>";
 <% end %>
 
-if (navigator.appName.indexOf('Internet Explorer') != -1) {
+if (navigator.userAgent.indexOf('Trident') != -1) {
   pce.on('load', function() {
     pce.setupScript([
       {code: fixbasescript, type: 'text/javascript'},
