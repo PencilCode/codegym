@@ -37,6 +37,7 @@ layout: framed
 <xmp id="starter" class="data"><%- @document.code %></xmp>
 <xmp id="hint" class="data"><%- @document.hint %></xmp>
 
+<div id="blocks" title="Toggle Code and Blocks" class="btn btn-default pull-left gap-right" style="background-color:#8fbfef;color:white;position:absolute;left:0;height:90px;padding:30px 1px;border-top-left-radius:17px;border-bottom-left-radius:17px;border-top-right-radius:0;border-bottom-right-radius:0;z-index:1;"><span class="glyphicon glyphicon-indent-left"></span></div>
 <div id="codeframe" class="container-margins" style="flex-grow:1">
 </div>
 
@@ -50,9 +51,8 @@ layout: framed
 <% end %>
 <% if @document.refs: %>
 <span class="btn"><a target="reference" style="color:inherit;text-decoration:inherit" href="/ref/reference.html">Reference:&nbsp;</a></span>
-<div id="blocks" title="Toggle Code and Blocks" class="btn btn-default pull-right"><span class="glyphicon glyphicon-indent-left"></span></div>
-<div id="share" title="Share on Gymstage" class="btn btn-default pull-right gap-right"><span class="glyphicon glyphicon-cloud-upload"></span></div>
-<div id="save" title="Save to Pencil Code" class="btn btn-default pull-right gap-right"><span class="pencil-icon"></span></div>
+<div id="share" title="Share on Gymstage" class="btn btn-default pull-right"><span class="glyphicon glyphicon-cloud-upload"></span></div>
+<div id="save" title="Save to your own website" class="btn btn-default pull-right gap-right"><span class="pencil-icon"></span></div>
 <% for ref in (@document.refs or []): %><a target="reference" class="btn btn-default gap-right" href="/ref/<%= ref.replace(/\s/g, '_') %>.html"><%=ref%></a><% end %>
 <% end %>
 </center>
@@ -168,11 +168,11 @@ if (navigator.userAgent.indexOf('Trident') != -1) {
     ]);
     pce.setCode(code);
   });
-  pce.beginLoad({mode:mode});
+  pce.beginLoad({mode:mode,blocks:1});
 } else {
   // Using the url for all initialization is less buggy, if supported
   // URLs are long enough.
-  pce.beginLoad({code: code, mode: mode, setup: [
+  pce.beginLoad({code: code, blocks:1, mode: mode, setup: [
     {code: fixbasescript, type: 'text/javascript'},
     {code: setup, type: 'text/coffeescript'}
   ]});
