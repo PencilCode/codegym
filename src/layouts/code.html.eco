@@ -160,6 +160,8 @@ var mode = '';
 mode = "<%= @document.mode %>";
 <% end %>
 
+var blockMode = <%= !!(@document.blocks) %>;
+
 if (navigator.userAgent.indexOf('Trident') != -1) {
   pce.on('load', function() {
     pce.setupScript([
@@ -168,17 +170,16 @@ if (navigator.userAgent.indexOf('Trident') != -1) {
     ]);
     pce.setCode(code);
   });
-  pce.beginLoad({mode:mode,blocks:1});
+  pce.beginLoad({mode:mode, blocks:blockMode});
 } else {
   // Using the url for all initialization is less buggy, if supported
   // URLs are long enough.
-  pce.beginLoad({code: code, blocks:1, mode: mode, setup: [
+  pce.beginLoad({code: code, mode: mode, blocks:blockMode, setup: [
     {code: fixbasescript, type: 'text/javascript'},
     {code: setup, type: 'text/coffeescript'}
   ]});
 }
 
-var blockMode = true;
 $('#blocks').click(function() {
   blockMode = !blockMode;
   pce.setBlockMode(blockMode);
