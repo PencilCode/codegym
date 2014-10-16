@@ -21,6 +21,9 @@
   <!-- Mobile viewport optimized: h5bp.com/viewport -->
   <meta name="viewport" content="width=device-width" />
 
+  <!-- Fonts -->
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:400&subset=latin">
+
   <!-- Icons -->
     <link rel="shortcut icon" href="/images/icons/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/icons/apple-touch-icon-144-precomposed.png">
