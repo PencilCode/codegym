@@ -53,7 +53,7 @@ function saveStorage(c) {
   } catch (e) { }
 }
 
-var initurl = loadStorage() || "<%- firstlink %>";
+var initurl = location.hash.substr(1) || loadStorage() || "<%- firstlink %>";
 
 $('#workframe').attr('src', initurl);
 selecturl(initurl, true);
@@ -79,6 +79,7 @@ function selecturl(url, quick) {
     if (url.substr(url.length - href.length) == href) {
       selectedtile = this;
       saveStorage(href);
+      document.location.hash = '#' + href;
     }
   });
   if (selectedtile) {
@@ -116,4 +117,5 @@ $('#overlay .closebox, #overlay').on('click', function() {
     next();
   });
 });
+
 </script>
