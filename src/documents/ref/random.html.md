@@ -14,10 +14,12 @@ The following program may produce a different result each time:
 write random [3, 5, 7]
 </pre>
 
-Random can be used on a range of numbers:
+Random can be used on a range of numbers.  The returned number
+will be greater than or equal to the first number, and less than
+the second one:
 
 <pre class="jumbo">
-write random [1..100]
+write random 1, 101
 </pre>
 
 Or on a list of strings:
