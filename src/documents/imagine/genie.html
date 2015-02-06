@@ -1,0 +1,25 @@
+---
+title: Genie
+subtitle: using a button
+mission: >
+  The <code>button</code> command set up a subprogram so that
+  it runs when you click the button. Remember to use <code>-&gt</code>
+  and then indent your program.  A subprogram used like this
+  is called a <em>function</em>.
+layout: code
+codeLevel: 1
+codeOrder: 0.5
+thumb: 'magiclamp'
+tags: ['imagine','index']
+refs: ['write', 'random', 'variables', 'if', 'button']
+code: |
+  write 'You see a tarnished old brass lamp.'
+  button 'Rub the lamp', ->
+    x = random 3
+    if x is 0
+      write 'Squeak squeak.'
+    if x is 1
+      write 'You hear a rumbling sound.'
+    if x is 2
+      write 'A genie appears and grants you three wishes!'
+---
