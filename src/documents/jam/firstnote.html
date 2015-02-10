@@ -48,7 +48,7 @@ hints = ->
     popup """
       <p>Want more ideas?<br>Click "More Ideas" or explore other projects.
     """
-click ->
+$(window).click ->
   if songs.length is 0
     popup """
       <p>Click on the blue play button to run the program.
