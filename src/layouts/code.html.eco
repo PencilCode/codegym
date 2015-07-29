@@ -104,7 +104,8 @@ function fixbase() {
   $('base').attr('href', "BASEURL");
 }
 var fixbasescript =
-  fixbase.toString().replace('BASEURL', location.href) + "\nfixbase();";
+  fixbase.toString().replace('BASEURL', location.href.replace(/^http.?:/, ''))
+      + "\nfixbase();";
 
 $('.carousel').carousel();
 function updatePagers() {
