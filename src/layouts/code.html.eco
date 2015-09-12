@@ -243,7 +243,7 @@ $('#share').click(function() {
     key: 943
   }
   $.ajax({
-    url: 'http://gymstage.pencilcode.net/save/' + name,
+    url: '//gymstage.pencilcode.net/save/' + name,
     data: payload,
     dataType: 'json',
     type: 'GET',
@@ -252,7 +252,7 @@ $('#share').click(function() {
         alert('error: ' + m.error);
       } else {
         sharedCode = code;
-        sharedUrl ='http://gymstage.pencilcode.net/home/' + name;
+        sharedUrl ='//gymstage.pencilcode.net/home/' + name;
         updateShareButton(pce.getCode());
       }
     }
@@ -278,7 +278,7 @@ if ($('#teaser').length) {
   var hint_contents =
     '<!doctype html>\n' +
     '<html><base href="' + location.href + '">\n' +
-    '<body><script src="http://pencilcode.net/turtlebits.js" ' +
+    '<body><script src="//pencilcode.net/turtlebits.js" ' +
     'crossorigin="anonymous"><\x2fscript><script type="text/coffeescript">' +
     $(teaser).text() + '<\x2fscript></body></html>';
   function runteaser() {
