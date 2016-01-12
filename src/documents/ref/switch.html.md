@@ -15,7 +15,7 @@ Here is how `switch` works:
 <pre class="jumbo" data-before="m = 29">
 d = "w"
 switch d
-  when "m",
+  when "m"
     write "Monday"
   when "t"
     write "Tuesday"
