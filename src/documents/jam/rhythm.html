@@ -1,0 +1,76 @@
+---
+title: Rhythm
+subtitle: make a rhythm with multiple instruments
+mission: >
+  To make a rhythm with multiple instruments, create a
+  different object to play each instrument.  Here we
+  just create an an image of the instrument and tell it to play.
+instructions:
+  - title: Synthesizing Sounds
+    subtitle: using different waveforms
+    mission: >
+      The <code>'noise'</code> waveform is good for percussive
+      sounds.  To make a tonal sound, use the <code>'square'</code>,
+      <code>'sawtooth'</code>, <code>'triangle'</code>, or
+      <code>'sine'</code> waves.  Experiment with waveforms.
+layout: code
+codeLevel: 2
+codeOrder: 1
+thumb: 'rhythm'
+refs: ['play', 'octaves', 'beats', 'rests', 'variables', 'new', 'Piano']
+code: |
+  clapsound =
+    wave: 'noise'
+    attack: .01
+    decay: .1
+    gain: .5
+    cutfollow: 4
+    resonance: 10
+  
+  lowdrum =
+    wave: 'noise'
+    attack: .06
+    decay: .15
+    gain: 10
+    cutfollow: 0.7
+    resonance: 15
+  
+  block =
+    wave: 'noise'
+    attack: .05
+    decay: .1
+    gain: 0.3
+    cutfollow: 3
+    resonance: 25
+  
+  a = img 'percussion-clap', 100
+  b = img 'percussion-woodblock', 100
+  c = img 'percussion-timpani', 100
+  sync a,b,c
+  d = img '//pencilcode.net/img/piano', 100
+  
+  for i in [1..3]
+    b.play
+      timbre: block
+      tempo: 100
+      song: "z/G/GGGz/G/GGG"
+  
+    c.play
+      timbre: lowdrum
+      tempo: 100
+      song: "DDDDDDDD"
+  
+    a.play
+      timbre: clapsound
+      tempo: 100
+      song: "zc/c/ccc/c/c/c//c/c//cz/"
+  
+    if i < 2
+      d.play
+        tempo: 100
+        song: "zzzzzzzz"
+    else
+      d.play
+        tempo: 100
+        song: "DEGFFGEC"
+---
