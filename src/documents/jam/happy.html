@@ -53,11 +53,12 @@ code: |
     [F,F,C,A_E]ZC/C_E
     """
   p = new Piano 49
-  p.play
-    tempo: 100
-    song: intro + q1 +
-          a + t + q2 +
-          a + t + q3 +
-          a2 + t2 + q4 +
-          a + b + b
+  button 'go', ->
+    p.play
+      tempo: 100
+      song: intro + q1 +
+            a + t + q2 +
+            a + t + q3 +
+            a2 + t2 + q4 +
+            a + b + b
 ---

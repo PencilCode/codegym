@@ -46,23 +46,24 @@ code: |
   clap = img 'percussion-clap', 100
   block = img 'percussion-woodblock', 100
   drum = img 'percussion-timpani', 100
-  sync clap, block, drum
-  
-  for i in [1..3]
-    clap.play
-      timbre: clapsound
-      tempo: 100
-      song: "zc/c/ccc/c/c/c//c/c//cz/"
-  
-  for i in [1..3]
-    block.play
-      timbre: blocksound
-      tempo: 100
-      song: "z/G/GGGz/G/GGG"
-  
-  for i in [1..3]
-    drum.play
-      timbre: lowdrum
-      tempo: 100
-      song: "DDDDDDDD"
+
+  button 'go', ->
+    
+    for i in [1..3]
+      clap.play
+        timbre: clapsound
+        tempo: 100
+        song: "zc/c/ccc/c/c/c//c/c//cz/"
+    
+    for i in [1..3]
+      block.play
+        timbre: blocksound
+        tempo: 100
+        song: "z/G/GGGz/G/GGG"
+    
+    for i in [1..3]
+      drum.play
+        timbre: lowdrum
+        tempo: 100
+        song: "DDDDDDDD"
 ---

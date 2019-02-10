@@ -30,7 +30,6 @@ code: |
     lowest: "C"
     keys: 36
   m.fd 100
-  sync p, m
 
   b = """
     [D_B,]/[D_B,]/[D_B,]/[D_B,]/
@@ -43,33 +42,34 @@ code: |
     [_E_E,]3[GG,]/[FF,]4Z/
     """
 
-  p.play b+b+b
+  button 'go', ->
+    p.play b+b+b
 
-  m.play """
-    Z8
-    Z/G'/_B'/G'/_B'/G'/Z/G'/
-    _B'/C''/D''/C''A'_B'/
-    Z/G'/_B'/G'/_B'/G'/Z/F'/
-    _B'/C''/D''/C''A'_B'/
-    Z/G'/_B'/G'/_B'/G'/Z/G'/
-    _B'/C''/D''/C''A'_B'/-
-    _B'2Z/F'/D''/C''/-
-    C''2Z2
-    Z/G'/_B'/G'/_B'/G'/Z/Z/
-    _B'/C''/D''/C''A'_B'/
-    Z/G'/_B'/G'/_B'/G'/Z/F'/
-    _B'/C''/D''/C''A'_B'/
-    Z/G'/_B'/G'/_B'/G'/Z/G'/
-    _B'/C''/D''/C''A'_B'/-
-    _B'2Z/F'/D''/C''/-
-    C''2_B'A'
-    G'3G'/G'/
-    Z/F'/F'2D'/F'/
-    G'3G'/F'/-
-    F'Z_B'A'
-    G'3G'/G'/
-    Z/F'/F'2D'/F'/
-    G'3Z/G'/
-    G'A'_B'C''
-    """
+    m.play """
+      Z8
+      Z/G'/_B'/G'/_B'/G'/Z/G'/
+      _B'/C''/D''/C''A'_B'/
+      Z/G'/_B'/G'/_B'/G'/Z/F'/
+      _B'/C''/D''/C''A'_B'/
+      Z/G'/_B'/G'/_B'/G'/Z/G'/
+      _B'/C''/D''/C''A'_B'/-
+      _B'2Z/F'/D''/C''/-
+      C''2Z2
+      Z/G'/_B'/G'/_B'/G'/Z/Z/
+      _B'/C''/D''/C''A'_B'/
+      Z/G'/_B'/G'/_B'/G'/Z/F'/
+      _B'/C''/D''/C''A'_B'/
+      Z/G'/_B'/G'/_B'/G'/Z/G'/
+      _B'/C''/D''/C''A'_B'/-
+      _B'2Z/F'/D''/C''/-
+      C''2_B'A'
+      G'3G'/G'/
+      Z/F'/F'2D'/F'/
+      G'3G'/F'/-
+      F'Z_B'A'
+      G'3G'/G'/
+      Z/F'/F'2D'/F'/
+      G'3Z/G'/
+      G'A'_B'C''
+      """
 ---

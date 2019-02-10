@@ -37,8 +37,7 @@ code: |
   p2 = new Piano
   p2.bk 100
 
-  # synchronize the pianos
-  sync p1, p2
-  p1.play song
-  p2.play "Z8" + song
+  button 'go', ->
+    p1.play song
+    p2.play "Z8" + song
 ---

@@ -11,16 +11,17 @@ thumb: 'dice'
 refs: ['for','random','play','note names','beats','octaves''sharps']
 code: |
   p = new Piano
-  for [1..6]
-    p.play random [
-      "_B,/C/C_E2"
-      "_B,/C/CF_E"
-      "C/_E/Z/E/_B,2"
-    ]
-    p.play random [
-      "F,Z/_E/A,C/D/"
-      "Z/A,/Z/A,/A,/A,/A,"
-      "Z/F,/F,/Z/A,/A,_B,/"
-    ]
-  p.play "[C'C]/"
+  button 'go', ->
+    for [1..6]
+      p.play random [
+        "_B,/C/C_E2"
+        "_B,/C/CF_E"
+        "C/_E/Z/E/_B,2"
+      ]
+      p.play random [
+        "F,Z/_E/A,C/D/"
+        "Z/A,/Z/A,/A,/A,/A,"
+        "Z/F,/F,/Z/A,/A,_B,/"
+      ]
+    p.play "[C'C]/"
 ---
