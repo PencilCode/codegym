@@ -13,16 +13,15 @@ codeOrder: 0
 thumb: 'queen'
 refs: ['play', 'note names', 'sharps', 'flats', 'octaves', 'beats', 'rests', 'tempo']
 code: |
-  button 'go', ->
-    p = new Piano
-    p.play
-      tempo: 160
-      song: """
-        D/E/E/D/EE/D/EED/E/E/D/|
-        EE/D/E/D/EAGGB,/D/|
-        E/ED/EZEEEZ|
-        D/D/DDA,/B,/A,/G,/E,/E,Z/B,/D/|
-        G2F2E2D2|EEZ6|
-        G2F2E2D2|EEZ6|
-      """
+  p = new Piano
+  p.play
+    tempo: 160
+    song: """
+      D/E/E/D/EE/D/EED/E/E/D/|
+      EE/D/E/D/EAGGB,/D/|
+      E/ED/EZEEEZ|
+      D/D/DDA,/B,/A,/G,/E,/E,Z/B,/D/|
+      G2F2E2D2|EEZ6|
+      G2F2E2D2|EEZ6|
+    """
 ---
